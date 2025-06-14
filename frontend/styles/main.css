@@ -1,0 +1,235 @@
+/* 
+_____________
+Header
+_____________
+*/
+.header{
+    background-color: var(--color-bg-wight);
+}
+.header__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: var(--max-width-container-desktop);
+    margin: auto;
+    gap: 80px;
+    padding: 30px var(--padding-container-desktop);
+}
+.header__nav{
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.topmenu{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+.tobmenu__item {
+
+}
+.topmenu__link{
+    padding: 12px 0;
+    font-weight: 400;
+}
+
+.panel{
+    display: flex;
+    justify-content: space-between;
+    gap: var(--margin-right-links-base);
+}
+
+/* 
+_____________
+Main
+_____________
+*/
+/* .main__section{
+    max-width: var(--max-width-container-desktop);
+    margin: auto;
+    padding: 0 var(--padding-container-desktop)
+} */
+.main__section:last-child{
+    margin-bottom: 200px;
+}
+
+
+.services {
+    height: 400px;
+}
+.services__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: var(--max-width-container-desktop);
+    margin: auto;
+    padding: 0 var(--padding-container-desktop)
+}
+.services__info{
+    margin-bottom: 60px;
+    padding: 50px;
+}
+.services__title{
+    margin-bottom: var(--margin-bottom-title-lg);
+}
+.services__courses {
+  /* position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%); */
+  display:flex;
+  margin:0;
+  padding:0;
+}
+
+.services__course .services__link span {
+  padding:0;
+  margin:0;
+  position:absolute;
+  top: 30px;
+  font-family: var(--font-family-text-nunito);
+  color: #262626;
+  letter-spacing: 4px;
+  transition: .5s;
+}
+
+.services__course .services__link {
+  text-decoration: none;
+  display:block;
+  width:210px;
+  height:80px;
+  background: #fff;
+  text-align:left;
+  padding-left: 20px;
+  transform: rotate(-30deg) skew(25deg) translate(0,0);
+  transition:.5s;
+  box-shadow: -20px 20px 10px rgba(0,0,0,.5);
+}
+.services__course .services__link:before {
+  content: '';
+  position: absolute;
+  top:10px;
+  left:-20px;
+  height:100%;
+  width:20px;
+  background: #b1b1b1;
+  transform: .5s;
+  transform: rotate(0deg) skewY(-45deg);
+}
+.services__course .services__link:after {
+  content: '';
+  position: absolute;
+  bottom:-20px;
+  left:-10px;
+  height:20px;
+  width:100%;
+  background: #b1b1b1;
+  transform: .5s;
+  transform: rotate(0deg) skewX(-45deg);
+}
+
+.services__course .services__link:hover {
+  transform: rotate(-30deg) skew(25deg) translate(20px,-15px);
+  box-shadow: -50px 50px 50px rgba(0,0,0,.5);
+}
+
+.services__course:hover span {
+  color:#fff;
+}
+
+.services__course_green:hover .services__link{
+  background: #3b985f;
+}
+.services__course_green:hover .services__link:before{
+  background: #369255;
+}
+.services__course_green:hover .services__link:after{
+  background: #4aad7f;
+}
+
+.services__course_dark-blue:hover .services__link{
+  background: #3b5998;
+}
+.services__course_dark-blue:hover .services__link:before{
+  background: #365492;
+}
+.services__course_dark-blue:hover .services__link:after{
+  background: #4a69ad;
+}
+
+.services__course_blue:hover .services__link{
+  background: #00aced;
+}
+.services__course_blue:hover .services__link:before{
+  background: #097aa5;
+}
+.services__course_blue:hover .services__link:after{
+  background: #53b9e0;
+}
+
+.services__course_red:hover .services__link{
+  background: #dd4b39;
+}
+.services__course_red:hover .services__link:before{
+  background: #b33a2b;
+}
+.services__course_red:hover .services__link:after{
+  background: #e66a5a;
+}
+
+.services__course_yellow:hover .services__link{
+  background: #d9e440;
+}
+.services__course_yellow:hover .services__link:before{
+  background: #d8cb1c;
+}
+.services__course_yellow:hover .services__link:after{
+  background: #e4e268;
+}
+
+/* 
+_____________
+Footer
+_____________
+*/
+.footer{
+    position: relative;
+    height: 75vh;
+    background: var(--color-bg-blue-gradient);
+    border: 1px solid black;
+}
+.footer::before{
+    position: absolute;
+    top: -15px;
+    height: 15px;
+    width: 100%;
+    background-color: var(--color-bg-dark-blue);
+    content: '';
+    opacity: var(--opacity-footer-after-before, 0);
+    visibility: var(--visibility-footer-arter-before, 'hidden');
+}
+.footer::after{
+    position: absolute;
+    top: -155px;
+    left: 0;
+    right: 0;
+    content: 'RoomSchool';
+    font-family: var(--font-family-title-montserrat);
+    font-size: 10rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--color-bg-dark-blue);
+    opacity: var(--opacity-footer-after-before, 0);
+    visibility: var(--visibility-footer-arter-before, 'hidden');
+}
+.footer__container{
+    max-width: var(--max-width-container-desktop);
+    margin: auto;
+    padding: 90px var(--padding-container-desktop);
+}
+.bottommenu__list{
+    display: flex;
+    justify-content: center;
+    gap: var(--margin-right-links-base);
+}

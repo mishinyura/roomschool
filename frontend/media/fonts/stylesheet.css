@@ -3,9 +3,10 @@
 
 
 @font-face {
-    font-family: 'montserrat_alternatesbold';
-    src: url('montserrat-bold.woff2') format('woff2'),
-         url('montserrat-bold.woff') format('woff');
+    font-family: 'nunito_sansbold';
+    src: url('nunitosans-bold.woff2') format('woff2'),
+         url('nunitosans-bold.woff') format('woff'),
+         url('nunitosans-bold.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 
@@ -15,9 +16,10 @@
 
 
 @font-face {
-    font-family: 'montserrat_alternateslight';
-    src: url('montserrat-light.woff2') format('woff2'),
-         url('montserrat-light.woff') format('woff');
+    font-family: 'nunito_sanslight';
+    src: url('nunitosans-light.woff2') format('woff2'),
+         url('nunitosans-light.woff') format('woff'),
+         url('nunitosans-light.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 
@@ -27,21 +29,10 @@
 
 
 @font-face {
-    font-family: 'montserrat_alternatesmedium';
-    src: url('montserrat-medium.woff2') format('woff2'),
-         url('montserrat-medium.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-
-
-
-@font-face {
-    font-family: 'montserrat_alternatesregular';
-    src: url('montserrat-regular.woff2') format('woff2'),
-         url('montserrat-regular.woff') format('woff');
+    font-family: 'nunito_sansregular';
+    src: url('nunitosans-regular.woff2') format('woff2'),
+         url('nunitosans-regular.woff') format('woff'),
+         url('nunitosans-regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 

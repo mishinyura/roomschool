@@ -2,12 +2,26 @@
     /*--свойство-предмет-модификация*/
     /* Цвета */
     --color-bg-grey: #F4F5F5;
-    
+    --color-bg-wight: #fff;
+    --color-bg-blue: #e6f3f7;
+    --color-bg-blue-gradient: linear-gradient(90deg,rgba(230, 243, 247, 1) 0%, rgba(255, 255, 255, 1) 38%, rgba(230, 243, 247, 1) 70%, rgba(255, 255, 255, 1) 88%, rgba(230, 243, 247, 1) 100%);
+    --color-bg-dark-blue: #0AA6D7;
+
     /* Отступы */
     --spacing-xs: 4px;
     --spacing-sm: 8px;
     --spacing-md: 16px;
     --spacing-lg: 32px;
+
+    --padding-container-desktop: 20px;
+    --padding-container-tablet: 15px;
+    --padding-container-mobile: 10px;
+
+    --margin-right-links-base: 20px;
+
+    --margin-bottom-title-sm: 10px;
+    --margin-bottom-title-md: 30px;
+    --margin-bottom-title-lg: 50px;
     
     /* Размеры */
     --breakpoint-page-desktop: 1440px;
@@ -28,6 +42,7 @@
     
     /* Шрифты */
     --font-family-title-montserrat: 'Montserrat', Arial, sans-serif;
+    --font-family-text-nunito: 'Nunito', Arial, sans-serif;
     --font-size-title-base: 1rem;
     --font-size-descr-base: 0.95rem;
     --font-size-title-xs: 24px;
@@ -38,9 +53,9 @@
 
 @font-face {
     font-family: 'Montserrat';
-    src: url('Montserrat-Light.woff2') format('woff2'),
-         url('Montserrat-Light.woff') format('woff'),
-         url('Montserrat-Light.ttf') format('truetype');
+    src: url('../media/fonts/Montserrat-Light.woff2') format('woff2'),
+         url('../media/fonts/Montserrat-Light.woff') format('woff'),
+         url('../media/fonts/Montserrat-Light.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
@@ -48,9 +63,9 @@
 
 @font-face {
     font-family: 'Montserrat';
-    src: url('Montserrat-Regular.woff2') format('woff2'),
-         url('Montserrat-Regular.woff') format('woff'),
-         url('Montserrat-Regulat.ttf') format('truetype');
+    src: url('../media/fonts/Montserrat-Regular.woff2') format('woff2'),
+         url('../media/fonts/Montserrat-Regular.woff') format('woff'),
+         url('../media/fonts/Montserrat-Regulat.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -58,9 +73,9 @@
 
 @font-face {
     font-family: 'Montserrat';
-    src: url('Montserrat-Medium.woff2') format('woff2'),
-         url('Montserrat-Medium.woff') format('woff'),
-         url('Montserrat-Medium.ttf') format('truetype');
+    src: url('../media/fonts/Montserrat-Medium.woff2') format('woff2'),
+         url('../media/fonts/Montserrat-Medium.woff') format('woff'),
+         url('../media/fonts/Montserrat-Medium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -68,15 +83,46 @@
 
 @font-face {
     font-family: 'Montserrat';
-    src: url('Montserrat-Bold.woff2') format('woff2'),
-         url('Montserrat-Bold.woff') format('woff'),
-         url('Montserrat-Bold.ttf') format('truetype');
+    src: url('../media/fonts/Montserrat-Bold.woff2') format('woff2'),
+         url('../media/fonts/Montserrat-Bold.woff') format('woff'),
+         url('../media/fonts/Montserrat-Bold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'Nunito';
+    src: url('../media/fonts/NunitoSans-Bold.woff2') format('woff2'),
+         url('../media/fonts/NunitoSans-Bold.woff') format('woff'),
+         url('../media/fonts/NunitoSans-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('../media/fonts/NunitoSans-Light.woff2') format('woff2'),
+         url('../media/fonts/NunitoSans-Light.woff') format('woff'),
+         url('../media/fonts/NunitoSans-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('../media/fonts/NunitoSans-Regular.woff2') format('woff2'),
+         url('../media/fonts/NunitoSans-Regular.woff') format('woff'),
+         url('../media/fonts/NunitoSans-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
 a{
+    font-family: var(--font-family-text-nunito);
     text-decoration: none;
 }
 
@@ -104,7 +150,10 @@ ul{
 }
 
 .body{
-    overflow: hidden;
+    min-height: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    background-color: var(--color-bg-grey);
 }
 
 .icons{
