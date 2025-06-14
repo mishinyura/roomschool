@@ -10,8 +10,16 @@
     --spacing-lg: 32px;
     
     /* Размеры */
-    --size-header-height: 56px;
-    --size-container: 1200px;
+    --breakpoint-page-desktop: 1440px;
+    --breakpoint-page-laptop: 1200px;
+    --breakpoint-page-tablet: 990px;
+    --breakpoint-page-smartphone: 750px;
+    --breakpoint-page-mobile: 480px;
+
+    --max-width-container-desktop: 1140px;
+    --max-width-container-laptop: 960px;
+    --max-width-container-tablet: 720px;
+    --max-width-container-mobile: 100%;
     
     
     /* Радиусы */
