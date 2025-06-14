@@ -1,0 +1,80 @@
+:root{
+    /*--свойство-предмет-модификация*/
+    /* Цвета */
+    --color-bg-grey: #F4F5F5;
+    
+    /* Отступы */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 32px;
+    
+    /* Размеры */
+    --size-header-height: 56px;
+    --size-container: 1200px;
+    
+    
+    /* Радиусы */
+    --radius-md: 8px;
+    --radius-lg: 16px;
+    
+    /* Шрифты */
+    --font-family-title-montserrat: 'Montserrat', Arial, sans-serif;
+    --font-size-title-base: 1rem;
+    --font-size-descr-base: 0.95rem;
+    --font-size-title-xs: 24px;
+    --font-size-title-sm: 28px;
+    --font-size-title-md: 32px;
+    --font-size-title-lg: 36px;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('Montserrat-Light.woff2') format('woff2'),
+         url('Montserrat-Light.woff') format('woff'),
+         url('Montserrat-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('Montserrat-Regular.woff2') format('woff2'),
+         url('Montserrat-Regular.woff') format('woff'),
+         url('Montserrat-Regulat.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('Montserrat-Medium.woff2') format('woff2'),
+         url('Montserrat-Medium.woff') format('woff'),
+         url('Montserrat-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('Montserrat-Bold.woff2') format('woff2'),
+         url('Montserrat-Bold.woff') format('woff'),
+         url('Montserrat-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+a{
+    text-decoration: none;
+}
+
+button{
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
