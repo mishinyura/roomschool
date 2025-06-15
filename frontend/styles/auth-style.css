@@ -1,0 +1,103 @@
+/* 
+_____________
+Страница авторизации
+login.html
+_____________
+*/
+.body{
+    background-color: #fff;
+    background-image: url('../media/images/login-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.main {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.main__logo {
+    position: absolute;
+    left: 50px;
+    top: 50px;
+    max-width: 200px;
+}
+
+.main__logo img {
+    width: 100%;
+}
+
+.main__section{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 55%;
+    height: 100%;
+    visibility: visible;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .1s, visibility .1s;
+}
+.main__section.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: painted;
+}
+
+.auth {
+    
+}
+
+
+.auth__comeback {
+    display: block;
+    margin-bottom: 30px;
+}
+
+.auth__title {
+    margin-bottom: 50px;
+}
+
+.auth__form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin-bottom: 30px;
+}
+
+.auth__input {
+    padding: 5px 10px;
+    margin-bottom: 8px;
+    font-family: var(--font-family-text-nunito);
+    font-size: 0.90rem;
+}
+
+.auth__bth_login {
+    padding: var(--paddings-btn-sm);
+    background-color: var(--color-btn-blue);
+}
+
+.choise {
+    
+}
+.choise__title{
+    margin-bottom: 50px;
+}
+.choise__item{
+    display: none;
+    padding: 20px 40px;
+    border: 1px solid rgb(189, 189, 189);
+}
+.choise__item:not(:last-child){
+    margin-bottom: 10px;
+}
+.choise__item.active{
+    display: block;
+}

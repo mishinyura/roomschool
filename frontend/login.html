@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="RoomSchool">
+    <meta property="og:description" content="Первая онлайн школа с AI поддержкой">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://roomschool.ru/">
+    <meta property="og:image" content="https://roomschool.ru/preview.jpg">
+    <title>Войти в личный кабинет RoomSchool</title>
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/auth-style.css">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <script src="scripts/app.js" defer></script>
+</head>
+<body class="body">
+    <main class="main">
+        <a href="#" class="main__logo">
+            <img src="./media/images/logo.png" alt="">
+        </a>
+        <section class="main__section auth active">
+            <div class="auth__container">
+                <a href="#" class="auth__comeback">
+                    Вернуться
+                </a>
+                <h1 class="auth__title">
+                    Авторизация
+                </h1>
+                <form method="post" class="auth__form">
+                    <input class="auth__input" type="text" placeholder="Логин">
+                    <input class="auth__input" type="password" placeholder="Пароль">
+                    <button class="auth__btn auth__bth_login" type="button">
+                        Войти
+                    </button>
+                </form>
+                <button class="auth__btn auth__btn_forgot">
+                    Забыли пароль?
+                </button>
+            </div>
+        </section>
+        <section class="main__section choise">
+            <div class="choise__container">
+                <h1 class="choise__title">
+                    Выбор профиля
+                </h1>
+                <ul class="choise__list">
+                    <li class="choise__item" data-account="admin">
+                        <a href="#" class="choise__link">
+                            Администратор
+                        </a>
+                    </li>
+                    <li class="choise__item" data-account="employee">
+                        <a href="#" class="choise__link">
+                            Сотрудник
+                        </a>
+                    </li>
+                    <li class="choise__item" data-account="parent">
+                        <a href="#" class="choise__link">
+                            Родитель
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
