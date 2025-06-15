@@ -7,6 +7,13 @@
     --color-bg-blue-gradient: linear-gradient(90deg,rgba(230, 243, 247, 1) 0%, rgba(255, 255, 255, 1) 38%, rgba(230, 243, 247, 1) 70%, rgba(255, 255, 255, 1) 88%, rgba(230, 243, 247, 1) 100%);
     --color-bg-dark-blue: #0AA6D7;
 
+    --color-text-black: #000;
+
+    --color-btn-blue: #0AA6D7;
+    --color-btn-white: #fff;
+
+    --color-border-base-blue: 1px solid #0AA6D7;
+
     /* Отступы */
     --spacing-xs: 4px;
     --spacing-sm: 8px;
@@ -22,6 +29,13 @@
     --margin-bottom-title-sm: 10px;
     --margin-bottom-title-md: 30px;
     --margin-bottom-title-lg: 50px;
+
+    --margin-bottom-descr-sm: 10px;
+    --margin-bottom-descr-md: 20px;
+    --margin-bottom-descr-lg: 30px;
+
+    --paddings-btn-sm: 10px 30px;
+    --paddings-btn-lg: 20px 50px;
     
     /* Размеры */
     --breakpoint-page-desktop: 1440px;
@@ -41,51 +55,55 @@
     --radius-lg: 16px;
     
     /* Шрифты */
-    --font-family-title-montserrat: Montserrat, Arial, sans-serif;
-    --font-family-text-nunito: 'Nunito Sans', Arial, sans-serif;
-    --font-size-title-base: 1rem;
-    --font-size-descr-base: 0.95rem;
+    --font-family-text-montserrat: 'Montserrat', Arial, sans-serif;
+    --font-family-text-nunito: 'Nunito', Arial, sans-serif;
+
+    --font-size-title-base: 1.2rem;
+    --font-size-descr-base: 1rem;
+
     --font-size-title-xs: 24px;
     --font-size-title-sm: 28px;
     --font-size-title-md: 32px;
     --font-size-title-lg: 36px;
+
+    --font-size-btn: 1rem;
 }
 
 @font-face {
-    font-family: Montserrat;
-    src: url('../media/fonts/Montserrat-Light.woff2') format('woff2'),
-         url('../media/fonts/Montserrat-Light.woff') format('woff'),
-         url('../media/fonts/Montserrat-Light.ttf') format('truetype');
+    font-family: 'Montserrat';
+    src: url('../media/fonts/montserrat/Montserrat-Light.woff2') format('woff2'),
+         url('../media/fonts/montserrat/Montserrat-Light.woff') format('woff'),
+         url('../media/fonts/montserrat/Montserrat-Light.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: Montserrat;
-    src: url('../media/fonts/Montserrat-Regular.woff2') format('woff2'),
-         url('../media/fonts/Montserrat-Regular.woff') format('woff'),
-         url('../media/fonts/Montserrat-Regulat.ttf') format('truetype');
+    font-family: 'Montserrat';
+    src: url('../media/fonts/montserrat/Montserrat-Regular.woff2') format('woff2'),
+         url('../media/fonts/montserrat/Montserrat-Regular.woff') format('woff'),
+         url('../media/fonts/montserrat/Montserrat-Regulat.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: Montserrat;
-    src: url('../media/fonts/Montserrat-Medium.woff2') format('woff2'),
-         url('../media/fonts/Montserrat-Medium.woff') format('woff'),
-         url('../media/fonts/Montserrat-Medium.ttf') format('truetype');
+    font-family: 'Montserrat';
+    src: url('../media/fonts/montserrat/Montserrat-Medium.woff2') format('woff2'),
+         url('../media/fonts/montserrat/Montserrat-Medium.woff') format('woff'),
+         url('../media/fonts/montserrat/Montserrat-Medium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: Montserrat;
-    src: url('../media/fonts/Montserrat-Bold.woff2') format('woff2'),
-         url('../media/fonts/Montserrat-Bold.woff') format('woff'),
-         url('../media/fonts/Montserrat-Bold.ttf') format('truetype');
+    font-family: 'Montserrat';
+    src: url('../media/fonts/montserrat/Montserrat-Bold.woff2') format('woff2'),
+         url('../media/fonts/montserrat/Montserrat-Bold.woff') format('woff'),
+         url('../media/fonts/montserrat/Montserrat-Bold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -93,9 +111,9 @@
 
 @font-face {
     font-family: 'Nunito';
-    src: url('../media/fonts/NunitoSans-Bold.woff2') format('woff2'),
-         url('../media/fonts/NunitoSans-Bold.woff') format('woff'),
-         url('../media/fonts/NunitoSans-Bold.ttf') format('truetype');
+    src: url('../media/fonts/nunito/Nunito-Bold.woff2') format('woff2'),
+         url('../media/fonts/nunito/Nunito-Bold.woff') format('woff'),
+         url('../media/fonts/nunito/Nunito-Bold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -103,9 +121,9 @@
 
 @font-face {
     font-family: 'Nunito';
-    src: url('../media/fonts/NunitoSans-Light.woff2') format('woff2'),
-         url('../media/fonts/NunitoSans-Light.woff') format('woff'),
-         url('../media/fonts/NunitoSans-Light.ttf') format('truetype');
+    src: url('../media/fonts/nunito/Nunito-Light.woff2') format('woff2'),
+         url('../media/fonts/nunito/Nunito-Light.woff') format('woff'),
+         url('../media/fonts/nunito/Nunito-Light.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
@@ -113,17 +131,22 @@
 
 @font-face {
     font-family: 'Nunito';
-    src: url('../media/fonts/NunitoSans-Regular.woff2') format('woff2'),
-         url('../media/fonts/NunitoSans-Regular.woff') format('woff'),
-         url('../media/fonts/NunitoSans-Regular.ttf') format('truetype');
+    src: url('../media/fonts/nunito/Nunito-Regular.woff2') format('woff2'),
+         url('../media/fonts/nunito/Nunito-Regular.woff') format('woff'),
+         url('../media/fonts/nunito/Nunito-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
 
+@keyframes text-rotate {
+  100% { transform: rotate(360deg); }
+}
+
 a{
     font-family: var(--font-family-text-nunito);
     text-decoration: none;
+    color: var(--color-text-black);
 }
 
 button{
@@ -136,11 +159,12 @@ button{
 
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
-    font-family: var(--font-family-title-montserrat)
+    font-family: var(--font-family-text-montserrat)
 }
 
 p{
     margin: 0;
+    font-family: var(--font-family-text-nunito);
 }
 
 ul{
