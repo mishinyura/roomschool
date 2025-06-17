@@ -59,6 +59,7 @@ _____________
 .auth__comeback {
     display: block;
     margin-bottom: 30px;
+    color: var(--color-text-blue);
 }
 
 .auth__title {
@@ -75,6 +76,8 @@ _____________
 .auth__input {
     padding: 5px 10px;
     margin-bottom: 8px;
+    border: var(--border-btn-black);
+    border-radius: 3px;
     font-family: var(--font-family-text-nunito);
     font-size: 0.90rem;
 }

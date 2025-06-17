@@ -243,7 +243,7 @@ _____________
   position: relative;
   width: 60px;
   height: 60px;
-  border: var(--color-border-base-blue);
+  border: var(--border-btn-blue);
   border-radius: 50px;
 }
 .hero__play::before{
@@ -498,4 +498,69 @@ _____________
   display: flex;
   justify-content: center;
   gap: var(--margin-right-links-base);
+}
+
+
+
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.socials__link {
+  position: relative;
+  display: block;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  border-radius: 50px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.socials__svg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  color: #262626;
+  transition: .5s;
+  z-index: 3;
+}
+
+.socials__link:hover .socials__svg {
+  color: #fff;
+  transform: rotateY(360deg);
+}
+
+.socials__link:before {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f00;
+  transition: .5s;
+  z-index: 2;
+  content: "";
+}
+
+.socials__link:hover:before {
+  top: 0;
+}
+
+.socials__link_black:before{
+  background: #282828;
+}
+
+.socials__link_green:before{
+  background: #62ee55;
+}
+
+.socials__link_blue:before {
+  background: #0077b5;
+}
+
+.socials__link_red:before {
+  background: #dd4b39;
 }
