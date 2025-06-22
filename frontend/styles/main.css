@@ -1,3 +1,35 @@
+.notification{
+  position: fixed;
+  right: 5px;
+  bottom: 5px;
+  width: 200px;
+  min-height: 40px;
+  padding: 20px;
+  font-size: var(--font-size-descr-base);
+  background-color: #fbff8cc6;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 100000;
+  transition: opacity .3s, visibility .3s;;
+}
+
+.notification.show{
+  opacity: 1;
+  visibility: visible;
+}
+
+.notification__title{
+  margin-bottom: 10px;
+  font-family: var(--font-family-text-nunito);
+  font-size: var(--font-size-text-sm);
+  font-weight: 700;
+}
+.notification__descr{
+  font-family: var(--font-family-text-nunito);
+  font-size: var(--font-size-text-sm);
+  font-weight: 400;
+}
+
 /* 
 _____________
 Header
@@ -48,6 +80,54 @@ _____________
   padding: 12px 0;
   font-weight: 400;
 }
+
+
+
+.topmenu__link {
+  position: relative;
+  display: inline-block;
+  color: #1a253a;
+  font-weight: 600;
+  text-decoration: none;
+  overflow: hidden;
+  transition: color 0.25s;
+}
+
+.topmenu__link::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%;
+  height: 100%;
+  color: #4f99ff;
+  pointer-events: none;
+  white-space: nowrap;
+  transform: translateX(-100%);
+  transition: transform 0.35s cubic-bezier(.4,2,.6,1);
+}
+
+.topmenu__link.hover-from-left {
+  color: transparent;
+}
+.topmenu__link.hover-from-left::after {
+  transform: translateX(0%);
+}
+
+.topmenu__link.hover-from-right {
+  color: transparent;
+}
+.topmenu__link.hover-from-right::after {
+  /* начинаем анимацию справа налево */
+  transform: translateX(0%);
+  animation: fromRight 0.35s cubic-bezier(.4,2,.6,1) forwards;
+}
+@keyframes fromRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0%); }
+}
+
+
+
 .topmenu__submenu{
   position: absolute;
   display: flex;
@@ -84,6 +164,7 @@ _____________
 .panel {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: var(--margin-right-links-base);
 }
 .panel__item_burger{
@@ -206,6 +287,11 @@ _____________
   font-size: var(--font-size-btn);
   font-weight: 700;
   background-color: var(--color-btn-white);
+  box-shadow: 0 0 10px -6px black;
+  transition: box-shadow .1s;
+}
+.hero__btn_callback:hover{
+  box-shadow: 0 0 5px -6px black;
 }
 /* *{
   box-sizing: border-box;
@@ -278,8 +364,8 @@ _____________
 }
 
 .services__title {
-  margin-bottom: var(--margin-bottom-title-lg);
-  font-size: var(--font-size-title-base);
+  margin-bottom: var(--margin-bottom-title-md);
+  font-size: var(--font-size-text-lg);
 }
 .services__description{
   position: relative;
@@ -300,7 +386,11 @@ _____________
   visibility: visible;
   opacity: 1;
 }
-
+.services__subtitle{
+  margin-bottom: var(--margin-bottom-title-sm);
+  font-family: var(--font-family-text-nunito);
+  font-size: var(--font-size-descr-base);
+}
 .services__courses {
   position: relative;
   display: grid;
@@ -475,7 +565,7 @@ _____________
 
 .footer::after {
   position: absolute;
-  top: -155px;
+  top: -165px;
   left: 0;
   right: 0;
   content: 'RoomSchool';
