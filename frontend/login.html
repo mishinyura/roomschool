@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Войти в личный кабинет RoomSchool</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="RoomSchool">
+    <meta property="og:description" content="Первая онлайн школа с AI поддержкой">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://roomschool.ru/">
+    <meta property="og:image" content="https://roomschool.ru/preview.jpg">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/auth-style.css">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <!-- <script type="text/javascript" src="scripts/utils.js"></script>
+    <script type="module" src="scripts/notifications-templates.js" async></script>
+    <script type="module" src="scripts/modules.js" async></script> -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js" defer></script>
+    <script src="scripts/auth.js" defer></script>
+</head>
+<body class="body">
+    <main class="main" id="auth">
+        <transition name="scale" mode="out-in">
+            <section class="main__section auth" v-if="roles.length === 0">
+                <div class="auth__container">
+                    <a href="#" class="main__logo">
+                        <img src="./media/images/logo.png" alt="">
+                    </a>
+                    <h2 class="auth__title">
+                        Авторизация
+                    </h2>
+                    <form method="post" name="authorizationForm" class="auth__form" @submit.prevent="auth">
+                        <input class="auth__input" type="text" placeholder="Логин" v-model.trim="login">
+                        <input class="auth__input" type="password" placeholder="Пароль" v-model.trim="password">
+                        <button class="auth__btn auth__btn_login" :disabled="login.length === 0">
+                            Войти
+                        </button>
+                    </form>
+                    <button class="auth__btn auth__btn_forgot">
+                        Забыли пароль?
+                    </button>
+                </div>
+            </section>
+            <section class="main__section choise" v-if="roles.length > 1">
+                <div class="choise__container">
+                    <h2 class="choise__title">
+                        Выбор профиля
+                    </h2>
+                    <ul class="choise__list">
+                        <li class="choise__item" v-for="role in roles" :data-account="role.name">
+                            <a href="#" class="choise__link">
+                                {{ role.display }}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </transition>
+        <Loader class="loader" role="status" aria-live="polite" v-if="loader" />
+    </main>
+</body>
+</html>

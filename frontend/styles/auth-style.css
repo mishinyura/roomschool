@@ -1,0 +1,222 @@
+/* 
+_____________
+Страница авторизации
+login.html
+_____________
+*/
+.body{
+    background-color: #fff;
+    background: radial-gradient(circle,rgba(0, 133, 255, 1) 0%, rgba(0, 52, 101, 1) 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.main {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../media/images/auth-bg-elem1.png'),
+    url('../media/images/auth-bg-elem2.png'),
+    url('../media/images/auth-bg-elem3.png'),
+    url('../media/images/auth-bg-elem7.png'),
+    url('../media/images/auth-bg-elem9.png'),
+    url('../media/images/auth-bg-elem4.png'),
+    url('../media/images/auth-bg-elem2.png');
+    background-size: 20%, 20%, 10%, 20%, 15%, 5%, 20%;
+    background-position: right bottom, left bottom, 30% 70%, 70% 20%, center 80%, 28% 71%, right top;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.main__logo {
+    /* position: absolute; */
+    /* left: 30px;
+    top: 30px; */
+    display: block;
+    max-width: 120px;
+    margin-bottom: 30px;
+}
+
+.main__logo img {
+    width: 100%;
+}
+
+.main__section{
+    /* position: absolute; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 80%;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.659);
+    /* visibility: visible;
+    opacity: 0; */
+    /* pointer-events: none; */
+    transition: opacity .1s, visibility .1s;
+}
+/* .main__section.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: painted;
+} */
+
+.auth {
+    background: radial-gradient(circle,rgba(0, 133, 255, 0) 0%, rgba(0, 52, 101, 0.55) 90%);
+}
+
+.auth__container{
+    padding: 30px 50px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.16);
+    backdrop-filter: blur(2px) saturate(150%);
+    -webkit-backdrop-filter: blur(2px) saturate(150%);
+}
+
+.auth__title {
+    margin-bottom: 50px;
+    font-family: var(--font-family-text-montserrat);
+    font-size: 2rem;
+    color: #fff;
+}
+
+.auth__form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+
+}
+
+.auth__input {
+    padding: 8px 12px;
+    margin-bottom: 15px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-family: var(--font-family-text-montserrat);
+    font-size: 0.90rem;
+}
+
+.auth__btn {
+    font-family: var(--font-family-text-montserrat);
+    color: #fff;
+}
+
+.auth__btn_login {
+    padding: var(--paddings-btn-sm);
+    background-color: #003465;
+}
+
+.choise {
+    
+}
+.choise__title{
+    font-family: var(--font-family-text-montserrat);
+    margin-bottom: 50px;
+}
+.choise__item{
+    /* display: none; */
+    padding: 20px 40px;
+    border: 1px solid rgb(189, 189, 189);
+}
+.choise__item:not(:last-child){
+    margin-bottom: 10px;
+}
+/* .choise__item.active{
+    display: block;
+} */
+
+
+.scale-enter-active, .scale-leave-active {
+  transition: opacity 0.5s, transform 0.5s;
+}
+.scale-enter-from, .scale-leave-to {
+  opacity: 0;
+  transform: translateY(40px);
+}
+.scale-enter-to, .scale-leave-from {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.loader {
+    position: fixed;
+    top: 50px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.512);
+    color: #fff;
+    background-color: #003465;
+    transform: rotateZ(45deg);
+    perspective: 1000px;
+}
+.loader:before,
+.loader:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    transform: rotateX(70deg);
+    animation: 1s spin linear infinite;
+}
+.loader:after {
+    color: #8968e2;
+    transform: rotateY(70deg);
+    animation-delay: .4s;
+}
+
+@keyframes rotate {
+    0% {
+    transform: translate(-50%, -50%) rotateZ(0deg);
+    }
+    100% {
+    transform: translate(-50%, -50%) rotateZ(360deg);
+    }
+}
+
+@keyframes rotateccw {
+    0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+    transform: translate(-50%, -50%) rotate(-360deg);
+    }
+}
+
+@keyframes spin {
+    0%,
+    100% {
+    box-shadow: .2em 0px 0 0px currentcolor;
+    }
+    12% {
+    box-shadow: .2em .2em 0 0 currentcolor;
+    }
+    25% {
+    box-shadow: 0 .2em 0 0px currentcolor;
+    }
+    37% {
+    box-shadow: -.2em .2em 0 0 currentcolor;
+    }
+    50% {
+    box-shadow: -.2em 0 0 0 currentcolor;
+    }
+    62% {
+    box-shadow: -.2em -.2em 0 0 currentcolor;
+    }
+    75% {
+    box-shadow: 0px -.2em 0 0 currentcolor;
+    }
+    87% {
+    box-shadow: .2em -.2em 0 0 currentcolor;
+    }
+}
