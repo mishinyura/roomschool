@@ -1,10 +1,10 @@
 import { NOTIFICATION_TEMPLATES } from './notifications-templates.js';
 
 class Notification {
-    constructor(className, templates = NOTIFICATION_TEMPLATES) {
-        this.container = document.querySelector(`.${className}`);
-        this.description = this.container.querySelector(`.${className}__descr`);
-        this.title = this.container.querySelector(`.${className}__title`);
+    constructor(clsName, templates = NOTIFICATION_TEMPLATES) {
+        this.container = document.querySelector(`.${clsName}`);
+        this.description = this.container.querySelector(`.${clsName}__descr`);
+        this.title = this.container.querySelector(`.${clsName}__title`);
         this.templates = templates;
 
     }
@@ -96,4 +96,77 @@ class Forms {
 
 }
 
-let acc = new Forms('authorizationForm');
+
+class Slider {
+    constructor(config){
+        if (this.configValidate(config)) {
+            this.container = document.querySelector(config.container)
+            this.slider = this.container.querySelector('ul')
+            this.cards = this.slider.querySelectorAll('li')
+
+            this.prevBtn = this.container.querySelector(config.prev)
+            this.nextBtn = this.container.querySelector(config.next)
+
+            this.showNextSlide = this.showNextSlide.bind(this)
+            this.showPrevSlide = this.showPrevSlide.bind(this)
+
+            this.prevBtn.addEventListener('click', this.showPrevSlide)
+            this.nextBtn.addEventListener('click', this.showNextSlide)
+        }
+
+        this.getSliderParams()
+    }
+
+    configValidate(data){
+        if (!data.container) {
+            throw new Error('Укажите клас или идентификатор общего контейнера с вашим слайдером')
+        }
+
+        return true
+    }
+
+    getSliderParams(){
+        this.widthContainer = this.container.getBoundingClientRect().width;
+        this.heightContainer = this.container.getBoundingClientRect().height;
+        this.widthSlider = this.slider.getBoundingClientRect().width;
+        this.heightSlider = this.slider.getBoundingClientRect().height;
+        this.widthCard = this.cards[0].getBoundingClientRect().width;
+        this.heightCard = this.cards[0].getBoundingClientRect().height;
+
+        console.log(this.widthSlider)
+    }
+
+    showNextSlide(){
+        console.log('next')
+    }
+
+    showPrevSlide(){
+        console.log('prev')
+    }
+}
+
+
+class Header{
+    constructor(clsName) {
+        this.header = document.querySelector(`.${clsName}`)
+        this.editStyle = this.editStyle.bind(this)
+        window.addEventListener('scroll', this.editStyle)
+    }
+
+    editStyle(el) {
+        if (window.scrollY > 0) {
+            this.header.classList.add('scrolled');
+        } else {
+            this.header.classList.remove('scrolled');
+        }
+    }
+}
+
+// let acc = new Forms('authorizationForm');
+// let header = new Header('header')
+
+const slider = new Slider({
+    container: '.slider',
+    prev: '.prev',
+    next: '.next'
+})

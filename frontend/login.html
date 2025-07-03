@@ -15,60 +15,51 @@
     <link rel="stylesheet" href="styles/auth-style.css">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <script type="text/javascript" src="scripts/utils.js"></script>
+    <!-- <script type="text/javascript" src="scripts/utils.js"></script>
     <script type="module" src="scripts/notifications-templates.js" async></script>
-    <script type="module" src="scripts/modules.js" async></script>
-    <script src="scripts/app.js" defer></script>
+    <script type="module" src="scripts/modules.js" async></script> -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js" defer></script>
+    <script src="scripts/auth.js" defer></script>
 </head>
 <body class="body">
-    <main class="main">
-        <a href="#" class="main__logo">
-            <img src="./media/images/logo.png" alt="">
-        </a>
-        <section class="main__section auth active">
-            <div class="auth__container">
-                <a href="#" class="auth__comeback">
-                    Вернуться
-                </a>
-                <h1 class="auth__title">
-                    Авторизация
-                </h1>
-                <form method="post" name="authorizationForm" class="auth__form">
-                    <input class="auth__input" name="login" type="text" placeholder="Логин" data-validate="">
-                    <input class="auth__input" name="password" type="password" placeholder="Пароль">
-                    <button class="auth__btn auth__bth_login" type="button">
-                        Войти
+    <main class="main" id="auth">
+        <transition name="scale" mode="out-in">
+            <section class="main__section auth" v-if="roles.length === 0">
+                <div class="auth__container">
+                    <a href="#" class="main__logo">
+                        <img src="./media/images/logo.png" alt="">
+                    </a>
+                    <h2 class="auth__title">
+                        Авторизация
+                    </h2>
+                    <form method="post" name="authorizationForm" class="auth__form" @submit.prevent="auth">
+                        <input class="auth__input" type="text" placeholder="Логин" v-model.trim="login">
+                        <input class="auth__input" type="password" placeholder="Пароль" v-model.trim="password">
+                        <button class="auth__btn auth__btn_login" :disabled="login.length === 0">
+                            Войти
+                        </button>
+                    </form>
+                    <button class="auth__btn auth__btn_forgot">
+                        Забыли пароль?
                     </button>
-                </form>
-                <button class="auth__btn auth__btn_forgot">
-                    Забыли пароль?
-                </button>
-            </div>
-        </section>
-        <section class="main__section choise">
-            <div class="choise__container">
-                <h1 class="choise__title">
-                    Выбор профиля
-                </h1>
-                <ul class="choise__list">
-                    <li class="choise__item" data-account="admin">
-                        <a href="#" class="choise__link">
-                            Администратор
-                        </a>
-                    </li>
-                    <li class="choise__item" data-account="employee">
-                        <a href="#" class="choise__link">
-                            Сотрудник
-                        </a>
-                    </li>
-                    <li class="choise__item" data-account="parent">
-                        <a href="#" class="choise__link">
-                            Родитель
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </section>
+                </div>
+            </section>
+            <section class="main__section choise" v-if="roles.length > 1">
+                <div class="choise__container">
+                    <h2 class="choise__title">
+                        Выбор профиля
+                    </h2>
+                    <ul class="choise__list">
+                        <li class="choise__item" v-for="role in roles" :data-account="role.name">
+                            <a href="#" class="choise__link">
+                                {{ role.display }}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </transition>
+        <Loader class="loader" role="status" aria-live="polite" v-if="loader" />
     </main>
 </body>
 </html>

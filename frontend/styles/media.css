@@ -1,0 +1,75 @@
+@media screen and (max-width: 90rem) {
+    .header__container{
+        max-width: var(--max-width-container-desktop);
+        padding: 20px var(--padding-container-desktop);
+    }
+    .hero__container{
+        max-width: var(--max-width-container-desktop);
+        padding: 30px var(--padding-container-desktop);
+    }
+    .services__container{
+        max-width: var(--max-width-container-desktop);
+        padding: 50px var(--padding-container-desktop);
+    }
+    .footer__container{
+        max-width: var(--max-width-container-desktop);
+        padding: 50px var(--padding-container-desktop);
+    }
+}
+
+@media screen and (max-width: 75rem) {
+    .header__container{
+        max-width: var(--max-width-container-laptop);
+        padding: 50px var(--padding-container-laptop);
+    }
+    .hero__container{
+        max-width: var(--max-width-container-laptop);
+        padding: 50px var(--padding-container-laptop);
+    }
+      
+    .services{
+
+    }
+    .services__container{
+        max-width: var(--max-width-container-laptop);
+        padding: 50px var(--padding-container-laptop);
+    }
+    .services__courses{
+        grid-template-columns: repeat(1, 1fr);
+        gap: 50px;
+        /* min-height: 400px; */
+    }
+    .services__course{
+        /* margin-right: 20px; */
+    }
+    
+    .footer__container{
+        max-width: var(--max-width-container-laptop);
+        padding: 50px var(--padding-container-laptop);
+    }
+      
+}
+
+@media screen and (max-width: 61.875rem) {
+
+}
+
+@media screen and (max-width: 46.875rem) {
+    .header__nav{
+        flex-grow: 0;
+    }
+    .topmenu{
+        position: absolute;
+        top: 90px;
+        right: 100%;
+        padding: 50px 30px;
+        background-color: white;
+    }
+    .panel__icon_burger{
+        display: inline-block;
+    }
+}
+
+@media screen and (max-width: 30rem) {
+
+}

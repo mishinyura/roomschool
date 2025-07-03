@@ -1,28 +1,13 @@
 :root{
     /*--свойство-предмет-модификация*/
     /* Цвета */
-    --color-bg-grey: #F4F5F5;
-    --color-bg-wight: #fff;
-    --color-bg-blue: #8AD1FD;
-    --color-bg-purpure: #C3B9DF;
-    --color-bg-blue-radial-gradient: radial-gradient(circle at left top, #E8F6FF 0%, #8ad1fd59 53%);
-    --color-bg-purpure-radial-gradient: radial-gradient(circle at center 200px, #FFE6E6 0%, #c3b9df92 53%);
-    --color-bg-blue-linear-gradient: linear-gradient(90deg,rgba(230, 243, 247, 1) 0%, rgba(255, 255, 255, 1) 38%, rgba(230, 243, 247, 1) 70%, rgba(255, 255, 255, 1) 88%, rgba(230, 243, 247, 1) 100%);
-    --color-bg-dark-blue: #0AA6D7;
-
-    --color-text-black: #000;
-    --color-text-blue: #0AA6D7;
-
-    --color-btn-blue: #0AA6D7;
-    --color-btn-white: #fff;
-
-    --border-btn-blue: 1px solid #0AA6D7;
-    --border-btn-black: 1px solid black;
+    --color-bg-blue-purpure-gradient: linear-gradient(90deg,rgba(138, 209, 253, 1) 0%, rgba(195, 185, 223, 1) 100%);
+    --color-bg-blue: #0AA6D7;
 
     /* Отступы */
-    --padding-container-desktop: 20px;
-    --padding-container-tablet: 15px;
-    --padding-container-mobile: 10px;
+    --padding-container-desktop: 1.2rem;
+    --padding-container-tablet: 1rem;
+    --padding-container-mobile: 0.8rem;
 
     --margin-right-links-base: 20px;
     --margin-bottom-links-base: 10px;
@@ -150,7 +135,6 @@
 }
 
 a{
-    font-family: var(--font-family-text-nunito);
     text-decoration: none;
     color: var(--color-text-black);
     outline: none;
@@ -185,11 +169,15 @@ input{
 }
 
 .body{
-    position: relative;
+    min-height: 100vh;
+    background-color: #F9F9F9;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    /* position: relative;
     min-height: 100%;
     overflow-x: hidden;
     box-sizing: border-box;
-    background-color: var(--color-bg-grey);
+    background-color: var(--color-bg-grey); */
 }
 
 .icons{

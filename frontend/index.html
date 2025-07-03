@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/media.css">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <script type="text/javascript" src="scripts/utils.js"></script>
@@ -126,34 +127,31 @@
                         </a>
                     </li>
                 </ul>
-                <ul class="header__btns panel">
-                    <li class="panel__item panel__item_search">
-                        <button class="panel__btn">
+                <div class="header__btns panel">
+                    <div class="panel__icons">
+                        <button class="panel__icon panel__icon_search">
                             <svg width="25" height="25">
                                 <use xlink:href="#search-icon"></use>
                             </svg>
                         </button>
-                    </li>
-                    <li class="panel__item panel__item_login">
-                        <a href="#" class="panel__btn">
+                        <a href="#" class="panel__icon panel__icon_login">
                             <svg width="25" height="25">
                                 <use xlink:href="#profile-icon"></use>
                             </svg>
                         </a>
-                    </li>
-                    <li class="panel__item panel__item_login">
-                        <a href="#" class="panel__btn">
+                        <!-- <a href="#" class="panel__btn">
                             <svg width="25" height="25">
                                 <use xlink:href="#phone-icon"></use>
                             </svg>
-                        </a>
-                    </li>
-                    <li class="panel__item panel__item_burger">
-                        <button href="#" class="panel__btn">
+                        </a> -->
+                        <button href="#" class="panel__icon panel__icon_burger">
                             <span></span>
                         </button>
-                    </li>
-                </ul>
+                    </div>
+                    <button href="#" class="panel__btn panel__btn_act">
+                        Поступить
+                    </button>
+                </div>
             </nav>
         </div>
     </header>
@@ -295,6 +293,23 @@
                         </a>
                     </li>
                 </ul>
+            </div>
+        </section>
+        <section class="main__section block">
+            <div class="block__container">
+                <div class="block__iter slider">
+                    <button class="slider__btn prev">Назад</button>
+                    <button class="slider__btn next">Вперед</button>
+                    <ul class="slider__list">
+                        <li class="slider__item"></li>
+                        <li class="slider__item"></li>
+                        <li class="slider__item show"></li>
+                        <li class="slider__item next"></li>
+                        <li class="slider__item"></li>
+                        <li class="slider__item"></li>
+                    </ul>
+                    <div class="slider__pagination"></div>
+                </div>
             </div>
         </section>
     </main>
