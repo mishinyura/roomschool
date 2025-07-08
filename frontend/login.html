@@ -22,12 +22,20 @@
     <script src="scripts/auth.js" defer></script>
 </head>
 <body class="body">
+    <svg class="body__icons">
+        <symbol id="yandex-icon">
+            <path d="M21.88,2h-4c-4,0-8.07,3-8.07,9.62a8.33,8.33,0,0,0,4.14,7.66L9,28.13A1.25,1.25,0,0,0,9,29.4a1.21,1.21,0,0,0,1,.6h2.49a1.24,1.24,0,0,0,1.2-.75l4.59-9h.34v8.62A1.14,1.14,0,0,0,19.82,30H22a1.12,1.12,0,0,0,1.16-1.06V3.22A1.19,1.19,0,0,0,22,2ZM18.7,16.28h-.59c-2.3,0-3.66-1.87-3.66-5,0-3.9,1.73-5.29,3.34-5.29h.94Z" style="fill:#d61e3b"/>
+        </symbol>
+        <symbol id="vkontakte-icon">
+            <path d="M21.54736,7H18.25688a.74281.74281,0,0,0-.65452.39156s-1.31237,2.41693-1.73392,3.231C14.73438,12.8125,14,12.125,14,11.10863V7.60417A1.10417,1.10417,0,0,0,12.89583,6.5h-2.474a1.9818,1.9818,0,0,0-1.751.8125s1.25626-.20312,1.25626,1.48958c0,.41974.02162,1.62723.04132,2.64a.72943.72943,0,0,1-1.273.50431,21.54029,21.54029,0,0,1-2.4982-4.54359A.69314.69314,0,0,0,5.5668,7C4.8532,7,3.42522,7,2.57719,7a.508.508,0,0,0-.47969.68481C3.00529,10.17487,6.91576,18,11.37917,18h1.87865A.74219.74219,0,0,0,14,17.25781V16.12342a.7293.7293,0,0,1,1.22868-.5315l2.24861,2.1127A1.08911,1.08911,0,0,0,18.223,18h2.95281c1.42415,0,1.42415-.98824.64768-1.75294-.54645-.53817-2.51832-2.61663-2.51832-2.61663A1.01862,1.01862,0,0,1,19.2268,12.307c.63737-.83876,1.67988-2.21175,2.122-2.79993C21.95313,8.70313,23.04688,7,21.54736,7Z" style="fill:#577fa8"/>
+        </symbol>
+    </svg>
     <main class="main" id="auth">
         <transition name="scale" mode="out-in">
             <section class="main__section auth" v-if="roles.length === 0">
                 <div class="auth__container">
-                    <a href="#" class="main__logo">
-                        <img src="./media/images/logo.png" alt="">
+                    <a href="#" class="auth__logo">
+                        <img src="./media/images/logo-.png" alt="">
                     </a>
                     <h2 class="auth__title">
                         Авторизация
@@ -35,13 +43,29 @@
                     <form method="post" name="authorizationForm" class="auth__form" @submit.prevent="auth">
                         <input class="auth__input" type="text" placeholder="Логин" v-model.trim="login">
                         <input class="auth__input" type="password" placeholder="Пароль" v-model.trim="password">
+                        <button class="auth__btn auth__btn_forgot" type="button">
+                            Забыли пароль?
+                        </button>
                         <button class="auth__btn auth__btn_login" :disabled="login.length === 0">
                             Войти
                         </button>
+                        <p class="auth__text">
+                            Или войти с помощью
+                        </p>
+                        <div class="auth__ssobtns">
+                            <button class="auth__btn auth__btn_sso">
+                                <svg>
+                                    <use xlink:href="#yandex-icon"></use>
+                                </svg>
+                            </button>
+                            <button class="auth__btn auth__btn_sso">
+                                <svg>
+                                    <use xlink:href="#vkontakte-icon"></use>
+                                </svg>
+                            </button>
+                        </div>
                     </form>
-                    <button class="auth__btn auth__btn_forgot">
-                        Забыли пароль?
-                    </button>
+                    
                 </div>
             </section>
             <section class="main__section choise" v-if="roles.length > 1">
