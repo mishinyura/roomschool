@@ -1,5 +1,5 @@
-from office import office_router
+from .profile import profile_router
 
 __all__ = [
-    'office_router'
+    'profile_router'
 ]
