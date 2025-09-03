@@ -14,4 +14,4 @@ class Student(BaseModel, Base):
     code: Mapped[int] = mapped_column(Integer, unique=True, nullable=True)
     person_id: Mapped[int] = mapped_column(ForeignKey('persons.person_id'), nullable=False)
     account_id: Mapped[int] = mapped_column(ForeignKey('accounts.account_id'), nullable=False)
-    status: Mapped[StudentStatus] = mapped_column(AlchemyEnum(StudentStatus), nullable=False, default=StudentStatus.AWAITING)
+    status: Mapped[StudentStatus] = mapped_column(AlchemyEnum(StudentStatus), nullable=False, default=StudentStatus.WAITING)

@@ -162,11 +162,32 @@ class Header{
     }
 }
 
+class Course{
+    constructor() {
+        this.container = document.querySelector('#humanitarian')
+        this.books = this.container.querySelectorAll('.books__item')
+
+        for (let i of this.books){
+            i.addEventListener('click', this.openBook.bind(this))
+        }
+    }
+
+    openBook(book) {
+        console.log('dd')
+        for (let bk of this.books) {
+            bk.classList.remove('open')
+        }
+        book.currentTarget.classList.toggle('open')
+    }
+}
+
+new Course()
+
 // let acc = new Forms('authorizationForm');
 // let header = new Header('header')
 
-const slider = new Slider({
-    container: '.slider',
-    prev: '.prev',
-    next: '.next'
-})
+// const slider = new Slider({
+//     container: '.slider',
+//     prev: '.prev',
+//     next: '.next'
+// })

@@ -14,14 +14,17 @@
     <meta name="keywords" content="">
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/swiper-bundle.min.css">
+    <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/media.css">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <script type="text/javascript" src="scripts/utils.js"></script>
-    <script type="module" src="scripts/notifications-templates.js" async></script>
-    <script type="module" src="scripts/modules.js" async></script>
-    <script type="text/javascript" src="scripts/app.js" defer></script>
+    <script src="scripts/utils.js"></script>
+    <script type="module" src="scripts/custom/notifications-templates.js" defer></script>
+    <script type="module" src="scripts/custom/modules.js" defer></script>
+    <script src="scripts/modules/swiper-bundle.min.js" defer></script>
+    <script type="module" src="scripts/app.js" defer></script>
 </head>
 <body class="body">
     <svg class="icons">
@@ -46,9 +49,9 @@
         <symbol id="instagram-icon" viewBox="0 0 100 100">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M60.6082 25H39.3918C31.4566 25 25 31.4558 25 39.3918V60.8028C25 68.738 31.4558 75.1946 39.3918 75.1946H60.6082C68.5442 75.1946 75 68.738 75 60.8028V39.3918C75 31.4566 68.5442 25 60.6082 25ZM70.2371 60.8028C70.2371 66.1121 65.9174 70.4317 60.6082 70.4317H39.3918C34.0826 70.4317 29.7629 66.1121 29.7629 60.8028V39.3918C29.7629 34.0826 34.0826 29.7629 39.3918 29.7629H60.6082C65.9174 29.7629 70.2371 34.0826 70.2371 39.3918V60.8028ZM50.0397 37.0922C42.8438 37.0922 36.9883 42.8847 36.9883 50.0054C36.9883 57.1252 42.843 62.9177 50.0397 62.9177C57.2356 62.9177 63.0911 57.1252 63.0911 50.0054C63.0911 42.8847 57.2356 37.0922 50.0397 37.0922ZM50.0397 58.1638C45.4641 58.1638 41.7422 54.5033 41.7422 50.0054C41.7422 45.5066 45.4641 41.8469 50.0397 41.8469C54.6145 41.8469 58.3372 45.5066 58.3372 50.0054C58.3372 54.5041 54.6153 58.1638 50.0397 58.1638ZM66.3956 36.5646C66.3956 38.2606 65.0208 39.6355 63.3248 39.6355C61.6288 39.6355 60.2539 38.2606 60.2539 36.5646C60.2539 34.8687 61.6288 33.4938 63.3248 33.4938C65.0208 33.4938 66.3956 34.8687 66.3956 36.5646Z" fill="currentColor"/>
         </symbol>
-        <defs>
-            <path id="circlePath" d="M 100, 100 m -80, 0 a 80,80 0 1,1 160,0 a 80,80 0 1,1 -160,0"/>
-        </defs>
+        <symbol id="circlePath">
+            <path d="M 100, 100 m -80, 0 a 80,80 0 1,1 160,0 a 80,80 0 1,1 -160,0"/>
+        </symbol>
     </svg>
     <div class="notification" role="alert" aria-live="assertive">
         <h6 class="notification__title">
@@ -295,85 +298,342 @@
                 </ul>
             </div>
         </section>
-        <section class="main__section block">
-            <div class="block__container">
-                <div class="block__iter slider">
-                    <button class="slider__btn prev">Назад</button>
-                    <button class="slider__btn next">Вперед</button>
-                    <ul class="slider__list">
-                        <li class="slider__item"></li>
-                        <li class="slider__item"></li>
-                        <li class="slider__item show"></li>
-                        <li class="slider__item next"></li>
-                        <li class="slider__item"></li>
-                        <li class="slider__item"></li>
-                    </ul>
-                    <div class="slider__pagination"></div>
+        <section class="main__section courses">
+            <div class="courses__container">
+                <div class="courses__shelf">
+                    <div class="courses__head">
+                        <h3 class="courses__title">
+                            Гуманитарный
+                        </h3>
+                        <a href="#" class="courses__all">
+                            Все факультативы
+                        </a>
+                    </div>
+                    <article class="course__list books" id="humanitarian">
+                        <div class="books__item">
+                            <span class="books__label">
+                                Эмоциональный интеллект
+                            </span>
+                            <div class="books__image">
+                                <img src="media/images/banner_course.png" alt="">
+                            </div>
+                            <h4 class="books__name">
+                                Эмоциональный интеллект
+                            </h4>
+                            <p class="books__description">
+                                Узнаем природу эмоций, научимся понимать их и управлять ими
+                            </p>
+                            <span class="books__rating">
+                                Оценка
+                            </span>
+                            <span class="books__price">
+                                950
+                            </span>
+                            <a href="#" class="books__detail">
+                                Детали
+                            </a>
+                        </div>
+                        <div class="books__item open">
+                            <span class="books__label">
+                                Эмоциональный интеллект
+                            </span>
+                            <div class="books__image">
+                                <img src="media/images/banner_course.png" alt="">
+                            </div>
+                            <h4 class="books__name">
+                                Эмоциональный интеллект
+                            </h4>
+                            <p class="books__description">
+                                Узнаем природу эмоций, научимся понимать их и управлять ими
+                            </p>
+                            <span class="books__rating">
+                                Оценка
+                            </span>
+                            <span class="books__price">
+                                950
+                            </span>
+                            <a href="#" class="books__detail">
+                                Детали
+                            </a>
+                        </div>
+                        <div class="books__item">
+                            <span class="books__label">
+                                Эмоциональный интеллект
+                            </span>
+                            <div class="books__image">
+                                <img src="media/images/banner_course.png" alt="">
+                            </div>
+                            <h4 class="books__name">
+                                Эмоциональный интеллект
+                            </h4>
+                            <p class="books__description">
+                                Узнаем природу эмоций, научимся понимать их и управлять ими
+                            </p>
+                            <span class="books__rating">
+                                Оценка
+                            </span>
+                            <span class="books__price">
+                                950
+                            </span>
+                            <a href="#" class="books__detail">
+                                Детали
+                            </a>
+                        </div>
+                    </article>
+                </div>
+                <div class="courses__shelf">
+                    <div class="courses__head">
+                        <h3 class="courses__title">
+                            Технический
+                        </h3>
+                        <a href="#" class="courses__all">
+                            Все факультативы
+                        </a>
+                    </div>
+                    <article class="course__list books">
+                        <div class="books__item">
+                            <span class="books__label">
+                                Создание чат ботов
+                            </span>
+                            <div class="books__image">
+                                <img src="media/images/banner_course.png" alt="">
+                            </div>
+                            <h4 class="books__name">
+                                Создание чат ботов
+                            </h4>
+                            <p class="books__description">
+                                На курсе дети изучают способы создания телеграм 
+                                бота и внедряют собственные идеи в свой первый 
+                                самостоятельный проект
+                            </p>
+                            <span class="books__rating">
+                                Оценка
+                            </span>
+                            <span class="books__price">
+                                1350
+                            </span>
+                            <a href="#" class="books__detail">
+                                Детали
+                            </a>
+                        </div>
+                    </article>
+                </div>
+                <div class="courses__shelf">
+                    <div class="courses__head">
+                        <h3 class="courses__title">
+                            Инновационный
+                        </h3>
+                        <a href="#" class="courses__all">
+                            Все факультативы
+                        </a>
+                    </div>
+                    <article class="course__list books">
+                        <div class="books__item">
+                            <span class="books__label">
+                                Создание чат ботов
+                            </span>
+                            <div class="books__image">
+                                <img src="media/images/banner_course.png" alt="">
+                            </div>
+                            <h4 class="books__name">
+                                Создание чат ботов
+                            </h4>
+                            <p class="books__description">
+                                На курсе дети изучают способы создания телеграм 
+                                бота и внедряют собственные идеи в свой первый 
+                                самостоятельный проект
+                            </p>
+                            <span class="books__rating">
+                                Оценка
+                            </span>
+                            <span class="books__price">
+                                1350
+                            </span>
+                            <a href="#" class="books__detail">
+                                Детали
+                            </a>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
     </main>
     <footer class="footer">
         <div class="footer__container">
-            <nav class="footer__nav bottommenu">
-                <ul class="bottommenu__list">
-                    <li class="bottommenu__item">
-                        <a href="#" class="bottommenu__link">
-                            О школе
+            <div class="footer__head">
+                <ul class="footer__tabs"></ul>
+                <ul class="footer__list socials">
+                    <li class="socials__item">
+                        <a class="socials__link socials__link_black" href="#">
+                            <svg class="socials__svg" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <use xlink:href="#telegram-icon"></use>
+                            </svg>
                         </a>
                     </li>
-                    <li class="bottommenu__item">
-                        <a href="#" class="bottommenu__link">
-                            Контакты
+                    <li class="socials__item">
+                        <a class="socials__link socials__link_green" href="#">
+                            <svg class="socials__svg" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <use xlink:href="#whatsapp-icon"></use>
+                            </svg>
                         </a>
                     </li>
-                    <li class="bottommenu__item">
-                        <a href="#" class="bottommenu__link">
-                            Документы
+                    <li class="socials__item">
+                        <a class="socials__link socials__link_blue" href="#">
+                            <svg class="socials__svg" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <use xlink:href="#vk-icon"></use>
+                            </svg>
                         </a>
                     </li>
-                    <li class="bottommenu__item">
-                        <a href="#" class="bottommenu__link">
-                            Полезное
-                        </a>
-                    </li>
-                    <li class="bottommenu__item">
-                        <a href="#" class="bottommenu__link">
-                            Блог
+                    <li class="socials__item">
+                        <a class="socials__link socials__link_red" href="#">
+                            <svg class="socials__svg" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <use xlink:href="#instagram-icon"></use>
+                            </svg>
                         </a>
                     </li>
                 </ul>
+            </div>
+            <nav class="footer__nav bottommenu">
+                <div class="bottommenu__wrapper swiper-wrapper">
+                    <ul class="bottommenu__list swiper-slide">
+                        <li class="bottommenu__item">
+                            <a href="#" class="bottommenu__link">
+                                Договор на оказание образовательных услуг
+                            </a>
+                        </li>
+                        <li class="bottommenu__item">
+                            <a href="#" class="bottommenu__link">
+                                Лицензия на образовательную деятельность
+                            </a>
+                        </li>
+                        <li class="bottommenu__item">
+                            <a href="#" class="bottommenu__link">
+                                Соглашение на обработку персональных данных
+                            </a>
+                        </li>
+                        <li class="bottommenu__item">
+                            <a href="#" class="bottommenu__link">
+                                Политика конфиденциальности
+                            </a>
+                        </li>
+                        <li class="bottommenu__item">
+                            <a href="#" class="bottommenu__link">
+                                Пользовательское соглашение
+                            </a>
+                        </li>
+                        <li class="bottommenu__item">
+                            <a href="#" class="bottommenu__link">
+                                Регистрационные документы
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="bottommenu__list swiper-slide">
+                        <li class="bottommenu__item">
+                            <a href="#" class="bottommenu__link">
+                                Статьи
+                            </a>
+                        </li>
+                        <li class="bottommenu__item">
+                            <a href="#" class="bottommenu__link">
+                                Ответы на вопросы
+                            </a>
+                        </li>
+                        <li class="bottommenu__item">
+                            <a href="#" class="bottommenu__link">
+                                Спортивные секции
+                            </a>
+                        </li>
+                        <li class="bottommenu__item">
+                            <a href="#" class="bottommenu__link">
+                                Полезное
+                            </a>
+                        </li>
+                        <li class="bottommenu__item">
+                            <a href="#" class="bottommenu__link">
+                                Блог
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="bottommenu__list swiper-slide">
+                        <li class="bottommenu__item">
+                            <a href="#" class="bottommenu__link">
+                                О школе
+                            </a>
+                        </li>
+                        <li class="bottommenu__item">
+                            <a href="#" class="bottommenu__link">
+                                Техническая поддержка
+                            </a>
+                        </li>
+                        <li class="bottommenu__item">
+                            <a href="#" class="bottommenu__link">
+                                Администрация школы
+                            </a>
+                        </li>
+                        <li class="bottommenu__item">
+                            <a href="#" class="bottommenu__link">
+                                Контактная информация
+                            </a>
+                        </li>
+                        <li class="bottommenu__item">
+                            <a href="#" class="bottommenu__link">
+                                Вакансии
+                            </a>
+                        </li>
+                        <li class="bottommenu__item">
+                            <a href="#" class="bottommenu__link">
+                                Сотрудничество
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="bottommenu__list swiper-slide">
+                        <li class="bottommenu__item">
+                            <a href="#" class="bottommenu__link">
+                                О школе
+                            </a>
+                        </li>
+                        <li class="bottommenu__item">
+                            <a href="#" class="bottommenu__link">
+                                Техническая поддержка
+                            </a>
+                        </li>
+                        <li class="bottommenu__item">
+                            <a href="#" class="bottommenu__link">
+                                Администрация школы
+                            </a>
+                        </li>
+                        <li class="bottommenu__item">
+                            <a href="#" class="bottommenu__link">
+                                Контактная информация
+                            </a>
+                        </li>
+                        <li class="bottommenu__item">
+                            <a href="#" class="bottommenu__link">
+                                Вакансии
+                            </a>
+                        </li>
+                        <li class="bottommenu__item">
+                            <a href="#" class="bottommenu__link">
+                                Сотрудничество
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
             </nav>
-            <ul class="footer__list socials">
-                <li class="socials__item">
-                    <a class="socials__link socials__link_black" href="#">
-                        <svg class="socials__svg" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <use xlink:href="#telegram-icon"></use>
-                        </svg>
-                    </a>
-                </li>
-                <li class="socials__item">
-                    <a class="socials__link socials__link_green" href="#">
-                        <svg class="socials__svg" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <use xlink:href="#whatsapp-icon"></use>
-                        </svg>
-                    </a>
-                </li>
-                <li class="socials__item">
-                    <a class="socials__link socials__link_blue" href="#">
-                        <svg class="socials__svg" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <use xlink:href="#vk-icon"></use>
-                        </svg>
-                    </a>
-                </li>
-                <li class="socials__item">
-                    <a class="socials__link socials__link_red" href="#">
-                        <svg class="socials__svg" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <use xlink:href="#instagram-icon"></use>
-                        </svg>
-                    </a>
-                </li>
-            </ul>
+            <form class="footer__form" action="" method="">
+                <p class="footer__description">
+                    Если у вас остались вопросы - оставьте 
+                    заявку на звонок и сотрудник свяжется 
+                    с вами в течении 15 минут
+                </p>
+                <label class="footer__lable">
+                    <input type="text" class="footer__input" placeholder="Ваше имя">
+                </label>
+                <label class="footer__lable">
+                    <input type="text" class="footer__input" placeholder="Ваше имя">
+                </label>
+            </form>
         </div>
     </footer>
 </body>
