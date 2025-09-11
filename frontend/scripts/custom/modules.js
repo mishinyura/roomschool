@@ -1,32 +1,4 @@
-import { NOTIFICATION_TEMPLATES } from './notifications-templates.js';
 
-class Notification {
-    constructor(clsName, templates = NOTIFICATION_TEMPLATES) {
-        this.container = document.querySelector(`.${clsName}`);
-        this.description = this.container.querySelector(`.${clsName}__descr`);
-        this.title = this.container.querySelector(`.${clsName}__title`);
-        this.templates = templates;
-
-    }
-
-    setNotification({ type, code, params = {} }) {
-        const typeError = this.templates[type];
-        if (!typeError) throw new Error('Unknown notification type');
-        const title = interpolate(typeError.title, params);
-        const descTemplate = typeError.descriptions[code];
-        const description = interpolate(descTemplate, params);
-
-        this.title.innerText = title;
-        this.description.innerText = description;
-    }
-
-    showMessage() {
-        this.container.classList.add('show');
-        setTimeout(() => {
-            this.container.classList.remove('show');
-        }, 6000);
-    }
-}
 
 class Forms {
     constructor(nameForm){
@@ -181,7 +153,7 @@ class Course{
     }
 }
 
-new Course()
+// new Course()
 
 // let acc = new Forms('authorizationForm');
 // let header = new Header('header')

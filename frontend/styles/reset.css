@@ -7,7 +7,8 @@
     --color-bg-purpure: #C3B9DF;
     --color-bg-blue-radial-gradient: radial-gradient(circle at left top, #E8F6FF 0%, #8ad1fd59 53%);
     --color-bg-purpure-radial-gradient: radial-gradient(circle at center 200px, #FFE6E6 0%, #c3b9df92 53%);
-    --color-bg-blue-linear-gradient: linear-gradient(90deg,rgba(230, 243, 247, 1) 0%, rgba(255, 255, 255, 1) 38%, rgba(230, 243, 247, 1) 70%, rgba(255, 255, 255, 1) 88%, rgba(230, 243, 247, 1) 100%);
+    --color-bg-blue-linear-gradient: linear-gradient(236deg,rgba(189, 227, 252, 1) 0%, rgba(138, 209, 253, 1) 100%);
+    --color-bg-purpure-linear-gradient: linear-gradient(236deg,rgba(255, 230, 230, 1) 0%, rgba(195, 185, 223, 1) 100%);
     --color-bg-dark-blue: #0AA6D7;
 
     --color-text-black: #000;
@@ -29,7 +30,7 @@
     --padding-tb-container-tablet: 3.125rem; /* 50px */
     --padding-tb-container-mobile: 1.875rem; /* 30px */
 
-    --margin-bottom-title-desktop: 30px;
+    --margin-bottom-title-desktop: 40px;
     --margin-bottom-title-mobile: 20px;
 
     --margin-bottom-descr-desktop: 20px;
@@ -37,16 +38,16 @@
     
     /* Размеры */
     --breakpoint-page-desktop: 87.5rem; /* 1400 px */
-    --breakpoint-page-laptop: 68.75rem; /* 1100 px */
-    --breakpoint-page-tablet: 56.25rem; /* 900 px */
-    --breakpoint-page-smartphone: 43.75rem; /* 700 px */
-    --breakpoint-page-mobile: 33.75rem; /* 540 px */
+    --breakpoint-page-laptop: 75rem; /* 1200 px */
+    --breakpoint-page-tablet: 62rem; /* 992 px */
+    --breakpoint-page-smartphone: 48rem; /* 768 px */
+    --breakpoint-page-mobile: 36rem; /* 576 px */
  
-    --max-width-container-max: 93.75rem; /* 1500px */
-    --max-width-container-desktop: 75rem; /* 1200 px */
-    --max-width-container-laptop: 60rem; /* 960 px */
-    --max-width-container-tablet: 45rem; /* 720 px */
-    --max-width-container-mobile: 100%;
+    --max-width-container-desktop: 82.5rem; /* 1320px */
+    --max-width-container-laptop: 71.25rem; /* 1140 px */
+    --max-width-container-tablet: 60rem; /* 960 px */
+    --max-width-container-smartphone: 45rem; /* 720 px */
+    --max-width-container-mobile: 33.75rem; /* 540 px */
     
     
     /* Радиусы */
@@ -76,26 +77,6 @@
     --font-size-title-max: 2.5rem; /* h1 - 40px */
 
     --font-size-btn: 1rem;
-}
-
-@font-face {
-    font-family: 'Oswald';
-    src: url('../fonts/oswald/Oswald-Medium.woff2') format('woff2'),
-         url('../fonts/oswald/Oswald-Medium.woff') format('woff'),
-         url('../fonts/oswald/Oswald-Medium.ttf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Roboto Condensed';
-    src: url('../fonts/roboto_condensed/RobotoCondensed-Regular.woff2') format('woff2'),
-         url('../fonts/roboto_condensed/RobotoCondensed-Regular.woff') format('woff'),
-         url('../fonts/roboto_condensed/RobotoCondensed-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
 }
 
 @font-face {
