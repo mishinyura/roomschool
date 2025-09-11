@@ -1,3 +1,9 @@
+/**
+ * @module Notification
+ * @description Объект Notification создает сообщение на странице,
+ * управляет показом и удаляет после демонстрации
+ */
+
 export class Notification {
     constructor(clsContainer) {
         this.cls = clsContainer;

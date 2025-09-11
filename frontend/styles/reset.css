@@ -171,6 +171,11 @@ a{
     cursor: pointer;
 }
 
+
+@keyframes text-rotate {
+  100% { transform: rotate(360deg); }
+}
+
 button{
     padding: 0;
     background: none;

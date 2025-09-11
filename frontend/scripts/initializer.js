@@ -8,6 +8,7 @@
 import { InputMask } from './components/InputMask.js'
 import { Form } from './components/Form.js'
 import { Select } from './components/Select.js'
+import { Header } from './components/Header.js'
 
 /**
  * Инциализация основной страницы
@@ -20,4 +21,5 @@ export function indexInit() {
         input: '.callback__wrapper',
         options: '.callback__item'
     })
+    const header = new Header('.header')
 }

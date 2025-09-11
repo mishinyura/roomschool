@@ -5,7 +5,7 @@
  */
 
 
-import { NOTIFICATION_TEMPLATES } from '../custom/notifications-templates.js';
+import { NOTIFICATION_TEMPLATES } from '../notifications-templates.js';
 import { Notification } from './Notification.js';
 
 export class Form {
@@ -28,7 +28,7 @@ export class Form {
         this.form = form.target
         
         if (this.validate()) {
-
+            //Тут отправка формы на сервер
         }
     }
 

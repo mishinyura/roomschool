@@ -1,3 +1,9 @@
+/**
+ * @module Select
+ * @description Объект Select создает кастомный раскрывающийся
+ * список, регулирует показ списка и управляет выбором
+ */
+
 export class Select{
     constructor(settings) {
         this.container = document.querySelector(settings.obj)

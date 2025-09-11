@@ -1,6 +1,4 @@
-class AccordeonBuild
-
-class Accordeon {
+export class Accordeon {
     constructor() {
 
     }
