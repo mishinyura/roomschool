@@ -11,7 +11,9 @@ _____________
     background-repeat: no-repeat;
     background-position: center;
 }
-
+.body__icons{
+    display: none;
+}
 .main {
     position: relative;
     display: flex;
@@ -32,26 +34,11 @@ _____________
     overflow: hidden;
 }
 
-.main__logo {
-    /* position: absolute; */
-    /* left: 30px;
-    top: 30px; */
-    display: block;
-    max-width: 120px;
-    margin-bottom: 30px;
-}
-
-.main__logo img {
-    width: 100%;
-}
-
 .main__section{
     /* position: absolute; */
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 60%;
-    height: 80%;
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.659);
     /* visibility: visible;
@@ -70,15 +57,28 @@ _____________
 }
 
 .auth__container{
-    padding: 30px 50px;
-    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* width: 308px;
+    height: 415px; */
+    padding: 35px 45px;
+    /* box-sizing: border-box; */
+    border-radius: 28px;
     background: rgba(255, 255, 255, 0.16);
     backdrop-filter: blur(2px) saturate(150%);
     -webkit-backdrop-filter: blur(2px) saturate(150%);
 }
-
+.auth__logo{
+    display: block;
+    max-width: 50px;
+    /* margin-bottom: 30px; */
+}
+.auth__logo img{
+    width: 100%;
+}
 .auth__title {
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
     font-family: var(--font-family-text-montserrat);
     font-size: 2rem;
     color: #fff;
@@ -87,6 +87,7 @@ _____________
 .auth__form {
     display: flex;
     flex-direction: column;
+    min-width: 320px;
     margin-bottom: 30px;
 
 }
@@ -105,12 +106,40 @@ _____________
     font-family: var(--font-family-text-montserrat);
     color: #fff;
 }
-
+.auth__btn_forgot{
+    align-self: flex-start;
+    margin-bottom: 20px;
+}
 .auth__btn_login {
+    margin-bottom: 30px;
     padding: var(--paddings-btn-sm);
     background-color: #003465;
 }
-
+.auth__text{
+    margin-bottom: 30px;
+}
+.auth__ssobtns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.auth__btn_sso{
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    width: 115px;
+    height: 35px;
+    border-radius: 8px;
+    text-align: center;
+    /* padding: 10px 20px; */
+    background-color: #fff;
+}
+.auth__btn_sso:not(:last-child){
+    margin-right: 10px;
+}
+.auth__btn_sso svg{
+    height: 100%;
+}
 .choise {
     
 }

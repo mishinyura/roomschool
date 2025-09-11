@@ -1,32 +1,4 @@
-import { NOTIFICATION_TEMPLATES } from './notifications-templates.js';
 
-class Notification {
-    constructor(clsName, templates = NOTIFICATION_TEMPLATES) {
-        this.container = document.querySelector(`.${clsName}`);
-        this.description = this.container.querySelector(`.${clsName}__descr`);
-        this.title = this.container.querySelector(`.${clsName}__title`);
-        this.templates = templates;
-
-    }
-
-    setNotification({ type, code, params = {} }) {
-        const typeError = this.templates[type];
-        if (!typeError) throw new Error('Unknown notification type');
-        const title = interpolate(typeError.title, params);
-        const descTemplate = typeError.descriptions[code];
-        const description = interpolate(descTemplate, params);
-
-        this.title.innerText = title;
-        this.description.innerText = description;
-    }
-
-    showMessage() {
-        this.container.classList.add('show');
-        setTimeout(() => {
-            this.container.classList.remove('show');
-        }, 6000);
-    }
-}
 
 class Forms {
     constructor(nameForm){
@@ -162,11 +134,32 @@ class Header{
     }
 }
 
+class Course{
+    constructor() {
+        this.container = document.querySelector('#humanitarian')
+        this.books = this.container.querySelectorAll('.books__item')
+
+        for (let i of this.books){
+            i.addEventListener('click', this.openBook.bind(this))
+        }
+    }
+
+    openBook(book) {
+        console.log('dd')
+        for (let bk of this.books) {
+            bk.classList.remove('open')
+        }
+        book.currentTarget.classList.toggle('open')
+    }
+}
+
+// new Course()
+
 // let acc = new Forms('authorizationForm');
 // let header = new Header('header')
 
-const slider = new Slider({
-    container: '.slider',
-    prev: '.prev',
-    next: '.next'
-})
+// const slider = new Slider({
+//     container: '.slider',
+//     prev: '.prev',
+//     next: '.next'
+// })
