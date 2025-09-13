@@ -13,13 +13,18 @@
 
     --color-text-black: #000;
     --color-text-blue: #0AA6D7;
-    --color-text-grey: #888;
+    --color-text-grey: #7c7c7c;
+    --color-text-white: #fff;
+
+    --color-action-blue: #0AA6D7;
+    --color-action-dark-blue: #147fa0;
 
     --color-btn-blue: #0AA6D7;
     --color-btn-white: #fff;
 
     --border-blue: 1px solid #0AA6D7;
     --border-black: 1px solid black;
+    --border-grey: 1px solid #cbcbcb;
 
     /* Отступы */
     --padding-lr-container-desktop: 1.25em; /* 20px */
@@ -163,12 +168,16 @@
   100% { box-shadow: inset 0 0 0 rgba(255, 0, 64, 0); }
 }
 
+@keyframes text-rotate {
+  100% { transform: rotate(360deg); }
+}
+
 a{
     font-family: var(--font-family-nunito);
     text-decoration: none;
     color: var(--color-text-black);
     outline: none;
-    cursor: pointer;
+    cursor: url('../media/icons/cursor.cur') 0 0, auto;
 }
 
 button{
@@ -176,7 +185,7 @@ button{
     background: none;
     border: none;
     outline: none;
-    cursor: pointer;
+    cursor: url('../media/icons/cursor.cur') 0 0, auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
