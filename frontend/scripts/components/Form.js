@@ -26,9 +26,10 @@ export class Form {
     sendForm(form) {
         form.preventDefault();
         this.form = form.target
-        
+
         if (this.validate()) {
-            //Тут отправка формы на сервер
+            
+            this.notification.showMessage(NOTIFICATION_TEMPLATES.forms.sendForm, true)
         }
     }
 
@@ -39,52 +40,54 @@ export class Form {
     validate() {
         const form = new FormData(this.form)
         const formData = Object.fromEntries(form.entries())
-        let validStatus = true;
-        console.log(formData, form);
+        let countError = 0;
+
         for (let input of this.inputs) {
-            console.log(input.dataset.validate);
             switch (input.dataset.validate) {
                 case 'name': 
-                validStatus = this.checkName(input.value)
+                countError = countError + this.checkName(input.value)
                 break;
                 case 'phone': 
-                validStatus = this.checkPhone(input.value)
+                countError = countError + this.checkPhone(input.value)
                 break;
             }
         }
 
-        return validStatus
+        if (countError === 0) {
+            return true
+        }
+        return false
     }
 
     checkName(name) {
-        let valid = true;
+        let count = 0;
 
         name = name.trim();
 
         if (name.length < 2) {
-            valid = false
+            count++;
             this.notification.showMessage(NOTIFICATION_TEMPLATES.forms.nameShort)
         }
 
         const regex = /^[A-Za-zА-Яа-яЁё\-]+$/;
 
         if (!regex.test(name)) {
-            valid = false
+            count++;
             this.notification.showMessage(NOTIFICATION_TEMPLATES.forms.nameIncorrect)
         }
 
-        return valid;
+        return count;
     }
 
     checkPhone(phone) {
-        let valid = true;
+        let count = 0;
         phone = phone.trim();
         // убираем все символы кроме цифр
         const digits = phone.replace(/\D/g, '');
 
         // проверяем количество цифр
         if (digits.length < 11 || digits.length > 15) {
-            valid = false;
+            count++;
             this.notification.showMessage(NOTIFICATION_TEMPLATES.forms.phoneShort);
         }
 
@@ -92,10 +95,10 @@ export class Form {
         const regex = /^\+?[0-9\s\-\(\)]+$/;
 
         if (!regex.test(phone)) {
-            valid = false
+            count++;
             this.notification.showMessage(NOTIFICATION_TEMPLATES.forms.phoneIncorrect)
         }
 
-        return valid;
+        return count;
     }
 }
