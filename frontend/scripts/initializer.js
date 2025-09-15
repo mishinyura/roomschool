@@ -22,4 +22,28 @@ export function indexInit() {
         options: '.callback__item'
     })
     const header = new Header('.header')
+
+    const coursesSlider = new Swiper('.tickets', {
+        direction: 'horizontal',
+        loop: true,
+        freeMode: true,
+        slidesPerView: 3,
+        spaceBetween:  40,
+        wrapperClass: 'tickets__wrapper',
+        slideClass: 'tickets__item',
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: true,
+        }
+        // ,
+        // pagination: {
+        //     el: '.footer__tabs',
+        //     clickable: true,
+        //     renderBullet: function (index, className) {
+        //         customClass = 'footer__tab'
+        //         lst = ['Документы', 'Служебные', 'Полезное', 'Информация']
+        //         return `<li class="${customClass} ${className}">${lst[index]}</li>` // '<li class="' + className + '">' + (lst[index]) + '</li>';
+        //     },
+        // }
+    })
 }

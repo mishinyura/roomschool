@@ -161,7 +161,7 @@ _____________
   /* 768 px */
   @media (max-width: 48rem) {
     max-width: var(--max-width-container-mobile);
-    padding: 0 var(--padding-lr-container-mobile);
+    padding: 1em var(--padding-lr-container-mobile);
   }
 
   /* 576 px */

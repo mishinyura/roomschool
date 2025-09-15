@@ -1,6 +1,7 @@
 :root{
     /*--свойство-предмет-модификация*/
     /* Цвета */
+    --color-bg-white: #fff;
     --color-bg-grey: #F4F5F5;
     --color-bg-wight: #fff;
     --color-bg-blue: #8AD1FD;
@@ -10,6 +11,7 @@
     --color-bg-blue-linear-gradient: linear-gradient(236deg,rgba(189, 227, 252, 1) 0%, rgba(138, 209, 253, 1) 100%);
     --color-bg-purpure-linear-gradient: linear-gradient(236deg,rgba(255, 230, 230, 1) 0%, rgba(195, 185, 223, 1) 100%);
     --color-bg-dark-blue: #0AA6D7;
+    --color-bg-light-blue: #aedeed84;
 
     --color-text-black: #000;
     --color-text-blue: #0AA6D7;

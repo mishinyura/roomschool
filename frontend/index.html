@@ -81,7 +81,7 @@
                 fill="currentColor" />
         </symbol>
         <symbol id="play-icon" viewBox="0 0 24 24">
-            <path d="M8 5v14l11-7z" fill="currentColor" />
+            <path d="M8 5v14l11-7z" />
         </symbol> 
         <symbol id="search-icon" viewBox="0 0 25 25">
             <path
@@ -277,7 +277,7 @@
                     </li>
                 </ul>
                 <div class="header__btns panel">
-                    <button href="#" class="panel__btn panel__btn_chat">
+                    <button href="#" class="panel__btn panel__btn_chat" tabindex="0">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46 46">
                             <linearGradient id="bg-chat" x1="0" x2="1" y1="0" y2="1">
                                 <stop offset="0" stop-color="#AEEBFA"/>
@@ -290,7 +290,7 @@
                             Подобрать
                         </span>
                     </button>
-                    <button href="#" class="panel__btn">
+                    <button href="#" class="panel__btn" tabindex="0">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46 46">
                             <linearGradient id="bg-search" x1="0" x2="1" y1="0" y2="1">
                                 <stop offset="0" stop-color="#AEEBFA"/>
@@ -300,7 +300,7 @@
                             <path fill="#fff" name="men" d="M 17 24 C 11 24 5 27 5 31 L 5 37 H 41 L 41 31 C 41 27 35 24 29 24 M 23 26 A 1 1 0 0 0 23 6 A 1 1 0 0 0 23 26" />
                         </svg>
                     </button>
-                    <a href="#" class="panel__btn">
+                    <a href="#" class="panel__btn" tabindex="0">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46 46">
                             <linearGradient id="bg-login" x1="0" x2="1" y1="0" y2="1">
                                 <stop offset="0" stop-color="#AEEBFA"/>
@@ -310,7 +310,7 @@
                             <path fill="#fff" name="men" d="M 17 24 C 11 24 5 27 5 31 L 5 37 H 41 L 41 31 C 41 27 35 24 29 24 M 23 26 A 1 1 0 0 0 23 6 A 1 1 0 0 0 23 26" />
                         </svg>
                     </a>
-                    <button href="#" class="panel__btn panel__btn_burger" id="burger">
+                    <button href="#" class="panel__btn panel__btn_burger" id="burger" tabindex="0">
                         <span></span>
                     </button>
                 </div>
@@ -328,10 +328,10 @@
                     ребенок получает не просто знания, а поддержку, внимание к индивидуальным
                     целям и настоящую свободу выбора.
                 </p>
-                <button class="hero__btn hero__btn_callback">
+                <button class="hero__btn hero__btn_callback"  tabindex="0">
                     Хочу пообщаться
                 </button>
-                <button class="hero__btn hero__btn_present">
+                <button class="hero__btn hero__btn_present"  tabindex="0">
                     <svg class="hero__svg-text" viewBox="0 0 200 200">
                         <defs>
                             <path id="circle-text-icon" fill="#currentColor" d="M 100, 100 m -80, 0 a 80,80 0 1,1 160,0 a 80,80 0 1,1 -160,0" />
@@ -350,269 +350,227 @@
                 </button>
             </div>
         </section>
-        <!-- <section class="main__section services">
-            <div class="services__container">
-                <div class="services__info">
-                    <h2 class="services__title">
-                        Гибкие образовательные программы
-                    </h2>
-                    <ul class="services__description">
-                        <li class="services__text show">
-                            <h3 class="services__subtitle">
-                                Можно выбрать собственный путь или собрать из нескольких
-                            </h3>
-                            <p class="services__subdescr">
-                                Каждая образовательная программа — это уникальное направление 
-                                развития, созданное с учетом интересов и потребностей каждого 
-                                ребенка. Благодаря гибкому конструктору программ, мы помогаем 
-                                раскрыть индивидуальные таланты и подготовиться к будущим 
-                                достижениям, независимо от выбранного пути.
-                            </p>
-                        </li>
-                        <li class="services__text" data-course="main">
-                            <h3 class="services__subtitle">
-                                Общая образовательная программа
-                            </h3>
-                            <p class="services__subdescr">
-                                Наша основная программа сочетает современные онлайн-методики с 
-                                требованиями российского образования. Ученики проходят все 
-                                предметы по ФГОС, занимаются с опытными педагогами, получают 
-                                доступ к интерактивным материалам, вебинарам и поддержке менторов. 
-                                По завершении выдается аттестат государственного образца, что 
-                                открывает любые возможности для поступления в российские и 
-                                зарубежные вузы.
-                            </p>
-                        </li>
-                        <li class="services__text" data-course="individual">
-                            <h3 class="services__subtitle">
-                                Факультативная программа
-                            </h3>
-                            <p class="services__subdescr">
-                                Индивидуальная программа RoomSchool — это возможность построить 
-                                обучение полностью под себя: выбрать предметы, интенсивность, 
-                                расписание и даже стиль преподавания. Все занятия проходят в 
-                                онлайн-формате и позволяют быстро достичь целей: подтянуть знания, 
-                                подготовиться к экзаменам или освоить новый предмет с нуля.
-                            </p>
-                        </li>
-                        <li class="services__text" data-course="optional">
-                            <h3 class="services__subtitle">
-                                Профессиональная программа
-                            </h3>
-                            <p class="services__subdescr">
-                                Факультативная программа RoomSchool — это подборка курсов, 
-                                направленных на развитие критического мышления, финансовой 
-                                грамотности, коммуникативных и цифровых навыков. Мы уделяем особое 
-                                внимание умениям, которые востребованы сегодня и будут актуальны 
-                                завтра: работа в команде, публичные выступления, IT-грамотность, 
-                                основы предпринимательства и многое другое.
-                            </p>
-                        </li>
-                        <li class="services__text" data-course="professional">
-                            <h3 class="services__subtitle">
-                                Международная программа
-                            </h3>
-                            <p class="services__subdescr">
-                                Программа готовит учеников к реальным задачам взрослой жизни. 
-                                Здесь изучают бытовые, финансовые и технические аспекты, учатся 
-                                выбирать профессию, готовятся к стажировкам и проходят летнюю 
-                                практику в компаниях-партнёрах RoomSchool. Это отличный старт 
-                                для формирования самостоятельности и уверенности в своих силах.
-                            </p>
-                        </li>
-                        <li class="services__text" data-course="international">
-                            <h3 class="services__subtitle">
-                                Индивидуальная программа
-                            </h3>
-                            <p class="services__subdescr">
-                                Данная программа дает доступ к интенсивным курсам по иностранным 
-                                языкам, развитию разговорных навыков, подготовке к международным 
-                                экзаменам (например, Cambridge, IELTS, TOEFL и др.). Ученики 
-                                общаются с носителями языка, проходят спецкурсы по академическому 
-                                письму и готовятся к поступлению в зарубежные вузы.
-                            </p>
-                        </li>
-                    </ul>
-                </div>
-                <ul class="services__courses">
-                    <li class="services__course services__course_green" data-course="main">
-                        <a class="services__link" href="#">
-                            Общая образовательная
-                        </a>
-                    </li>
-                    <li class="services__course services__course_blue" data-course="optional">
-                        <a class="services__link" href="#">
-                            Факультативная
-                        </a>
-                    </li>
-                    <li class="services__course services__course_red" data-course="professional">
-                        <a class="services__link" href="#">
-                            Профессиональная
-                        </a>
-                    </li>
-                    <li class="services__course services__course_yellow" data-course="international">
-                        <a class="services__link" href="#">
-                            Международная
-                        </a>
-                    </li>
-                    <li class="services__course services__course_dark-blue" data-course="individual">
-                        <a class="services__link" href="#">
-                            Индивидуальная
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </section>
         <section class="main__section courses">
             <div class="courses__container">
-                <div class="courses__shelf">
-                    <div class="courses__head">
-                        <h3 class="courses__title">
-                            Гуманитарный
-                        </h3>
-                        <a href="#" class="courses__all">
-                            Все факультативы
-                        </a>
+                <div class="courses__head">
+                    <div class="courses__text">
+                        <h2 class="courses__title main-title">
+                            Популярные дисциплины
+                        </h2>
+                        <p class="courses__subtitle">
+                            Самых важных знаний порой так не хватает
+                        </p>
                     </div>
-                    <article class="course__list books" id="humanitarian">
-                        <div class="books__item">
-                            <div class="books__image">
-                                <img src="media/images/banner_course.png" alt="">
-                            </div>
-                            <h4 class="books__name">
-                                Эмоциональный интеллект
-                            </h4>
-                            <p class="books__description">
-                                Узнаем природу эмоций, научимся понимать их и управлять ими
-                            </p>
-                            <span class="books__rating">
-                                Оценка
-                            </span>
-                            <span class="books__price">
-                                950
-                            </span>
-                            <a href="#" class="books__detail">
-                                Детали
-                            </a>
-                        </div>
-                        <div class="books__item open">
-                            <div class="books__image">
-                                <img src="media/images/banner_course.png" alt="">
-                            </div>
-                            <h4 class="books__name">
-                                Эмоциональный интеллект
-                            </h4>
-                            <p class="books__description">
-                                Узнаем природу эмоций, научимся понимать их и управлять ими
-                            </p>
-                            <span class="books__rating">
-                                Оценка
-                            </span>
-                            <span class="books__price">
-                                950
-                            </span>
-                            <a href="#" class="books__detail">
-                                Детали
-                            </a>
-                        </div>
-                        <div class="books__item">
-                            <div class="books__image">
-                                <img src="media/images/banner_course.png" alt="">
-                            </div>
-                            <h4 class="books__name">
-                                Эмоциональный интеллект
-                            </h4>
-                            <p class="books__description">
-                                Узнаем природу эмоций, научимся понимать их и управлять ими
-                            </p>
-                            <span class="books__rating">
-                                Оценка
-                            </span>
-                            <span class="books__price">
-                                950
-                            </span>
-                            <a href="#" class="books__detail">
-                                Детали
-                            </a>
-                        </div>
-                    </article>
+                    <a href="#" class="courses__all">
+                        Посмотреть все
+                    </a>
                 </div>
-                <div class="courses__shelf">
-                    <div class="courses__head">
-                        <h3 class="courses__title">
-                            Технический
-                        </h3>
-                        <a href="#" class="courses__all">
-                            Все факультативы
-                        </a>
-                    </div>
-                    <article class="course__list books">
-                        <div class="books__item">
-                            <span class="books__label">
-                                Создание чат ботов
-                            </span>
-                            <div class="books__image">
-                                <img src="media/images/banner_course.png" alt="">
+                <div class="courses__content tickets swiper">
+                    <div class="tickets__wrapper swiper-wrapper">
+                        <article class="tickets__item swiper-slide">
+                            <div class="tickets__info">
+                                <span class="tickets__level tickets__level_begginer">
+                                    Начинающим
+                                </span>
+                                <a href="#" class="tickets__title">
+                                    Ораторское искусство
+                                </a>
+                                <p class="tickets__direction">
+                                    Социальный
+                                </p>
+                                <span class="tickets__videos">
+                                    45
+                                </span>
+                                <span class="tickets__hours">
+                                    5
+                                </span>
+                                <div class="tickets__teacher">
+                                    <div class="tickets__img">
+                                        <img src="./media/images/i.jpg" alt="">
+                                    </div>
+                                    <div class="tickets__teacher-info">
+                                        <span class="tickets__name">
+                                            Юрий Мишин
+                                        </span>
+                                        <span class="tickets__position">
+                                            Предприниматель
+                                        </span>
+                                    </div>
+                                </div>
                             </div>
-                            <h4 class="books__name">
-                                Создание чат ботов
-                            </h4>
-                            <p class="books__description">
-                                На курсе дети изучают способы создания телеграм 
-                                бота и внедряют собственные идеи в свой первый 
-                                самостоятельный проект
-                            </p>
-                            <span class="books__rating">
-                                Оценка
-                            </span>
-                            <span class="books__price">
-                                1350
-                            </span>
-                            <a href="#" class="books__detail">
-                                Детали
-                            </a>
-                        </div>
-                    </article>
-                </div>
-                <div class="courses__shelf">
-                    <div class="courses__head">
-                        <h3 class="courses__title">
-                            Инновационный
-                        </h3>
-                        <a href="#" class="courses__all">
-                            Все факультативы
-                        </a>
-                    </div>
-                    <article class="course__list books">
-                        <div class="books__item">
-                            <span class="books__label">
-                                Создание чат ботов
-                            </span>
-                            <div class="books__image">
-                                <img src="media/images/banner_course.png" alt="">
+                            <div class="tickets__control">
+                                <span class="tickets__price">
+                                    950
+                                </span>
+                                <button class="tickets__btn">
+                                    Подписаться
+                                </button>
                             </div>
-                            <h4 class="books__name">
-                                Создание чат ботов
-                            </h4>
-                            <p class="books__description">
-                                На курсе дети изучают способы создания телеграм 
-                                бота и внедряют собственные идеи в свой первый 
-                                самостоятельный проект
-                            </p>
-                            <span class="books__rating">
-                                Оценка
-                            </span>
-                            <span class="books__price">
-                                1350
-                            </span>
-                            <a href="#" class="books__detail">
-                                Детали
-                            </a>
-                        </div>
-                    </article>
+                        </article>
+                        <article class="tickets__item swiper-slide">
+                            <div class="tickets__info">
+                                <span class="tickets__level tickets__level_advanced">
+                                    Продвинутым
+                                </span>
+                                <a href="#" class="tickets__title">
+                                    Правовая граммотность
+                                </a>
+                                <p class="tickets__direction">
+                                    Социальный
+                                </p>
+                                <span class="tickets__videos">
+                                    45
+                                </span>
+                                <span class="tickets__hours">
+                                    5
+                                </span>
+                                <div class="tickets__teacher">
+                                    <div class="tickets__img">
+                                        <img src="./media/images/i.jpg" alt="">
+                                    </div>
+                                    <div class="tickets__teacher-info">
+                                        <span class="tickets__name">
+                                            Юлия Чистякова
+                                        </span>
+                                        <span class="tickets__position">
+                                            Юрист
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tickets__control">
+                                <span class="tickets__price">
+                                    950
+                                </span>
+                                <button class="tickets__btn">
+                                    Подписаться
+                                </button>
+                            </div>
+                        </article>
+                        <article class="tickets__item swiper-slide">
+                            <div class="tickets__info">
+                                <span class="tickets__level tickets__level_professional">
+                                    Профессионалам
+                                </span>
+                                <a href="#" class="tickets__title">
+                                    Продвинутая разработка на Go
+                                </a>
+                                <p class="tickets__direction">
+                                    Технический
+                                </p>
+                                <span class="tickets__videos">
+                                    60
+                                </span>
+                                <span class="tickets__hours">
+                                    12
+                                </span>
+                                <div class="tickets__teacher">
+                                    <div class="tickets__img">
+                                        <img src="./media/images/victor.png" alt="">
+                                    </div>
+                                    <div class="tickets__teacher-info">
+                                        <span class="tickets__name">
+                                            Виктор Самсонов
+                                        </span>
+                                        <span class="tickets__position">
+                                            Разработчик
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tickets__control">
+                                <span class="tickets__price">
+                                    950
+                                </span>
+                                <button class="tickets__btn">
+                                    Подписаться
+                                </button>
+                            </div>
+                        </article>
+                        <article class="tickets__item swiper-slide">
+                            <div class="tickets__info">
+                                <span class="tickets__level tickets__level_advanced">
+                                    Продвинутым
+                                </span>
+                                <a href="#" class="tickets__title">
+                                    Финансовая граммотность
+                                </a>
+                                <p class="tickets__direction">
+                                    Социальный
+                                </p>
+                                <span class="tickets__videos">
+                                    45
+                                </span>
+                                <span class="tickets__hours">
+                                    5
+                                </span>
+                                <div class="tickets__teacher">
+                                    <div class="tickets__img">
+                                        <img src="./media/images/i.jpg" alt="">
+                                    </div>
+                                    <div class="tickets__teacher-info">
+                                        <span class="tickets__name">
+                                            Юрий Мишин
+                                        </span>
+                                        <span class="tickets__position">
+                                            Предприниматель
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tickets__control">
+                                <span class="tickets__price">
+                                    950
+                                </span>
+                                <button class="tickets__btn">
+                                    Подписаться
+                                </button>
+                            </div>
+                        </article>
+                        <article class="tickets__item swiper-slide">
+                            <div class="tickets__info">
+                                <span class="tickets__level tickets__level_begginer">
+                                    Новичкам
+                                </span>
+                                <a href="#" class="tickets__title">
+                                    Эмоциональная грамотность
+                                </a>
+                                <p class="tickets__direction">
+                                    Социальный
+                                </p>
+                                <span class="tickets__videos">
+                                    30
+                                </span>
+                                <span class="tickets__hours">
+                                    4
+                                </span>
+                                <div class="tickets__teacher">
+                                    <div class="tickets__img">
+                                        <img src="./media/images/jul.png" alt="">
+                                    </div>
+                                    <div class="tickets__teacher-info">
+                                        <span class="tickets__name">
+                                            Юлия Борисенко
+                                        </span>
+                                        <span class="tickets__position">
+                                            Продуктолог
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tickets__control">
+                                <span class="tickets__price">
+                                    810
+                                </span>
+                                <button class="tickets__btn">
+                                    Подписаться
+                                </button>
+                            </div>
+                        </article>
+                    </div>
                 </div>
             </div>
-        </section> -->
+        </section>
         <section class="main__section blog">
             <div class="blog__container">
                 <div class="blog__head">
@@ -645,7 +603,7 @@
                                         Юрий Мишин
                                     </span>
                                     <span class="posts__position">
-                                        Преподаватель финансовой граммотности
+                                        Предприниматель
                                     </span>
                                 </div>
                             </div>
