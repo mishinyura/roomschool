@@ -4,10 +4,6 @@ Main и общие классы
 _____________
 */
 
-.main__section:last-child {
-  margin-bottom: 200px;
-}
-
 .main-title {
   display: flex;
   align-items: center;
@@ -23,6 +19,19 @@ _____________
   height: 2px;
   background-color: #298fff;
   content: '';
+}
+
+.all-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+  text-align: center;
+  font-family: var(--font-family-montserrat);
+  font-size: var(--font-size-text-sm);
+  font-weight: 500;
+  color: var(--color-text-white);
+  background-color: var(--color-btn-blue);
 }
 
 /* 
@@ -298,7 +307,10 @@ class courses
 _____________
 */
 .courses{
-  background: var(--color-bg-light-blue);
+  background: url('../media/images/lines-bg.png'), var(--color-bg-light-blue);
+  background-repeat: no-repeat;
+  background-size: contain, cover;
+  background-position: right top, center;
 }
 .courses__container {
   max-width: var(--max-width-container-desktop);
@@ -334,31 +346,73 @@ _____________
   }
 }
 
-.courses__shelf:not(:last-child) {
-  margin-bottom: 40px;
-}
-
 .courses__head {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: var(--margin-bottom-title-desktop);
 }
-.tickets__item{
-  display: flex;
-  flex: 0 0 auto ;
-  padding: 1.5em;
-  background-color: var(--color-bg-white);
-}
-.tickets__info{
-  position: relative;
-  flex-basis: 80%;
-  border-right: var(--border-black);
+.courses__subtitle{
+  font-family: var(--font-family-montserrat);
+  font-size: var(--font-size-title-md);
+  font-weight: 600;
 }
 .tickets{
-  overflow: visible;
+  /* padding: 2em; */
+  /* overflow: visible; */
+  /* box-shadow: inset -20px 0 15px 0 rgba(0, 0, 0, 0.212); */
 }
 .tickets__wrapper {
-  align-items: stretch; /* растянуть слайды по высоте */
+  align-items: stretch;
+  /* justify-content: stretch; */
+}
+.tickets__item{
+  position: relative;
+  display: flex;
+  flex: 1 0 auto;
+  height: auto;
+  padding: 1.5em;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-bg-white);
+  clip-path: path("M 0 -195 H 440 V 145 C 425 145 420 150 420 172 C 420 191 385 165 385 199 H 0 Z");
+
+  /* 1400 px */
+  @media (max-width: 87.5rem) {
+    clip-path: path("M 0 -195 H 440 V 145 C 425 145 420 150 420 172 C 420 191 385 165 385 199 H 0 Z");
+  }
+
+  /* 1200 px */
+  @media (max-width: 75rem) {
+    clip-path: path("M 0 -20 H 440 V 145 C 425 145 420 150 420 172 C 420 191 385 165 385 199 H 0 Z");
+  }
+
+  /* 992 px */
+  @media (max-width: 62rem) {
+    clip-path: path("M 0 -20 H 440 V 145 C 425 145 420 150 420 172 C 420 191 385 165 385 199 H 0 Z");
+  }
+
+  /* 768 px */
+  @media (max-width: 48rem) {
+    clip-path: path("M 0 -20 H 440 V 145 C 425 145 420 150 420 172 C 420 191 385 165 385 199 H 0 Z");
+  }
+
+  /* 576 px */
+  @media (max-width: 36rem) {
+    clip-path: path("M 0 -20 H 440 V 145 C 425 145 420 150 420 172 C 420 191 385 165 385 199 H 0 Z");
+  }
+}
+/* .tickets__item::after{
+  position: absolute;
+  width: 100px;height: 100px;
+  background-color: var(--color-bg-light-blue);
+  content: '';
+} */
+.tickets__info{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 80%;
+  border-right: var(--border-black);
 }
 .tickets__level{
   position: absolute;
@@ -401,13 +455,52 @@ _____________
   background-color: #ffa38c;
 }
 .tickets__title{
+  flex-basis: 100%;
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 5px;
   font-family: var(--font-family-montserrat);
   font-size: var(--font-size-title-sm);
 }
-
+.tickets__direction{
+  flex-basis: 100%;
+  margin-bottom: 10px;
+  font-family: var(--font-family-montserrat);
+  font-size: var(--font-size-text-xs);
+}
+.tickets__videos{
+  margin-right: 10px;
+}
+.tickets__videos, .tickets__hours{
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 15px;
+  font-family: var(--font-family-montserrat);
+  font-size: var(--font-size-text-xs);
+}
+.tickets__videos::before,
+.tickets__hours::before{
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  content: '';
+}
+.tickets__videos::before{
+  background-image: url('../media/icons/screen.svg');
+}
+.tickets__hours::before{
+  background-image: url('../media/icons/clock.svg');
+}
+.tickets__videos::after{
+  content: 'видео';
+}
+.tickets__hours::after{
+  content: 'ч.';
+}
 .tickets__teacher {
+  flex-basis: 100%;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -422,6 +515,7 @@ _____________
   border-radius: 200px;
   overflow: hidden;
   background-image: url('../media/images/no-user-photo.jpg');
+  background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 
@@ -457,6 +551,41 @@ _____________
   font-family: var(--font-family-montserrat);
   font-size: var(--font-size-text-min);
   color: var(--color-text-grey);
+}
+.tickets__control{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex-basis: 20%;
+  padding: 0.5em;
+}
+.tickets__price{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.tickets__price::before{
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background-image: url('../media/images/vector-price.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  content: '';
+}
+.tickets__price::after{
+  content: 'p.';
+}
+.tickets__btn{
+  padding: 0.5em;
+  font-family: var(--font-family-montserrat);
+  font-size: var(--font-size-text-xs);
+  font-weight: 500;
+  background-color: var(--color-btn-blue);
+  color: var(--color-text-white);
 }
 
 
@@ -563,18 +692,6 @@ _____________
 
   /* 576 px */
   @media (max-width: 36rem) {
-    text-align: center;
-  }
-}
-
-.blog__all {
-  padding: 0.6em 1.2em;
-  font-family: var(--font-family-montserrat);
-  font-size: var(--font-size-text-sm);
-  background: var(--color-bg-blue-linear-gradient);
-
-  /* 768 px */
-  @media (max-width: 48rem) {
     text-align: center;
   }
 }
