@@ -12,12 +12,12 @@
 
     --color-text-black: #000;
     --color-text-blue: #0AA6D7;
+    --color--text-wight: #fff;
 
     --color-btn-blue: #0AA6D7;
     --color-btn-white: #fff;
 
-    --border-btn-blue: 1px solid #0AA6D7;
-    --border-btn-black: 1px solid black;
+    
 
     /* Отступы */
     --padding-container-desktop: 20px;
@@ -53,10 +53,14 @@
     --max-width-container-mobile: 100%;
     
     
-    /* Радиусы */
+    /* Радиусы и рамки*/
     --radius-sm: 2px;
     --radius-md: 4px;
     --radius-lg: 6px;
+    --radius-max: 25px;
+
+    --border-btn-blue: 1px solid #0AA6D7;
+    --border-btn-black: 1px solid black;
     
     /* Шрифты */
     --font-family-text-montserrat: 'Montserrat', Arial, sans-serif;
