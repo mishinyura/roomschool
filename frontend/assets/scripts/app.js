@@ -1,4 +1,4 @@
-import { indexInit } from './initializer.js';
+import { indexInit, courseDetailInit } from './initializer.js';
 
 // function showPresentText(footerElement){
 //     const observer = new IntersectionObserver(entries => {
@@ -65,6 +65,9 @@ function main() {
     switch (namePage) {
         case 'index':
             indexInit()
+            break;
+        case 'course-detail':
+            courseDetailInit()
             break;
     }
 }

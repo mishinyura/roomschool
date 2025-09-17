@@ -47,3 +47,9 @@ export function indexInit() {
         // }
     })
 }
+
+
+
+export function courseDetailInit() {
+    
+}
