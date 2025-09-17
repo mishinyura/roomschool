@@ -389,13 +389,15 @@ _____________
   display: inline-flex;
   align-items: center;
   gap: 5px;
+  width: 60px;
+  height: 60px;
 }
 .panel__btn:not(:last-child) {
   margin-right: 10px;
 }
 .panel__btn svg{
-  width: 30px;
-  height: 30px;
+  width: 100%;
+  height: 100%;
 }
 .panel__btn_chat{
   padding: 0.5em 1em;
@@ -430,8 +432,8 @@ _____________
 .panel__btn_burger{
   position: relative;
   display: none;
-  width: 30px;
-  height: 30px;
+  width: 60px;
+  height: 60px;
 
   /* 768 px */
   @media (max-width: 48rem) {
@@ -444,7 +446,7 @@ _____________
   left: 0;
   right: 0;
   height: 2px;
-  background-color: black;
+  background-color: rgb(255, 255, 255);
   transition: background-color .2s, transform .2s;
 }
 .panel__btn_burger::before{
@@ -453,7 +455,7 @@ _____________
   left: 0;
   width: 50%;
   height: 2px;
-  background-color: black;
+  background-color: rgb(255, 255, 255);
   content: '';
   transition: top .2s , width .2s, transform .2s .15s;
 }
@@ -463,7 +465,7 @@ _____________
   right: 0;
   width: 50%;
   height: 2px;
-  background-color: black;
+  background-color: rgb(255, 255, 255);
   content: '';
   transition: top .2s, width .2s, transform .2s .15s;
 }

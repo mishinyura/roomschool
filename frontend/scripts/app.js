@@ -59,27 +59,6 @@ function main() {
     // editViewBurger(burgerBtn)
     // editViewLogin(loginBtn)
 
-    // const footerSlider = new Swiper('.bottommenu', {
-    //     direction: 'horizontal',
-    //     loop: true,
-    //     slidesPerView: 1,
-    //     spaceBetween:  10,
-    //     wrapperClass: 'bottommenu__wrapper',
-    //     slideClass: 'bottommenu__list',
-    //     autoplay: {
-    //         delay: 2500,
-    //         disableOnInteraction: true,
-    //     },
-    //     pagination: {
-    //         el: '.footer__tabs',
-    //         clickable: true,
-    //         renderBullet: function (index, className) {
-    //             customClass = 'footer__tab'
-    //             lst = ['Документы', 'Служебные', 'Полезное', 'Информация']
-    //             return `<li class="${customClass} ${className}">${lst[index]}</li>` // '<li class="' + className + '">' + (lst[index]) + '</li>';
-    //         },
-    //     }
-    // })
 
     const namePage = document.querySelector('meta[name="page"]').content
 

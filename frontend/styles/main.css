@@ -488,7 +488,7 @@ _____________
   content: '';
 }
 .tickets__videos::before{
-  background-image: url('../media/icons/screen.svg');
+  background-image: url('../media/icons/videos.svg ');
 }
 .tickets__hours::before{
   background-image: url('../media/icons/clock.svg');
