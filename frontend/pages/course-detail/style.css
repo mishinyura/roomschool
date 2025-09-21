@@ -1,0 +1,784 @@
+/* 
+_____________
+Body, Main и общие классы
+_____________
+*/
+.body {
+    background-color: var(--color-bg-grey);
+}
+
+.videos-course,
+.hours-course,
+.rating-course,
+.testes-course {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: var(--font-family-montserrat);
+    font-size: var(--font-size-text-xs);
+    font-weight: 500;
+}
+
+.videos-course::before,
+.hours-course::before,
+.rating-course::before,
+.testes-course::before {
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    content: '';
+}
+
+.videos-course::before {
+    background-image: url('../../assets/media/icons/videos.svg ');
+}
+
+.hours-course::before {
+    background-image: url('../../assets/media/icons/clock.svg');
+}
+
+.rating-course::before {
+    background-image: url('../../assets/media/icons/star.svg');
+}
+
+.testes-course::before {
+    background-image: url('../../assets/media/icons/okey.svg');
+}
+
+.videos-course::after {
+    content: 'видео';
+}
+
+.hours-course::after {
+    /* content: 'ч.'; */
+    content: '';
+}
+
+.rating-course::after {
+    content: '/ 5';
+}
+
+.testes-course::after {
+    /* content: 'заданий'; */
+    content: '';
+}
+
+/* 
+_____________
+Блок с курсом
+_____________
+*/
+.courses {
+    /* background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('../../assets/media/images/course-bg.jpg');
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, center;
+    background-size: cover, cover; */
+
+}
+
+.courses__container {
+    max-width: var(--max-width-container-desktop);
+    margin: auto;
+    padding: 120px var(--padding-lr-container-desktop) 0;
+
+    /* 1400 px */
+    @media (max-width: 87.5rem) {
+        max-width: var(--max-width-container-laptop);
+    }
+
+    /* 1200 px */
+    @media (max-width: 75rem) {
+        max-width: var(--max-width-container-tablet);
+        padding: 130px var(--padding-lr-container-tablet) var(--padding-tb-container-tablet);
+    }
+
+    /* 992 px */
+    @media (max-width: 62rem) {
+        max-width: var(--max-width-container-smartphone);
+    }
+
+    /* 768 px */
+    @media (max-width: 48rem) {
+        max-width: var(--max-width-container-mobile);
+        padding: 100px var(--padding-lr-container-mobile) var(--padding-tb-container-mobile);
+    }
+
+    /* 576 px */
+    @media (max-width: 36rem) {
+        align-items: center;
+        max-width: 100%;
+    }
+}
+
+.courses__wrapper {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 2em;
+    border-radius: var(--radius-lg);
+    background: var(--color-bg-blue-purpure-light-gradient);
+}
+
+.courses__content {
+    flex-basis: 60%;
+}
+
+.courses__title {
+    margin-bottom: var(--margin-bottom-title-desktop);
+    font-family: var(--font-family-montserrat);
+    font-size: var(--font-size-title-lg);
+    font-weight: 500;
+}
+
+.courses__description {
+    margin-bottom: var(--margin-bottom-descr-desktop);
+    font-family: var(--font-family-nunito);
+    font-size: var(--font-size-text-lg);
+}
+
+.courses__videos,
+.courses__hours {
+    margin-right: 10px;
+}
+
+.courses__image {
+    flex-basis: 40%;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-classic);
+    overflow: hidden;
+}
+
+.courses__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* 
+_____________
+С детальной информацией
+_____________
+*/
+.detail__container {
+    display: flex;
+    gap: 30px;
+    max-width: var(--max-width-container-desktop);
+    margin: auto;
+    padding: 40px var(--padding-tb-container-desktop) var(--padding-lr-container-desktop);
+
+    /* 1400 px */
+    @media (max-width: 87.5rem) {
+        max-width: var(--max-width-container-laptop);
+    }
+
+    /* 1200 px */
+    @media (max-width: 75rem) {
+        max-width: var(--max-width-container-tablet);
+        padding: 130px var(--padding-lr-container-tablet) var(--padding-tb-container-tablet);
+    }
+
+    /* 992 px */
+    @media (max-width: 62rem) {
+        max-width: var(--max-width-container-smartphone);
+    }
+
+    /* 768 px */
+    @media (max-width: 48rem) {
+        max-width: var(--max-width-container-mobile);
+        padding: 100px var(--padding-lr-container-mobile) var(--padding-tb-container-mobile);
+    }
+
+    /* 576 px */
+    @media (max-width: 36rem) {
+        align-items: center;
+        max-width: 100%;
+    }
+}
+
+.tabs {
+    width: 70%;
+}
+
+.tabs__btns {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 3px;
+    margin-bottom: 25px;
+    box-sizing: border-box;
+    border: var(--border-grey);
+    border-radius: var(--radius-lg);
+    background-color: var(--color-bg-white);
+}
+
+.tabs__btn {
+    flex: 1;
+    width: initial;
+    height: initial;
+    padding: 0.2em 2em;
+    border-radius: var(--radius-max);
+    font-family: var(--font-family-montserrat);
+    font-size: var(--font-size-text-sm);
+    font-weight: 500;
+    background-color: transparent;
+    color: var(--color-text-black);
+    opacity: 1;
+    transition: color .2s, background-color .2s;
+}
+
+.tabs__btn.swiper-pagination-bullet {
+    padding: 0.2em 2em;
+}
+
+.tabs__btn.swiper-pagination-bullet-active {
+    color: #8200db;
+    background-color: #f3e8ff;
+}
+
+.tabs__btn:hover {
+    color: #8200db;
+    background-color: #f3e8ff;
+}
+
+.tabs__content {
+    display: flex;
+    padding: 2em;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.tabs__data {
+    flex-shrink: 0;
+    flex-basis: 100%;
+    counter-reset: modules;
+}
+
+/* 
+_____________
+Таб с описанием курса
+_____________
+*/
+.description {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+/* 
+_____________
+Таб с планом обучения
+_____________
+*/
+.teachers__item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 2em;
+    border: var(--border-grey);
+    border-radius: var(--radius-lg);
+}
+
+.teachers__item:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.teachers__image {
+    flex-shrink: 0;
+    width: 200px;
+    height: 200px;
+    border-radius: var(--radius-max);
+    overflow: hidden;
+}
+
+.teachers__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.teachers__role {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 0.5em 1em;
+    background: var(--color-bg-blue-purpure-light-gradient);
+}
+
+.teachers__name {
+    margin-bottom: 5px;
+    font-family: var(--font-family-montserrat);
+    font-size: var(--font-size-title-md);
+    font-weight: 600;
+}
+
+.teachers__post {
+    margin-bottom: 10px;
+    font-family: var(--font-family-montserrat);
+    font-size: var(--font-size-text-md);
+    font-weight: 600;
+    color: var(--color-text-purpure);
+}
+
+.teachers__description {
+    margin-bottom: 10px;
+    font-family: var(--font-family-nunito);
+    font-size: var(--font-size-text-sm);
+    font-weight: 400;
+    color: var(--color-text-grey);
+}
+
+/* 
+_____________
+Таб с планом обучения
+_____________
+*/
+.plan__module {
+    border: var(--border-blue);
+    border-radius: var(--radius-md);
+}
+
+.plan__module:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+.plan__topic {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    padding: 1em 3em;
+    cursor: url('../../assets/media/icons/cursor.cur') 0 0, auto;
+}
+
+.plan__topic::before {
+    position: absolute;
+    left: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: var(--radius-md);
+    font-family: var(--font-family-montserrat);
+    font-size: var(--font-size-title-min);
+    font-weight: 500;
+    color: var(--color-text-white);
+    background: var(--color-btn-blue-purpure-gradient);
+    counter-increment: modules;
+    content: counter(modules);
+}
+
+.plan__title {
+    flex-basis: 100%;
+    margin-bottom: 3px;
+    font-family: var(--font-family-montserrat);
+    font-size: var(--font-size-title-xs);
+    font-weight: 500;
+}
+
+.plan__description {
+    flex-basis: 100%;
+    margin-bottom: 5px;
+    font-family: var(--font-family-montserrat);
+    font-size: var(--font-size-text-xs);
+    font-weight: 500;
+    color: var(--color-text-grey);
+}
+.plan__counter{
+
+}
+.plan__detail {
+    padding: 0 3em;
+    list-style: none;
+    overflow: hidden;
+    height: 0;
+    opacity: 0;
+    transition: height 0.4s ease, opacity 0.4s ease;
+}
+
+.plan__detail.open {
+    opacity: 1;
+}
+
+.plan__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 8px;
+    column-gap: 15px;
+    padding: 0.8em 3em;
+    opacity: 0;
+    border-radius: var(--radius-md);
+    font-family: var(--font-family-montserrat);
+    font-size: var(--font-size-text-sm);
+    font-weight: 500;
+    background-color: var(--color-bg-white);
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, 
+    transform 0.4s ease;
+    transition-delay: calc(var(--i) * 0.15s);
+}
+
+.plan__item:not(:last-child) {
+    margin-bottom: 10px;
+}
+.plan__item::before{
+    position: absolute;
+    left: 15px;
+    width: 20px;
+    height: 20px;
+    opacity: 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    transform: scale(0);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    transition-delay: calc(var(--i) * 0.15s + 0.1s);
+    content: "";
+}
+.plan__item_video::before {
+    background-image: url('../../assets/media/icons/videos.svg');
+}
+.plan__item_work::before {
+    background-image: url('../../assets/media/icons/okey.svg');
+}
+.plan__name{
+    flex-basis: 100%;
+    font-family: var(--font-family-montserrat);
+    font-size: var(--font-size-title-xs);
+    font-weight: 600;
+}
+.plan__type{
+    padding: 0.2em;
+    border: var(--border-grey);
+    font-family: var(--font-family-montserrat);
+    font-size: var(--font-size-text-min);
+    font-weight: 500;
+}
+.plan__detail.open .plan__item {
+    opacity: 1;
+    transform: translateY(0);
+}
+.plan__detail:not(.open) .plan__item {
+  transition-delay: 0s;
+}
+.plan__detail.open .plan__item::before {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* 
+_____________
+Таб с отзывами
+_____________
+*/
+.reviews__head {
+    display: flex;
+    background: var(--color-bg-blue-purpure-light-gradient);
+}
+.reviews__counter{
+    display: flex;
+}
+.reviews__count{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--font-family-montserrat);
+    font-size: var(--font-size-text-min);
+    font-weight: 400;
+}
+.reviews__count:not(:last-child) {
+    margin-right: 10px;
+}
+.reviews__count::after{
+    display: block;
+    width: 28px;
+    height: 18px;
+    background-image: url('../../assets/media/icons/star.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right center;
+}
+.reviews__count:nth-child(1):after{
+    content: '5';
+}
+.reviews__count:nth-child(2):after{
+    content: '4';
+}
+.reviews__count:nth-child(3):after{
+    content: '3';
+}
+.reviews__count:nth-child(4):after{
+    content: '2';
+}
+.reviews__count:nth-child(5):after{
+    content: '1';
+}
+.reviews__line{
+    position: relative;
+    display: block;
+    width: 8px;
+    height: 100px;
+    border-radius: var(--radius-lg);
+    background-color: #fff;
+}
+.reviews__line::before{
+    position: absolute;
+    bottom: 0;
+    width: 8px;
+    height: 70px;
+    border-radius: var(--radius-lg);
+    background-color: #ffe449;
+    content: '';
+}
+.reviews__value{
+    
+}
+.reviews__basis::before{
+    content: 'На основе';
+}
+.reviews__item{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 2em 0;
+}
+.reviews__item:not(:last-child) {
+    margin-bottom: 10px;
+    border-bottom: var(--border-grey);
+}
+.reviews__date{
+    position: absolute;
+    right: 0;
+}
+.reviews__author{
+    font-family: var(--font-family-montserrat);
+    font-size: var(--font-size-title-sm);
+    font-weight: 600;
+}
+.reviews__eval{
+    flex-basis: 100%;
+    margin-bottom: 10px;
+    font-family: var(--font-family-montserrat);
+    font-size: var(--font-size-text-min);
+    font-weight: 500;
+    color: var(--color-text-grey);
+}
+.reviews__rating{
+    display: flex;
+    align-items: center;
+    flex-basis: 100%;
+    margin-bottom: 10px;
+}
+.reviews__star{
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.reviews__star_yellow{
+    background-image: url('../../assets/media/icons/star.svg');
+}
+.reviews__star_white{
+    background-image: url('../../assets/media/icons/star-w.svg');
+}
+.reviews__comment{
+    flex-basis: 100%;
+    font-family: var(--font-family-nunito);
+    font-size: var(--font-size-text-md);
+    font-weight: 400;
+}
+
+
+
+/* 
+_____________
+Правый блок с кнопками и общей информацией
+_____________
+*/
+.course {
+    width: 30%;
+    height: fit-content;
+    padding: 1em;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-classic);
+}
+
+.course__discount {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 0.2em 0.5em;
+    margin-bottom: 20px;
+    border-radius: var(--radius-md);
+    font-family: var(--font-family-montserrat);
+    font-size: var(--font-size-text-xs);
+    background-color: var(--color-bg-red);
+    color: var(--color-text-red);
+}
+
+.course__discount::before {
+    content: 'Скидка';
+}
+
+.course__discount::after {
+    content: '%';
+}
+
+.course__price {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 10px;
+    font-family: var(--font-family-montserrat);
+}
+
+.course__price::after {
+    content: '₽';
+}
+
+.course__price_old {
+    position: relative;
+    top: -5px;
+    margin-bottom: 5px;
+    font-size: calc(var(--font-size-text-xs) - 2px);
+    color: var(--color-text-grey);
+    text-decoration: line-through;
+}
+
+.course__price_new {
+    font-size: var(--font-size-text-sm);
+    font-weight: 600;
+}
+
+.course__warning {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    padding: 0.3em 0.8em;
+    border: var(--border-red);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-text-xs);
+    color: var(--color-text-red);
+    background-color: var(--color-bg-red);
+}
+
+.course__warning::before {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    background-image: url('../../assets/media/icons/clock.svg');
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 20px;
+    color: var(--color-text-red);
+    content: '';
+}
+
+.course__control {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: 30px;
+}
+
+.course__btn {
+    display: block;
+    margin-bottom: 10px;
+    padding: 0.8em 1em;
+    border-radius: var(--radius-md);
+    font-family: var(--font-family-montserrat);
+    font-size: var(--font-size-text-xs);
+    font-weight: 500;
+    background: var(--color-btn-blue-purpure-gradient);
+    color: var(--color-text-white);
+}
+
+.course__title {
+    display: block;
+    margin-bottom: 10px;
+    font-family: var(--font-family-montserrat);
+    font-size: var(--font-size-text-xs);
+    font-weight: 500;
+}
+
+.course__recommendations {
+    margin-bottom: 20px;
+}
+
+.course__recommendation {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.course__recommendation::before {
+    flex-shrink: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: var(--radius-max);
+    background-color: var(--color-bg-green);
+    content: '';
+}
+
+.course__link {
+    display: block;
+    padding: 0.5em 0;
+    font-family: var(--font-family-montserrat);
+    font-size: var(--font-size-text-xs);
+    font-weight: 400;
+}
+
+.course__link:hover {
+    color: var(--color-action-blue);
+}
+
+.course__conditions {
+    padding: 2em 0;
+    border-top: var(--border-grey);
+}
+
+.course__condition {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-family-montserrat);
+    font-size: var(--font-size-text-xs);
+}
+
+.course__condition:not(:last-child) {
+    margin-bottom: 8px;
+}
+
+.course__condition::before {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    content: '';
+}
+
+.course__condition_garant::before {
+    background-image: url('../../assets/media/icons/shield.svg');
+}
+
+.course__condition_sertif::before {
+    background-image: url('../../assets/media/icons/medal.svg');
+}
+
+.course__condition_support::before {
+    background-image: url('../../assets/media/icons/shield.svg');
+}
