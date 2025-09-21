@@ -5,10 +5,10 @@
  * при загрузке DOM.
  */
 
-import { InputMask } from './components/InputMask.js'
-import { Form } from './components/Form.js'
-import { Select } from './components/Select.js'
-import { Header } from './components/Header.js'
+import { InputMask } from '../../assets/scripts/components/InputMask.js'
+import { Form } from '../../assets/scripts/components/Form.js'
+import { Select } from '../../assets/scripts/components/Select.js'
+import { Header } from '../../assets/scripts/components/Header.js'
 
 /**
  * Инциализация основной страницы
@@ -35,16 +35,6 @@ export function indexInit() {
             delay: 2500,
             disableOnInteraction: true,
         }
-        // ,
-        // pagination: {
-        //     el: '.footer__tabs',
-        //     clickable: true,
-        //     renderBullet: function (index, className) {
-        //         customClass = 'footer__tab'
-        //         lst = ['Документы', 'Служебные', 'Полезное', 'Информация']
-        //         return `<li class="${customClass} ${className}">${lst[index]}</li>` // '<li class="' + className + '">' + (lst[index]) + '</li>';
-        //     },
-        // }
     })
 }
 

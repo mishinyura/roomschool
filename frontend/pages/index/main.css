@@ -34,6 +34,28 @@ _____________
   background-color: var(--color-btn-blue);
 }
 
+.videos-course::before,
+.hours-course::before{
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  content: '';
+}
+.videos-course::before{
+  background-image: url('../../assets/media/icons/videos.svg ');
+}
+.hours-course::before{
+  background-image: url('../../assets/media/icons/clock.svg');
+}
+.videos-course::after{
+  content: 'видео';
+}
+.hours-course::after{
+  content: 'ч.';
+}
+
 /* 
 _____________
 Приветственная секция
@@ -46,7 +68,7 @@ _____________
   align-items: center;
   min-height: 100vh;
   box-sizing: border-box;
-  background: url('../media/images/paint-shape.png');
+  background: url('../../assets/media/images/paint-shape.png');
   background-size: 40%;
   background-repeat: no-repeat;
   background-position: 75% center;
@@ -133,7 +155,7 @@ _____________
   top: -30px;
   width: 50%;
   height: 100%;
-  background: url('../media/images/AI5.png');
+  background: url('../../assets/media/images/AI5.png');
   background-size: contain, 40%;
   background-repeat: no-repeat, no-repeat;
   background-position: 75% center;
@@ -179,7 +201,7 @@ _____________
   position: absolute;
   right: -70px;
   top: 0;
-  content: url('../media/images/rocket.png');
+  content: url('../../assets/media/images/rocket.png');
   z-index: 1;
 } */
 
@@ -227,7 +249,7 @@ _____________
   position: absolute;
   right: -20px;
   top: 100%;
-  content: url('../media/images/arrow-decoration.png');
+  content: url('../../assets/media/images/arrow-decoration.png');
 }
 
 .hero__btn_callback:hover {
@@ -307,7 +329,7 @@ class courses
 _____________
 */
 .courses{
-  background: url('../media/images/lines-bg.png'), var(--color-bg-light-blue);
+  background: url('../../assets/media/images/lines-bg.png'), var(--color-bg-light-blue);
   background-repeat: no-repeat;
   background-size: contain, cover;
   background-position: right top, center;
@@ -358,7 +380,7 @@ _____________
   font-weight: 600;
 }
 .tickets{
-  /* padding: 2em; */
+  padding: 2em;
   /* overflow: visible; */
   /* box-shadow: inset -20px 0 15px 0 rgba(0, 0, 0, 0.212); */
 }
@@ -375,31 +397,6 @@ _____________
   border-radius: var(--radius-lg);
   background-color: var(--color-bg-white);
   clip-path: path("M 0 -195 H 440 V 145 C 425 145 420 150 420 172 C 420 191 385 165 385 199 H 0 Z");
-
-  /* 1400 px */
-  @media (max-width: 87.5rem) {
-    clip-path: path("M 0 -195 H 440 V 145 C 425 145 420 150 420 172 C 420 191 385 165 385 199 H 0 Z");
-  }
-
-  /* 1200 px */
-  @media (max-width: 75rem) {
-    clip-path: path("M 0 -20 H 440 V 145 C 425 145 420 150 420 172 C 420 191 385 165 385 199 H 0 Z");
-  }
-
-  /* 992 px */
-  @media (max-width: 62rem) {
-    clip-path: path("M 0 -20 H 440 V 145 C 425 145 420 150 420 172 C 420 191 385 165 385 199 H 0 Z");
-  }
-
-  /* 768 px */
-  @media (max-width: 48rem) {
-    clip-path: path("M 0 -20 H 440 V 145 C 425 145 420 150 420 172 C 420 191 385 165 385 199 H 0 Z");
-  }
-
-  /* 576 px */
-  @media (max-width: 36rem) {
-    clip-path: path("M 0 -20 H 440 V 145 C 425 145 420 150 420 172 C 420 191 385 165 385 199 H 0 Z");
-  }
 }
 /* .tickets__item::after{
   position: absolute;
@@ -478,27 +475,6 @@ _____________
   font-family: var(--font-family-montserrat);
   font-size: var(--font-size-text-xs);
 }
-.tickets__videos::before,
-.tickets__hours::before{
-  width: 20px;
-  height: 20px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  content: '';
-}
-.tickets__videos::before{
-  background-image: url('../media/icons/videos.svg ');
-}
-.tickets__hours::before{
-  background-image: url('../media/icons/clock.svg');
-}
-.tickets__videos::after{
-  content: 'видео';
-}
-.tickets__hours::after{
-  content: 'ч.';
-}
 .tickets__teacher {
   flex-basis: 100%;
   display: flex;
@@ -514,7 +490,7 @@ _____________
   border: var(--border-black);
   border-radius: 200px;
   overflow: hidden;
-  background-image: url('../media/images/no-user-photo.jpg');
+  background-image: url('../../assets/media/images/no-user-photo.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -570,7 +546,7 @@ _____________
   position: absolute;
   width: 120px;
   height: 120px;
-  background-image: url('../media/images/vector-price.png');
+  background-image: url('../../assets/media/images/vector-price.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -722,7 +698,7 @@ _____________
 
 .posts__image {
   overflow: hidden;
-  background-image: url('../media/images/no-photo.jpg');
+  background-image: url('../../assets/media/images/no-photo.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -753,7 +729,7 @@ _____________
   right: 0px;
   width: 30px;
   height: 30px;
-  background-image: url('../media/images/external-radius.png');
+  background-image: url('../../assets/media/images/external-radius.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: 0 0;
@@ -836,7 +812,7 @@ _____________
   border: var(--border-black);
   border-radius: 200px;
   overflow: hidden;
-  background-image: url('../media/images/no-user-photo.jpg');
+  background-image: url('../../assets/media/images/no-user-photo.jpg');
   background-size: cover;
   background-position: center;
 
@@ -886,10 +862,10 @@ _____________
 */
 .callback {
   background:
-    url('../media/images/paint-2.png'),
-    url('../media/images/paint-1.png'),
+    url('../../assets/media/images/paint-2.png'),
+    url('../../assets/media/images/paint-1.png'),
     linear-gradient(236deg, rgba(189, 227, 252, 0.9) 0%, rgba(138, 209, 253, 0.9) 100%),
-    url('../media/images/books.png');
+    url('../../assets/media/images/books.png');
   background-position: left top, right bottom, center, center;
   background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
   background-size: 200px, 200px, cover, cover;
