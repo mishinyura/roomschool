@@ -1,9 +1,10 @@
-import { marked } from '../../assets/scripts/modules/marked.esm.js'
+import { marked } from '../../assets/scripts/libs/marked.esm.js'
 
 import { timeFormatDuration, pluralize } from '../../assets/scripts/utils.js'
-import { Header } from '../../assets/scripts/components/Header.js'
+import { Header } from '../../assets/scripts/modules/Header.js'
 import { Accordion } from '../../assets/scripts/components/Accordeon.js'
 import { Tabs } from '../../assets/scripts/components/Tabs.js'
+import { Reviews } from '../../assets/scripts/modules/Reviews.js'
 
 function main() {
     const namePage = document.querySelector('meta[name="page"]').content
@@ -16,15 +17,10 @@ function main() {
         collapse: false
     })
 
-    // const detailCourseTabs = new Tabs({
-    //     btnsName: '.tabs__btn',
-    //     detailsName: '.tabs__data'
-    // })
-
     const coursesSlider = new Swiper('.tabs__content', {
         direction: 'horizontal',
         loop: false,
-        effect: 'cube',
+        effect: 'coverflow',
         resistanceRatio: 0,
         slidesPerView: 1,
         spaceBetween: 40,
@@ -43,6 +39,27 @@ function main() {
             },
         }
     })
+
+    let testReviews = [
+        {
+            author: 'Марина Иванова',
+            comment: 'Отличный курс! Все очень понятно объяснено, много практики. Благодаря этому курсу я смогла устроиться на работу junior разработчиком.',
+            rating: 5,
+            created_at: '2025-12-12',
+            evaluated: 'О предмете: "Эмоциональная грамотность"'
+        },
+        {
+            author: 'Александр Иванов',
+            comment: 'Благодаря этому курсу я смогла устроиться на работу',
+            rating: 5,
+            created_at: '2024-12-12',
+            evaluated: 'Преподаватель: Юрий Мишин'
+        }
+    ]
+
+    for (let rev of testReviews) {
+        new Reviews(rev).buildReview()
+    }
 
     
 }

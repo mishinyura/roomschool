@@ -128,14 +128,14 @@ _____________
 .courses__title {
     margin-bottom: var(--margin-bottom-title-desktop);
     font-family: var(--font-family-montserrat);
-    font-size: var(--font-size-title-max);
+    font-size: var(--font-size-title-lg);
     font-weight: 500;
 }
 
 .courses__description {
     margin-bottom: var(--margin-bottom-descr-desktop);
-    font-family: var(--font-family-nutino);
-    font-size: var(--font-size-text-max);
+    font-family: var(--font-family-nunito);
+    font-size: var(--font-size-text-lg);
 }
 
 .courses__videos,
@@ -208,7 +208,7 @@ _____________
     align-items: center;
     gap: 10px;
     padding: 3px;
-    margin-bottom: 40px;
+    margin-bottom: 25px;
     box-sizing: border-box;
     border: var(--border-grey);
     border-radius: var(--radius-lg);
@@ -246,8 +246,10 @@ _____________
 
 .tabs__content {
     display: flex;
+    padding: 2em;
     border-radius: var(--radius-lg);
     overflow: hidden;
+    background-color: #fff;
 }
 
 .tabs__data {
@@ -325,7 +327,7 @@ _____________
 
 .teachers__description {
     margin-bottom: 10px;
-    font-family: var(--font-family-nutino);
+    font-family: var(--font-family-nunito);
     font-size: var(--font-size-text-sm);
     font-weight: 400;
     color: var(--color-text-grey);
@@ -368,7 +370,7 @@ _____________
     font-size: var(--font-size-title-min);
     font-weight: 500;
     color: var(--color-text-white);
-    background: var(--color-btn-purpure-blue-gradient);
+    background: var(--color-btn-blue-purpure-gradient);
     counter-increment: modules;
     content: counter(modules);
 }
@@ -479,7 +481,121 @@ _____________
 _____________
 */
 .reviews__head {
+    display: flex;
     background: var(--color-bg-blue-purpure-light-gradient);
+}
+.reviews__counter{
+    display: flex;
+}
+.reviews__count{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--font-family-montserrat);
+    font-size: var(--font-size-text-min);
+    font-weight: 400;
+}
+.reviews__count:not(:last-child) {
+    margin-right: 10px;
+}
+.reviews__count::after{
+    display: block;
+    width: 28px;
+    height: 18px;
+    background-image: url('../../assets/media/icons/star.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right center;
+}
+.reviews__count:nth-child(1):after{
+    content: '5';
+}
+.reviews__count:nth-child(2):after{
+    content: '4';
+}
+.reviews__count:nth-child(3):after{
+    content: '3';
+}
+.reviews__count:nth-child(4):after{
+    content: '2';
+}
+.reviews__count:nth-child(5):after{
+    content: '1';
+}
+.reviews__line{
+    position: relative;
+    display: block;
+    width: 8px;
+    height: 100px;
+    border-radius: var(--radius-lg);
+    background-color: #fff;
+}
+.reviews__line::before{
+    position: absolute;
+    bottom: 0;
+    width: 8px;
+    height: 70px;
+    border-radius: var(--radius-lg);
+    background-color: #ffe449;
+    content: '';
+}
+.reviews__value{
+    
+}
+.reviews__basis::before{
+    content: 'На основе';
+}
+.reviews__item{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 2em 0;
+}
+.reviews__item:not(:last-child) {
+    margin-bottom: 10px;
+    border-bottom: var(--border-grey);
+}
+.reviews__date{
+    position: absolute;
+    right: 0;
+}
+.reviews__author{
+    font-family: var(--font-family-montserrat);
+    font-size: var(--font-size-title-sm);
+    font-weight: 600;
+}
+.reviews__eval{
+    flex-basis: 100%;
+    margin-bottom: 10px;
+    font-family: var(--font-family-montserrat);
+    font-size: var(--font-size-text-min);
+    font-weight: 500;
+    color: var(--color-text-grey);
+}
+.reviews__rating{
+    display: flex;
+    align-items: center;
+    flex-basis: 100%;
+    margin-bottom: 10px;
+}
+.reviews__star{
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.reviews__star_yellow{
+    background-image: url('../../assets/media/icons/star.svg');
+}
+.reviews__star_white{
+    background-image: url('../../assets/media/icons/star-w.svg');
+}
+.reviews__comment{
+    flex-basis: 100%;
+    font-family: var(--font-family-nunito);
+    font-size: var(--font-size-text-md);
+    font-weight: 400;
 }
 
 
@@ -585,7 +701,7 @@ _____________
     font-family: var(--font-family-montserrat);
     font-size: var(--font-size-text-xs);
     font-weight: 500;
-    background: var(--color-btn-purpure-blue-gradient);
+    background: var(--color-btn-blue-purpure-gradient);
     color: var(--color-text-white);
 }
 

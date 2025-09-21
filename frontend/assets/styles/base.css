@@ -93,7 +93,7 @@ _____________
 }
 
 .notifications__descr {
-  font-family: var(--font-family-text-nunito);
+  font-family: var(--font-family-nunito);
   font-size: var(--font-size-text-sm);
   font-weight: 400;
 }
@@ -141,8 +141,8 @@ _____________
 }
 .description_md p{
   margin-bottom: 15px;
-  font-family: var(--font-family-text-nunito);
-  font-size: var(--font-size-title-md);
+  font-family: var(--font-family-nunito);
+  font-size: var(--font-size-text-md);
   font-weight: 400;
 }
 .description_md ul{
@@ -608,7 +608,6 @@ _____________
 */
 .footer {
   position: relative;
-  height: 100vh;
   background: var(--color-bg-blue-linear-gradient);
 }
 

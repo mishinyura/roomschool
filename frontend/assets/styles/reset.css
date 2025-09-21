@@ -2,7 +2,7 @@
     /*--свойство-предмет-модификация*/
     /* Цвета */
     --color-bg-white: #fff;
-    --color-bg-grey: #ececec;
+    --color-bg-grey: #ebebeb;
     --color-bg-wight: #fff;
     --color-bg-blue: #8AD1FD;
     --color-bg-purpure: #C3B9DF;
@@ -15,13 +15,13 @@
     --color-bg-purpure-radial-gradient: radial-gradient(circle at center 200px, #FFE6E6 0%, #c3b9df92 53%);
     --color-bg-blue-linear-gradient: linear-gradient(236deg,rgba(189, 227, 252, 1) 0%, rgba(138, 209, 253, 1) 100%);
     --color-bg-purpure-linear-gradient: linear-gradient(236deg,rgba(255, 230, 230, 1) 0%, rgba(195, 185, 223, 1) 100%);
-    --color-bg-blue-purpure-light-gradient: linear-gradient(318deg,rgb(221, 236, 255) 0%, rgb(239, 227, 250) 100%);
+    --color-bg-blue-purpure-light-gradient: linear-gradient(318deg,rgb(213, 231, 255) 0%, rgb(238, 218, 255) 100%);
 
 
     --color-text-black: #000;
     --color-text-blue: #0AA6D7;
     --color-text-grey: #7c7c7c;
-    --color-text-dark-grey: #4b4b4b;
+    --color-text-dark-grey: #4e4e4e;
     --color-text-white: #fff;
     --color-text-red: #de2d2d;
     --color-text-purpure: #9436ff;
@@ -31,7 +31,7 @@
 
     --color-btn-blue: #0AA6D7;
     --color-btn-white: #fff;
-    --color-btn-purpure-blue-gradient: linear-gradient(318deg,rgba(82, 157, 255, 1) 0%, rgba(163, 71, 255, 1) 100%);
+    --color-btn-blue-purpure-gradient: linear-gradient(318deg,rgba(82, 157, 255, 1) 0%, rgba(163, 71, 255, 1) 100%);
 
     /* Отступы */
     --padding-lr-container-desktop: 1.25em; /* 20px */
@@ -84,7 +84,7 @@
     --font-size-text-min: 0.8125rem; /* 13px */
     --font-size-text-xs: 0.875rem; /* 14px */
     --font-size-text-sm: 1rem; /* 16px */
-    --font-size-title-md: 1.125; /* 18px */
+    --font-size-text-md: 1.125; /* 18px */
     --font-size-text-lg: 1.25rem; /* 20px */
     --font-size-text-max: 1.5rem; /* 24px */
 
@@ -92,7 +92,7 @@
     --font-size-title-xs: 1rem; /* h4... - 16px */
     --font-size-title-sm: 1.125rem; /* 18px */
     --font-size-title-md: 1.5rem; /* h3 - 24px */
-    --font-size-title-lg: 2rem; /* h2 - 32px */
+    --font-size-title-lg: 2rem; /* h1-h2 - 32px */
     --font-size-title-max: 2.5rem; /* h1 - 40px */
 
     --font-size-btn: 1rem;
