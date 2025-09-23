@@ -193,7 +193,7 @@ _____________
   @media (max-width: 36rem) {
     max-width: 80%;
     text-align: center;
-    font-size: var(--font-size-title-sm);
+    font-size: var(--font-size-title-md);
   }
 }
 
@@ -222,7 +222,6 @@ _____________
   @media (max-width: 36rem) {
     max-width: 80%;
     text-align: center;
-    font-size: var(--font-size-text-sm);
   }
 }
 
@@ -397,6 +396,31 @@ _____________
   border-radius: var(--radius-lg);
   background-color: var(--color-bg-white);
   clip-path: path("M 0 -195 H 440 V 145 C 425 145 420 150 420 172 C 420 191 385 165 385 199 H 0 Z");
+
+  /* 1400 px */
+  @media (max-width: 87.5rem) {
+    clip-path:none;
+  }
+
+  /* 1200 px */
+  @media (max-width: 75rem) {
+    
+  }
+
+  /* 992 px */
+  @media (max-width: 62rem) {
+    
+  }
+
+  /* 768 px */
+  @media (max-width: 48rem) {
+    
+  }
+
+  /* 576 px */
+  @media (max-width: 36rem) {
+    
+  }
 }
 /* .tickets__item::after{
   position: absolute;

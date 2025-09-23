@@ -127,7 +127,7 @@ export class Accordion {
         detail.addEventListener('transitionend', () => {
             detail.classList.remove('open');
             btn.classList.remove('open');
-            detail.style.removeProperty('height');
+            detail.removeAttribute('style')
         }, { once: true });
     }
 

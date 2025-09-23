@@ -13,7 +13,7 @@
     <meta property="og:image" content="https://roomschool.ru/preview.jpg">
     <meta name="description" content="">
     <meta name="keywords" content="">
-    <title>RoomSchool - онлайн школа с AI-поддержкой и выдачей аттестата</title>
+    <title>Курсы</title>
     <link rel="stylesheet" href="../../assets/styles/normalize.css">
     <link rel="stylesheet" href="../../assets/styles/reset.css">
     <link rel="stylesheet" href="../../assets/libs/swiper/swiper-bundle.min.css">
@@ -290,395 +290,51 @@
         <section class="main__section hero">
             <div class="hero__container">
                 <h1 class="hero__title">
-                    Онлайн школа развития навыков будущего с AI-поддержкой
+                    Каталог образовательных программ
                 </h1>
-                <p class="hero__descr">
-                    Пространство для развития, открытий и уверенного будущего! Здесь каждый
-                    ребенок получает не просто знания, а поддержку, внимание к индивидуальным
-                    целям и настоящую свободу выбора.
+                <p class="hero__description">
+                    Откройте для себя мир знаний с нашими экспертными курсами. 
+                    От начинающего до профессионала — найдите идеальный путь для вашего развития
                 </p>
-                <button class="hero__btn hero__btn_callback"  tabindex="0">
-                    Хочу пообщаться
-                </button>
-                <button class="hero__btn hero__btn_present"  tabindex="0">
-                    <svg class="hero__svg-text" viewBox="0 0 200 200">
-                        <defs>
-                            <path id="circle-text-icon" fill="#currentColor" d="M 100, 100 m -80, 0 a 80,80 0 1,1 160,0 a 80,80 0 1,1 -160,0" />
-                        </defs>
-                        <text>
-                            <textPath href="#circle-text-icon" startOffset="0%">
-                                ● посмотрите презентацию ● о нашей школе
-                            </textPath>
-                        </text>
-                    </svg>
-                    <div class="hero__play">
-                        <svg>
-                            <use href="#play-icon"></use>
-                        </svg>
-                    </div>
+                <button class="hero__btn">
+                    Узнать больше
                 </button>
             </div>
         </section>
         <section class="main__section courses">
             <div class="courses__container">
-                <div class="courses__head">
-                    <div class="courses__text">
-                        <h2 class="courses__title main-title">
-                            Популярные дисциплины
-                        </h2>
-                        <p class="courses__subtitle">
-                            Самых важных знаний порой так не хватает
-                        </p>
+                <div class="courses__control filters">
+                    <div class="filters__control">
+                        <label class="filters__label">
+                            <input type="text">
+                        </label>
+                        <div class="filters__select"></div>
+                        <button class="filters__btn">
+                            Фильтры
+                        </button>
                     </div>
-                    <a href="#" class="courses__all all-btn">
-                        Посмотреть все
-                    </a>
-                </div>
-                <div class="courses__content tickets swiper">
-                    <div class="tickets__wrapper swiper-wrapper">
-                        <article class="tickets__item swiper-slide">
-                            <div class="tickets__info">
-                                <span class="tickets__level tickets__level_begginer">
-                                    Начинающим
-                                </span>
-                                <a href="#" class="tickets__title">
-                                    Ораторское искусство
-                                </a>
-                                <p class="tickets__direction">
-                                    Социальный
-                                </p>
-                                <span class="tickets__videos videos-course videos-course">
-                                    45
-                                </span>
-                                <span class="tickets__hours hours-course hours-course">
-                                    5
-                                </span>
-                                <div class="tickets__teacher">
-                                    <div class="tickets__img">
-                                        <img src="../../assets/media/images/i.jpg" alt="">
-                                    </div>
-                                    <div class="tickets__teacher-info">
-                                        <span class="tickets__name">
-                                            Юрий Мишин
-                                        </span>
-                                        <span class="tickets__position">
-                                            Предприниматель
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tickets__control">
-                                <span class="tickets__price">
-                                    950
-                                </span>
-                                <button class="tickets__btn">
-                                    Купить
-                                </button>
-                            </div>
-                        </article>
-                        <article class="tickets__item swiper-slide">
-                            <div class="tickets__info">
-                                <span class="tickets__level tickets__level_advanced">
-                                    Продвинутым
-                                </span>
-                                <a href="#" class="tickets__title">
-                                    Правовая граммотность
-                                </a>
-                                <p class="tickets__direction">
-                                    Социальный
-                                </p>
-                                <span class="tickets__videos videos-course">
-                                    45
-                                </span>
-                                <span class="tickets__hours hours-course">
-                                    5
-                                </span>
-                                <div class="tickets__teacher">
-                                    <div class="tickets__img">
-                                        <img src="../../assets/media/images/i.jpg" alt="">
-                                    </div>
-                                    <div class="tickets__teacher-info">
-                                        <span class="tickets__name">
-                                            Юлия Чистякова
-                                        </span>
-                                        <span class="tickets__position">
-                                            Юрист
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tickets__control">
-                                <span class="tickets__price">
-                                    950
-                                </span>
-                                <button class="tickets__btn">
-                                    Купить
-                                </button>
-                            </div>
-                        </article>
-                        <article class="tickets__item swiper-slide">
-                            <div class="tickets__info">
-                                <span class="tickets__level tickets__level_professional">
-                                    Профессионалам
-                                </span>
-                                <a href="#" class="tickets__title">
-                                    Продвинутая разработка на Go
-                                </a>
-                                <p class="tickets__direction">
-                                    Технический
-                                </p>
-                                <span class="tickets__videos videos-course">
-                                    60
-                                </span>
-                                <span class="tickets__hours hours-course">
-                                    12
-                                </span>
-                                <div class="tickets__teacher">
-                                    <div class="tickets__img">
-                                        <img src="../../assets/media/images/victor.png" alt="">
-                                    </div>
-                                    <div class="tickets__teacher-info">
-                                        <span class="tickets__name">
-                                            Виктор Самсонов
-                                        </span>
-                                        <span class="tickets__position">
-                                            Разработчик
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tickets__control">
-                                <span class="tickets__price">
-                                    950
-                                </span>
-                                <button class="tickets__btn">
-                                    Купить
-                                </button>
-                            </div>
-                        </article>
-                        <article class="tickets__item swiper-slide">
-                            <div class="tickets__info">
-                                <span class="tickets__level tickets__level_advanced">
-                                    Продвинутым
-                                </span>
-                                <a href="#" class="tickets__title">
-                                    Финансовая граммотность
-                                </a>
-                                <p class="tickets__direction">
-                                    Социальный
-                                </p>
-                                <span class="tickets__videos videos-course">
-                                    45
-                                </span>
-                                <span class="tickets__hours hours-course">
-                                    5
-                                </span>
-                                <div class="tickets__teacher">
-                                    <div class="tickets__img">
-                                        <img src="../../assets/media/images/i.jpg" alt="">
-                                    </div>
-                                    <div class="tickets__teacher-info">
-                                        <span class="tickets__name">
-                                            Юрий Мишин
-                                        </span>
-                                        <span class="tickets__position">
-                                            Предприниматель
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tickets__control">
-                                <span class="tickets__price">
-                                    950
-                                </span>
-                                <button class="tickets__btn">
-                                    Купить
-                                </button>
-                            </div>
-                        </article>
-                        <article class="tickets__item swiper-slide">
-                            <div class="tickets__info">
-                                <span class="tickets__level tickets__level_begginer">
-                                    Новичкам
-                                </span>
-                                <a href="#" class="tickets__title">
-                                    Эмоциональная грамотность
-                                </a>
-                                <p class="tickets__direction">
-                                    Социальный
-                                </p>
-                                <span class="tickets__videos videos-course">
-                                    30
-                                </span>
-                                <span class="tickets__hours hours-course">
-                                    4
-                                </span>
-                                <div class="tickets__teacher">
-                                    <div class="tickets__img">
-                                        <img src="../../assets/media/images/jul.png" alt="">
-                                    </div>
-                                    <div class="tickets__teacher-info">
-                                        <span class="tickets__name">
-                                            Юлия Борисенко
-                                        </span>
-                                        <span class="tickets__position">
-                                            Продуктолог
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tickets__control">
-                                <span class="tickets__price">
-                                    810
-                                </span>
-                                <button class="tickets__btn">
-                                    Купить
-                                </button>
-                            </div>
-                        </article>
+                    <div class="filters__settings">
+                        <div class="filters__col">
+                            <span class="filters__title">
+                                Категории
+                            </span>
+                            <ul class="filters__list">
+                                <li class="filters__item">
+                                    <label class="filters__label">
+                                        <input type="checkbox" id="">
+                                        <span>Технические</span>
+                                    </label>
+                                </li>
+                                <li class="filters__item">
+                                    <label class="filters__label">
+                                        <input type="checkbox" id="">
+                                        <span>Социальные</span>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <section class="main__section blog">
-            <div class="blog__container">
-                <div class="blog__head">
-                    <div class="blog__text">
-                        <h2 class="courses__title main-title">
-                            Полезные статьи
-                        </h2>
-                        <p class="blog__title">
-                            Мы собираем множество полезной информации совершенно бесплатно
-                        </p>
-                    </div>
-                    <a href="#" class="blog__all all-btn">
-                        Посмотреть все
-                    </a>
-                </div>
-                <div class="blog__list posts">
-                    <article class="posts__item">
-                        <div class="posts__image">
-                            <img src="../../assets/media/images/programs_individual.jpg" alt="">
-                        </div>
-                        <div class="posts__content">
-                            <a class="posts__title">
-                                Выводим онлийн образование на новый уровень
-                            </a>
-                            <p class="posts__description">
-                                По данным исследования в России существует ряд глобальных образовательных
-                                проблем, которые не решаются существующими инструментами...
-                            </p>
-                            <div class="posts__author">
-                                <div class="posts__img">
-                                    <img src="../../assets/media/images/i.jpg" alt="">
-                                </div>
-                                <div class="posts__author-info">
-                                    <span class="posts__name">
-                                        Юрий Мишин
-                                    </span>
-                                    <span class="posts__position">
-                                        Предприниматель
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="posts__item">
-                        <div class="posts__image">
-                            <img src="../../assets/media/images/programs_main.jpg" alt="">
-                        </div>
-                        <div class="posts__content">
-                            <a class="posts__title">
-                                Выводим онлийн образование на новый уровень
-                            </a>
-                            <p class="posts__description">
-                                По данным исследования в России существует ряд глобальных образовательных
-                                проблем, которе не решаются существующими инструментами. Время требуют серьезных
-                                поправок...
-                            </p>
-                            <div class="posts__author">
-                                <div class="posts__img">
-                                    <img src="../../assets/media/images/i.jpg" alt="">
-                                </div>
-                                <div class="posts__author-info">
-                                    <span class="posts__name">
-                                        Юрий Мишин
-                                    </span>
-                                    <span class="posts__position">
-                                        Преподаватель финансовой граммотности
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="posts__item">
-                        <div class="posts__image">
-                            <img src="../../assets/media/images/programs_national.jpg" alt="">
-                        </div>
-                        <div class="posts__content">
-                            <a class="posts__title">
-                                Выводим онлийн образование на новый уровень
-                            </a>
-                            <p class="posts__description">
-                                По данным исследования в России существует ряд глобальных образовательных
-                                проблем, которе не решаются существующими инструментами. Время требуют серьезных
-                                поправок...
-                            </p>
-                            <div class="posts__author">
-                                <div class="posts__img">
-                                    <img src="../../assets/media/images/i.jpg" alt="">
-                                </div>
-                                <div class="posts__author-info">
-                                    <span class="posts__name">
-                                        Юрий Мишин
-                                    </span>
-                                    <span class="posts__position">
-                                        Преподаватель финансовой граммотности
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-        <section class="main__section callback">
-            <div class="callback__container">
-                <h2 class="callback__title">
-                    Оставьте Ваш телефон для связи
-                </h2>
-                <p class="callback__description">
-                    Менеджер свяжется с вами в ближайшие 30 минут
-                </p>
-                <form action="/" method="post" class="callback__form">
-                    <label class="callback__label">
-                        <input type="text" placeholder="Имя" name="name" id="inputUserName" data-validate="name">
-                    </label>
-                    <label class="callback__label">
-                        <input type="text" placeholder="Телефон" name="phone" id="inputPhoneNumber"
-                            data-validate="phone">
-                    </label>
-                    <div class="callback__select">
-                        <lable class="callback__wrapper">
-                            <input class="callback__input" name="method" type="text" value="По телефону"
-                                data-validate="select" data-method="phone" readonly>
-                        </lable>
-                        <ul class="callback__list">
-                            <li class="callback__item" data-method="telegram">
-                                Telegram
-                            </li>
-                            <li class="callback__item selected" data-method="phone">
-                                По телефону
-                            </li>
-                            <li class="callback__item" data-method="whatsapp">
-                                What's app
-                            </li>
-                        </ul>
-                    </div>
-                    <button class="callback__btn" type="submit">
-                        Отправить
-                    </button>
-                </form>
             </div>
         </section>
     </main>

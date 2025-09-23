@@ -383,11 +383,23 @@ _____________
   }
 }
 
+.submenu:focus-within{
+  visibility: visible;
+  opacity: 1;
+  transform: none;
+}
+
 .tobmenu__item:hover .submenu {
   visibility: visible;
   opacity: 1;
   transform: none;
 }
+.topmenu__link:focus-within + .submenu {
+  visibility: visible;
+  opacity: 1;
+  transform: none;
+}
+
 
 .submenu__col {
   padding: 0 1em;
@@ -424,6 +436,10 @@ _____________
   color: var(--color-text-black);
 }
 
+.submenu__title:focus-within {
+  color: var(--color-action-blue);
+}
+
 .submenu__item {
   border-radius: var(--radius-lg);
   transition: background-color .1s;
@@ -436,6 +452,10 @@ _____________
 .submenu__link {
   display: block;
   padding: 0.5em;
+}
+
+.submenu__link:focus-within {
+  color: var(--color-action-blue);
 }
 
 .submenu__name {
@@ -469,7 +489,7 @@ _____________
     left: 0;
     right: 0;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
     padding: 0.5em 1em;
     backdrop-filter: blur(16px) saturate(150%);
     -webkit-backdrop-filter: blur(16px) saturate(150%);
@@ -540,12 +560,18 @@ _____________
 .panel__btn_burger {
   position: relative;
   display: none;
-  width: 60px;
-  height: 60px;
+  width: 30px;
+  height: 30px;
 
   /* 768 px */
   @media (max-width: 48rem) {
     display: inline-block;
+  }
+
+  /* 576 px */
+  @media (max-width: 36rem) {
+    width: 60px;
+    height: 60px;
   }
 }
 
@@ -554,8 +580,9 @@ _____________
   top: 50%;
   left: 0;
   right: 0;
-  height: 2px;
-  background-color: rgb(255, 255, 255);
+  height: 5px;
+  border-radius: var(--radius-lg);
+  background-color: #000;
   transition: background-color .2s, transform .2s;
 }
 
@@ -564,8 +591,9 @@ _____________
   top: 10%;
   left: 0;
   width: 50%;
-  height: 2px;
-  background-color: rgb(255, 255, 255);
+  height: 5px;
+  border-radius: var(--radius-lg);
+  background-color: #000;
   content: '';
   transition: top .2s, width .2s, transform .2s .15s;
 }
@@ -575,8 +603,9 @@ _____________
   top: 90%;
   right: 0;
   width: 50%;
-  height: 2px;
-  background-color: rgb(255, 255, 255);
+  height: 5px;
+  border-radius: var(--radius-lg);
+  background-color: #000;
   content: '';
   transition: top .2s, width .2s, transform .2s .15s;
 }

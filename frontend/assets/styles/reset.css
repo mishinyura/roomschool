@@ -2,7 +2,7 @@
     /*--свойство-предмет-модификация*/
     /* Цвета */
     --color-bg-white: #fff;
-    --color-bg-grey: #ebebeb;
+    --color-bg-grey: #f8f8f8;
     --color-bg-wight: #fff;
     --color-bg-blue: #8AD1FD;
     --color-bg-purpure: #C3B9DF;
@@ -84,7 +84,7 @@
     --font-size-text-min: 0.8125rem; /* 13px */
     --font-size-text-xs: 0.875rem; /* 14px */
     --font-size-text-sm: 1rem; /* 16px */
-    --font-size-text-md: 1.125; /* 18px */
+    --font-size-text-md: 1.125rem; /* 18px */
     --font-size-text-lg: 1.25rem; /* 20px */
     --font-size-text-max: 1.5rem; /* 24px */
 

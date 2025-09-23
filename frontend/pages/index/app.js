@@ -1,19 +1,11 @@
-/**
- * @module initializer
- * @description Модуль хранит в себе функции с инициализацией
- * страниц. Каждая функция относится к одной странице и вызывается
- * при загрузке DOM.
- */
-
 import { InputMask } from '../../assets/scripts/components/InputMask.js'
 import { Form } from '../../assets/scripts/components/Form.js'
 import { Select } from '../../assets/scripts/components/Select.js'
-import { Header } from '../../assets/scripts/components/Header.js'
+import { Header } from '../../assets/scripts/modules/Header.js'
 
-/**
- * Инциализация основной страницы
- */
-export function indexInit() {
+function main() {
+    const namePage = document.querySelector('meta[name="page"]').content
+
     new InputMask('#inputPhoneNumber')
     const formCallback = new Form('callback__form')
     const selectCallback = new Select({
@@ -27,19 +19,28 @@ export function indexInit() {
         direction: 'horizontal',
         loop: true,
         freeMode: true,
-        slidesPerView: 3,
         spaceBetween:  40,
         wrapperClass: 'tickets__wrapper',
         slideClass: 'tickets__item',
         autoplay: {
             delay: 2500,
             disableOnInteraction: true,
+        },
+        breakpoints: {
+            320: {
+                slidesPerView: 1
+            },
+            992: {
+                slidesPerView: 2
+    
+            },
+            1200: {
+                slidesPerView: 3
+            }
         }
     })
 }
 
-
-
-export function courseDetailInit() {
-    
-}
+document.addEventListener("DOMContentLoaded", () => {
+    main()
+})
