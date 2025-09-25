@@ -103,56 +103,171 @@ _____________
 Разметка MarkDown
 _____________
 */
-.description_md h1{
+.description_md h1 {
   margin-bottom: 30px;
   font-family: var(--font-family-text-montserrat);
   font-size: var(--font-size-title-max);
   font-weight: 600;
 }
-.description_md h2{
+
+.description_md h2 {
   margin-bottom: 25px;
   font-family: var(--font-family-text-montserrat);
   font-size: var(--font-size-title-lg);
   font-weight: 600;
 }
-.description_md h3{
+
+.description_md h3 {
   margin-bottom: 20px;
   font-family: var(--font-family-text-montserrat);
   font-size: var(--font-size-title-md);
   font-weight: 600;
 }
-.description_md h4{
+
+.description_md h4 {
   margin-bottom: 15px;
   font-family: var(--font-family-text-montserrat);
   font-size: var(--font-size-title-sm);
   font-weight: 600;
 }
-.description_md h5{
+
+.description_md h5 {
   margin-bottom: 10px;
   font-family: var(--font-family-text-montserrat);
   font-size: var(--font-size-title-xs);
   font-weight: 600;
 }
-.description_md h6{
+
+.description_md h6 {
   margin-bottom: 5px;
   font-family: var(--font-family-text-montserrat);
   font-size: var(--font-size-title-min);
   font-weight: 600;
 }
-.description_md p{
+
+.description_md p {
   margin-bottom: 15px;
   font-family: var(--font-family-nunito);
   font-size: var(--font-size-text-md);
   font-weight: 400;
 }
-.description_md ul{
+
+.description_md ul {
   padding: 1em;
   list-style: circle;
 }
-.description_md ol{
+
+.description_md ol {
   padding: 1em;
 }
 
+/* 
+_____________
+Рейтинговые звезды
+_____________
+*/
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.rating__stars {
+  position: relative;
+  width: 100px;
+  height: 20px;
+}
+
+.rating__stars::before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../assets/media/grey-stars.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  content: '';
+}
+
+.rating__img {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-image: url('../../assets/media/gold-stars.svg');
+  background-repeat: no-repeat;
+  background-size: 100px 20px;
+  background-position: 0 0;
+  z-index: 1;
+}
+
+.rating__count::after{
+  content: ' / 5';
+}
+
+/* 
+_____________
+Блок с мини статистикой (Количество видео, часов, учеников, тестов)
+_____________
+*/
+.stats-course__videos,
+.stats-course__hours,
+.rating-course,
+.testes-course {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: var(--font-family-montserrat);
+    font-size: var(--font-size-text-xs);
+    font-weight: 500;
+}
+
+.stats-course__videos::before,
+.stats-course__hours::before,
+.rating-course::before,
+.testes-course::before {
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    content: '';
+}
+
+.stats-course__videos::before {
+    background-image: url('../../assets/media/icons/videos.svg ');
+}
+
+.stats-course__hours::before {
+    background-image: url('../../assets/media/icons/clock.svg');
+}
+
+.rating-course::before {
+    background-image: url('../../assets/media/icons/star.svg');
+}
+
+.testes-course::before {
+    background-image: url('../../assets/media/icons/okey.svg');
+}
+
+.stats-course__videos::after {
+    content: 'видео';
+}
+
+.stats-course__hours::after {
+    content: 'ч.';
+    /* content: ''; */
+}
+
+.rating-course::after {
+    content: '/ 5';
+}
+
+.testes-course::after {
+    /* content: 'заданий'; */
+    content: '';
+}
 
 /* 
 _____________
@@ -383,7 +498,7 @@ _____________
   }
 }
 
-.submenu:focus-within{
+.submenu:focus-within {
   visibility: visible;
   opacity: 1;
   transform: none;
@@ -394,7 +509,8 @@ _____________
   opacity: 1;
   transform: none;
 }
-.topmenu__link:focus-within + .submenu {
+
+.topmenu__link:focus-within+.submenu {
   visibility: visible;
   opacity: 1;
   transform: none;

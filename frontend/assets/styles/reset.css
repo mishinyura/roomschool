@@ -32,6 +32,7 @@
     --color-btn-blue: #0AA6D7;
     --color-btn-white: #fff;
     --color-btn-blue-purpure-gradient: linear-gradient(318deg,rgba(82, 157, 255, 1) 0%, rgba(163, 71, 255, 1) 100%);
+    --colot-btn-green-blue-gradient: linear-gradient(117deg,rgba(0, 204, 10, 1) 0%, rgba(82, 235, 255, 1) 100%);
 
     /* Отступы */
     --padding-lr-container-desktop: 1.25em; /* 20px */
@@ -96,6 +97,10 @@
     --font-size-title-max: 2.5rem; /* h1 - 40px */
 
     --font-size-btn: 1rem;
+
+
+    /* Другое */
+    --cursor-point: url('../../assets/media/icons/cursor.cur') 0 0, auto;
 }
 
 @font-face {
@@ -186,12 +191,16 @@
   100% { transform: rotate(360deg); }
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 a{
     font-family: var(--font-family-nunito);
     text-decoration: none;
     color: var(--color-text-black);
     outline: none;
-    cursor: url('../../assets/media/icons/cursor.cur') 0 0, auto;
+    cursor: var(--cursor-point)
 }
 
 button{
@@ -199,7 +208,7 @@ button{
     background: none;
     border: none;
     outline: none;
-    cursor: url('../../assets/media/icons/cursor.cur') 0 0, auto;
+    cursor: var(--cursor-point)
 }
 
 h1, h2, h3, h4, h5, h6 {
