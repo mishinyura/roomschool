@@ -1,21 +1,19 @@
-import { marked } from '../../assets/scripts/libs/marked.esm.js'
+import { marked } from '../../assets/libs/marked.esm.js'
 
-import { timeFormatDuration, pluralize } from '../../assets/scripts/utils.js'
+import { timeFormatDuration, pluralize, loadData } from '../../assets/scripts/utils.js'
 import { Header } from '../../assets/scripts/modules/Header.js'
 import { Accordion } from '../../assets/scripts/components/Accordeon.js'
 import { Tabs } from '../../assets/scripts/components/Tabs.js'
 import { Reviews } from '../../assets/scripts/modules/Reviews.js'
+import { CourseDetail } from '../../assets/scripts/modules/Course.js'
 
-function main() {
+async function main() {
+    const courseData = await loadData('../../data/course.json')
+    console.log(courseData)
+
     const namePage = document.querySelector('meta[name="page"]').content
 
     const header = new Header('.header')
-
-    const planAccordeon = new Accordion({
-        name: '.plan',
-        btns: '.plan__topic',
-        collapse: false
-    })
 
     const coursesSlider = new Swiper('.tabs__content', {
         direction: 'horizontal',
@@ -40,51 +38,11 @@ function main() {
         }
     })
 
-    let testReviews = [
-        {
-            author: 'Марина Иванова',
-            comment: 'Отличный курс! Все очень понятно объяснено, много практики. Благодаря этому курсу я смогла устроиться на работу junior разработчиком.',
-            rating: 5,
-            created_at: '2025-12-12',
-            evaluated: 'О предмете: "Эмоциональная грамотность"'
-        },
-        {
-            author: 'Александр Иванов',
-            comment: 'Благодаря этому курсу я смогла устроиться на работу',
-            rating: 5,
-            created_at: '2024-12-12',
-            evaluated: 'Преподаватель: Юрий Мишин'
-        }
-    ]
-
-    for (let rev of testReviews) {
-        new Reviews(rev).buildReview()
-    }
-
-    
+    const course = new CourseDetail(courseData)
+    course.build()
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    let text = `### О курсе \nРазвитие эмоционального интеллекта (ЭИ) у&nbsp;детей&nbsp;&mdash; важная часть их&nbsp;общей компетентности. 
-    Наша программа опирается на&nbsp;проверенные подходы SEL (социально-эмоциональное обучение) и&nbsp;ЭИ по&nbsp;Гоулману, 
-    а&nbsp;также на&nbsp;методику RULER (Йельский университет). Курс разбит на&nbsp;короткие видеоролики (5&ndash;15&nbsp;минут) 
-    с&nbsp;активными упражнениями и&nbsp;ролевыми играми. Как показывают исследования, театральные и&nbsp;игровые методы помогают 
-    детям лучше осознавать и&nbsp;выражать чувства.\nНапример, Edutopia отмечает, что при театральной игре 
-    (&laquo;Pass the Hello&raquo;), где ученики передают друг другу &laquo;привет&raquo; с&nbsp;разными эмоциями, дети быстрее 
-    учатся вербализовать свои чувства.\n ### Что вы изучите? \nНаша программа базируется на&nbsp;пяти ключевых компетенциях SEL: самосознание, 
-    самоуправление, социальное осознание, ответственное принятие решений и&nbsp;навыки общения, которые соответствуют пяти 
-    компонентам&nbsp;ЭИ по&nbsp;Гоулману: самопознание, саморегуляция, мотивация, эмпатия и&nbsp;социальные навыки. Особое внимание 
-    уделяется развитию эмпатии и&nbsp;коммуникации. Занятия включают ролевые и&nbsp;группово&#769;ые упражнения, позволяющие ученикам 
-    практиковаться в&nbsp;выражении эмоций и&nbsp;понимании других. Такие интерактивные методы делают абстрактные навыки осязаемыми 
-    и&nbsp;улучшают эмоциональное взаимодействие между сверстниками.\n ### Для кого курс? \nПрограмма делится на&nbsp;два уровня: начальный 
-    (10&ndash;13&nbsp;лет) и&nbsp;продвинутый (14&ndash;17&nbsp;лет), чтобы постепенно усложнять материалы и&nbsp;задачи. Используются 
-    и&nbsp;доказанные образовательные методики. Например, метод RULER (Йель) учит школьников распознавать, называть и&nbsp;управлять 
-    эмоциями. Для этого применяются инструменты вроде &laquo;колеса эмоций&raquo; или &laquo;компаса настроения&raquo;, расширяющие 
-    словарь чувств. Во&nbsp;всех уроках даются простые определения, разбор примеров и&nbsp;практические рекомендации.`
-    let descr = document.querySelector('.description_md')
-    const html = marked.parse(text);
-    descr.innerHTML = html
-
     let hours = document.querySelectorAll('.hours-course')
     let testes = document.querySelectorAll('.testes-course')
 

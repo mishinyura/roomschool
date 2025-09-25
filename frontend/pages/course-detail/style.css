@@ -145,8 +145,14 @@ _____________
 
 .courses__image {
     flex-basis: 40%;
+    min-width: 250px;
+    min-height: 250px;
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-classic);
+    background-image: url('../../assets/media/images/no-photo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     overflow: hidden;
 }
 
