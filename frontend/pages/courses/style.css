@@ -54,19 +54,22 @@
     font-size: var(--font-size-text-max);
     font-weight: 400;
 }
-.hero__btn{
+
+.hero__btn {
     padding: 0.6em 2em;
     border-radius: var(--radius-md);
     font-family: var(--font-family-montserrat);
     font-size: var(--font-size-text-sm);
     font-weight: 500;
 }
-.hero__btn_blue{
+
+.hero__btn_blue {
     margin-right: 20px;
     color: var(--color-text-white);
     background: var(--color-btn-blue-purpure-gradient);
 }
-.hero__btn_white{
+
+.hero__btn_white {
     color: var(--color-text-purpure);
     background-color: var(--color-bg-wight);
 }
@@ -158,6 +161,11 @@ _____________
     background-color: var(--color-bg-dark-blue);
     color: var(--color-text-white);
     content: attr(data-count);
+    transition: opacity .2s;
+}
+
+.filters__btn[data-count="0"]::after {
+    opacity: 0;
 }
 
 .filters__search input {
@@ -381,6 +389,7 @@ _____________
     font-size: var(--font-size-text-min);
     font-weight: 500;
     color: var(--color-text-white);
+    z-index: 1;
 }
 
 .cards__label_popular {

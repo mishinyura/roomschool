@@ -13,7 +13,7 @@
     <meta property="og:image" content="https://roomschool.ru/preview.jpg">
     <meta name="description" content="">
     <meta name="keywords" content="">
-    <title>Курсы</title>
+    <title>Раздел в разработке</title>
     <link rel="stylesheet" href="../../assets/styles/normalize.css">
     <link rel="stylesheet" href="../../assets/styles/reset.css">
     <link rel="stylesheet" href="../../assets/libs/swiper/swiper-bundle.min.css">
@@ -297,273 +297,36 @@
             </nav>
         </div>
     </header>
-    <main class="catalog container">
-        <section class="main__section hero">
-            <div class="hero__container">
-                <h1 class="hero__title">
-                    Каталог образовательных программ
-                </h1>
-                <p class="hero__description">
-                    Откройте для себя мир знаний с нашими экспертными курсами. 
-                    От начинающего до профессионала — найдите идеальный путь для вашего развития
-                </p>
-                <a href="#courses-list" class="hero__btn hero__btn_blue">
-                    Посмотреть все
-                </a>
-                <button class="hero__btn hero__btn_white">
-                    Узнать больше
-                </button>
-            </div>
-        </section>
-        <section class="main__section courses">
-            <div class="courses__container">
-                <div class="courses__control filters">
-                    <div class="filters__control">
-                        <label class="filters__search">
-                            <input type="text" placeholder="Поиск курсов">
-                        </label>
-                        <div class="filters__select">
-                            <label class="filters__wrapper">
-                                <input class="filters__input" name="method" type="text" value="По телефону"
-                                    data-validate="select" data-sort="popular" readonly tabindex="0">
-                            </label>
-                            <ul class="filters__variants">
-                                <li class="filters__sort selected" data-sort="popular">
-                                    По популярности
-                                </li>
-                                <li class="filters__sort" data-sort="rating">
-                                    По рейтингу
-                                </li>
-                                <li class="filters__sort" data-sort="new">
-                                    Сначала новые
-                                </li>
-                                <li class="filters__sort" data-sort="priceasc">
-                                    По возрастанию цены
-                                </li>
-                                <li class="filters__sort" data-sort="pricedesc">
-                                    По убыванию цены
-                                </li>
-                            </ul>
-                        </div>
-                        <button class="filters__btn" data-count="1">
-                            Фильтры
-                        </button>
-                    </div>
-                    <div class="filters__settings">
-                        <div class="filters__col">
-                            <span class="filters__title">
-                                Категории
-                            </span>
-                            <ul class="filters__list">
-                                <li class="filters__item">
-                                    <label class="filters__checkbox">
-                                        <input type="checkbox" id="">
-                                        <span></span>
-                                        <span>Технические</span>
-                                    </label>
-                                </li>
-                                <li class="filters__item">
-                                    <label class="filters__checkbox">
-                                        <input type="checkbox" id="">
-                                        <span></span>
-                                        <span>Социальные</span>
-                                    </label>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="filters__col">
-                            <span class="filters__title">
-                                Уровень
-                            </span>
-                            <ul class="filters__list">
-                                <li class="filters__item">
-                                    <label class="filters__checkbox">
-                                        <input type="checkbox" id="">
-                                        <span></span>
-                                        <span>Начинающим</span>
-                                    </label>
-                                </li>
-                                <li class="filters__item">
-                                    <label class="filters__checkbox">
-                                        <input type="checkbox" id="">
-                                        <span></span>
-                                        <span>Продвинутым</span>
-                                    </label>
-                                </li>
-                                <li class="filters__item">
-                                    <label class="filters__checkbox">
-                                        <input type="checkbox" id="">
-                                        <span></span>
-                                        <span>Профессионалам</span>
-                                    </label>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+    <main class="main">
+        <section class="main__section develop">
+            <div class="develop__container">
+                <div class="develop__decor-list">
+                    <span class="develop__decor develop__decor_circle"></span>
+                    <span class="develop__decor develop__decor_circle"></span>
+                    <span class="develop__decor develop__decor_circle"></span>
+                    <span class="develop__decor develop__decor_circle"></span>
+                    <span class="develop__decor develop__decor_circle"></span>
+                    <span class="develop__decor develop__decor_circle"></span>
+                    <span class="develop__decor develop__decor_circle"></span>
+                    <span class="develop__decor develop__decor_circle"></span>
+                    <span class="develop__decor develop__decor_paints"></span>
+                    <span class="develop__decor develop__decor_glow"></span>
+                    <span class="develop__decor develop__decor_glow"></span>
+                    <span class="develop__decor develop__decor_glow"></span>
                 </div>
-                <div class="courses__list cards" id="courses-list">
-                    <article class="cards__item">
-                        <span class="cards__label cards__label_popular">
-                            Популярный
-                        </span>
-                        <div class="cards__image">
-                            <img src="../../assets/media/images/course-detail-photo.jpg" alt="">
-                        </div>
-                        <div class="cards__content">
-                            <h4 class="cards__title">
-                                <a href="#" class="cards__link">
-                                    Полный курс веб-разработки с нуля
-                                </a>
-                            </h4>
-                            <p class="cards__description">
-                                Изучите современные технологии веб-разработки: HTML, CSS, JavaScript, React,
-                            </p>
-                            <div class="cards__reviews rating">
-                                <span class="rating__stars">
-                                    <span class="rating__img" style="width: 90%;"></span>
-                                </span>
-                                <span class="rating__count">4.5</span>
-                            </div>
-                            <div class="cards__counter stats-course">
-                                <span class="stats-course__hours">50</span>
-                                <span class="stats-course__videos">10</span>
-                            </div>
-                        </div>
-                        <div class="cards__info">
-                            <ins class="cards__price cards__price_new">
-                                7990
-                            </ins>
-                            <del class="cards__price cards__price_old">
-                                15990
-                            </del>
-                            <a href="#" class="cards__btn">
-                                Подробнее
-                            </a>
-                        </div>
-                    </article>
-                    <article class="cards__item">
-                        <span class="cards__label cards__label_popular">
-                            Популярный
-                        </span>
-                        <div class="cards__image">
-                            <img src="../../assets/media/images/course-detail-photo.jpg" alt="">
-                        </div>
-                        <div class="cards__content">
-                            <h4 class="cards__title">
-                                <a href="#" class="cards__link">
-                                    Полный курс веб-разработки с нуля
-                                </a>
-                            </h4>
-                            <p class="cards__description">
-                                Изучите современные технологии веб-разработки: HTML, CSS, JavaScript, React,
-                            </p>
-                            <div class="cards__reviews rating">
-                                <span class="rating__stars">
-                                    <span class="rating__img" style="width: 90%;"></span>
-                                </span>
-                                <span class="rating__count">4.5</span>
-                            </div>
-                            <div class="cards__counter stats-course">
-                                <span class="stats-course__hours">50</span>
-                                <span class="stats-course__videos">10</span>
-                            </div>
-                        </div>
-                        <div class="cards__info">
-                            <ins class="cards__price cards__price_new">
-                                7990
-                            </ins>
-                            <del class="cards__price cards__price_old">
-                                15990
-                            </del>
-                            <a href="#" class="cards__btn">
-                                Подробнее
-                            </a>
-                        </div>
-                    </article>
-                    <article class="cards__item">
-                        <span class="cards__label cards__label_new">
-                            Новый
-                        </span>
-                        <div class="cards__image">
-                            <img src="../../assets/media/images/course-detail-photo.jpg" alt="">
-                        </div>
-                        <div class="cards__content">
-                            <h4 class="cards__title">
-                                <a href="#" class="cards__link">
-                                    Полный курс веб-разработки с нуля
-                                </a>
-                            </h4>
-                            <p class="cards__description">
-                                Изучите современные технологии веб-разработки: HTML, CSS, JavaScript, React,
-                            </p>
-                            <div class="cards__reviews rating">
-                                <span class="rating__stars">
-                                    <span class="rating__img" style="width: 90%;"></span>
-                                </span>
-                                <span class="rating__count">4.5</span>
-                            </div>
-                            <div class="cards__counter stats-course">
-                                <span class="stats-course__hours">50</span>
-                                <span class="stats-course__videos">10</span>
-                            </div>
-                        </div>
-                        <div class="cards__info">
-                            <ins class="cards__price cards__price_new">
-                                7990
-                            </ins>
-                            <del class="cards__price cards__price_old">
-                                15990
-                            </del>
-                            <a href="#" class="cards__btn">
-                                Подробнее
-                            </a>
-                        </div>
-                    </article>
-                    <article class="cards__item">
-                        <span class="cards__label cards__label_new">
-                            Новый
-                        </span>
-                        <div class="cards__image">
-                            <img src="../../assets/media/images/course-detail-photo.jpg" alt="">
-                        </div>
-                        <div class="cards__content">
-                            <h4 class="cards__title">
-                                <a href="#" class="cards__link">
-                                    Полный курс веб-разработки с нуля
-                                </a>
-                            </h4>
-                            <p class="cards__description">
-                                Изучите современные технологии веб-разработки: HTML, CSS, JavaScript, React,
-                            </p>
-                            <div class="cards__reviews rating">
-                                <span class="rating__stars">
-                                    <span class="rating__img" style="width: 90%;"></span>
-                                </span>
-                                <span class="rating__count">4.5</span>
-                            </div>
-                            <div class="cards__counter stats-course">
-                                <span class="stats-course__hours">50</span>
-                                <span class="stats-course__videos">10</span>
-                            </div>
-                        </div>
-                        <div class="cards__info">
-                            <ins class="cards__price cards__price_new">
-                                7990
-                            </ins>
-                            <del class="cards__price cards__price_old">
-                                15990
-                            </del>
-                            <a href="#" class="cards__btn">
-                                Подробнее
-                            </a>
-                        </div>
-                    </article>
-                </div>
-                <div class="courses__btns">
-                    <a href="" class="courses__link courses__link_back disabled">Назад</a>
-                    <a href="" class="courses__link courses__link_num active">1</a>
-                    <a href="" class="courses__link courses__link_num">2</a>
-                    <a href="" class="courses__link courses__link_forward">Вперед</a>
+                <div class="develop__content">
+                    <h1 class="develop__title">
+                        В разработке
+                    </h1>
+                    <p class="develop__description">
+                        Готовим что-то невероятное для вас!
+                    </p>
+                    <div class="develop__progress">
+                        Загружаем магию...
+                    </div>
+                    <button class="develop__btn">
+                        Уведомить о запуске
+                    </button>
                 </div>
             </div>
         </section>

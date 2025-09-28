@@ -1,0 +1,302 @@
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+}
+
+@keyframes translateTopBottom {
+    0% {
+        opacity: 0;
+        transform: translateX(0) translateY(0) scale(0.8) rotate(0);
+    }
+
+    25% {
+        opacity: 0.5;
+        transform: translateX(-0px) translateY(-20px) scale(1.2) rotate(90deg);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateX(10px) translateY(30px) scale(1) rotate(-180deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-10px) translateY(-30px) scale(1.2) rotate(180deg);
+    }
+}
+
+@keyframes translateFightLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(0) translateY(0) scale(0.8) rotate(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateX(30px) translateY(10px) scale(1) rotate(-180deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(0) translateY(0) scale(0.8) rotate(0);
+    }
+}
+
+@keyframes widthProgress {
+    0% {
+        width: 5%;
+    }
+
+    20% {
+        width: 20%;
+    }
+
+    30% {
+        width: 30%;
+    }
+
+    90% {
+        width: 90%;
+    }
+
+    100% {
+        width: 5%;
+    }
+}
+
+.develop__container {
+    max-width: var(--max-width-container-desktop);
+    margin: auto;
+    padding: 130px var(--padding-lr-container-desktop) var(--padding-tb-container-desktop);
+
+    /* 1400 px */
+    @media (max-width: 87.5rem) {
+        max-width: var(--max-width-container-laptop);
+    }
+
+    /* 1200 px */
+    @media (max-width: 75rem) {
+        max-width: var(--max-width-container-tablet);
+        padding: 130px var(--padding-lr-container-tablet) var(--padding-tb-container-tablet);
+    }
+
+    /* 992 px */
+    @media (max-width: 62rem) {
+        max-width: var(--max-width-container-smartphone);
+    }
+
+    /* 768 px */
+    @media (max-width: 48rem) {
+        max-width: var(--max-width-container-mobile);
+        padding: 100px var(--padding-lr-container-mobile) var(--padding-tb-container-mobile);
+    }
+
+    /* 576 px */
+    @media (max-width: 36rem) {
+        align-items: center;
+        max-width: 100%;
+    }
+}
+
+.develop__decor-list {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.develop__decor {
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: contain;
+    color: blanchedalmond;
+    animation: translateTopBottom 5s ease infinite;
+}
+
+.develop__decor:nth-child(1) {
+    top: 15%;
+    left: 20%;
+    animation-delay: 0.2s;
+}
+
+.develop__decor:nth-child(2) {
+    top: 10%;
+    left: 90%;
+    animation-delay: 0s;
+}
+
+.develop__decor:nth-child(3) {
+    top: 28%;
+    left: 85%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 0.5s;
+}
+
+.develop__decor:nth-child(4) {
+    top: 30%;
+    left: 70%;
+    animation-delay: 1.1s;
+}
+
+.develop__decor:nth-child(5) {
+    top: 5%;
+    left: 60%;
+    animation-delay: 0s;
+}
+
+.develop__decor:nth-child(6) {
+    top: 30%;
+    left: 10%;
+    animation-delay: 0.7s;
+}
+
+.develop__decor:nth-child(7) {
+    top: 10%;
+    left: 90%;
+    animation-delay: 0s;
+}
+
+.develop__decor:nth-child(8) {
+    top: 20%;
+    left: 65%;
+    animation-delay: 0.7s;
+}
+
+.develop__decor:nth-child(9) {
+    top: 30%;
+    left: 35%;
+    animation-delay: 1.1s;
+    animation: translateFightLeft 5s ease infinite;
+}
+
+.develop__decor:nth-child(10) {
+    top: 15%;
+    left: 60%;
+    animation-delay: 0s;
+}
+
+.develop__decor:nth-child(11) {
+    top: 10%;
+    left: 30%;
+    animation-delay: 0s;
+}
+
+.develop__decor:nth-child(12) {
+    top: 20%;
+    left: 80%;
+    animation-delay: 0.7s;
+}
+
+.develop__decor_glow {
+    background: var(--color-btn-blue-purpure-gradient);
+    mask: url('../../assets/media/icons/glow.svg') no-repeat center / contain;
+}
+
+.develop__decor_paints {
+    background: var(--color-btn-blue-purpure-gradient);
+    mask: url('../../assets/media/icons/paints.svg') no-repeat center / contain;
+}
+
+.develop__decor_circle {
+    border-radius: 50px;
+    background: var(--color-btn-blue-purpure-gradient);
+    animation: fadeInOut 3s ease infinite;
+}
+
+.develop__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+}
+
+.develop__title {
+    margin-bottom: 20px;
+    font-family: var(--font-family-montserrat);
+    font-size: var(--font-size-title-max);
+    font-weight: 600;
+    text-align: center;
+    background: var(--color-btn-blue-purpure-gradient);
+    background-clip: text;
+    color: transparent;
+}
+
+.develop__description {
+    margin-bottom: 20px;
+    font-family: var(--font-family-montserrat);
+    font-size: var(--font-size-text-max);
+    font-weight: 400;
+    text-align: center;
+}
+
+.develop__progress {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 300px;
+    margin-bottom: 50px;
+    font-family: var(--font-family-montserrat);
+    font-size: var(--font-size-text-sm);
+    font-weight: 300;
+}
+
+.develop__progress::before {
+    position: absolute;
+    bottom: -20px;
+    width: 100%;
+    height: 10px;
+    border-radius: 10px;
+    background-color: var(--color-bg-grey);
+    content: '';
+}
+
+.develop__progress::after {
+    position: absolute;
+    bottom: -20px;
+    height: 10px;
+    border-radius: 10px;
+    background: var(--color-btn-blue-purpure-gradient);
+    content: '';
+    animation: widthProgress 5s ease infinite;
+}
+
+.develop__btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 1em 2em;
+    border-radius: var(--radius-md);
+    font-family: var(--font-family-montserrat);
+    font-size: var(--font-size-text-sm);
+    font-weight: 500;
+    background: var(--color-btn-blue-purpure-gradient);
+    color: var(--color-text-white);
+}
+
+.develop__btn::before {
+    width: 20px;
+    height: 20px;
+    background-color: var(--color-text-white);
+    mask: url('../../assets/media/icons/glow.svg') no-repeat center / contain;
+    content: '';
+}
