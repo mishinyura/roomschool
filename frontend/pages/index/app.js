@@ -19,7 +19,7 @@ function main() {
         direction: 'horizontal',
         loop: true,
         freeMode: true,
-        spaceBetween:  40,
+        spaceBetween: 40,
         wrapperClass: 'tickets__wrapper',
         slideClass: 'tickets__item',
         autoplay: {
@@ -32,13 +32,18 @@ function main() {
             },
             992: {
                 slidesPerView: 2
-    
+
             },
             1200: {
                 slidesPerView: 3
             }
         }
     })
+
+    particlesJS.load('particles-js', '../../assets/libs/particles/particles.json', function () {
+        console.log('callback - particles.js config loaded');
+    });
+
 }
 
 document.addEventListener("DOMContentLoaded", () => {
