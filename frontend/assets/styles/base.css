@@ -428,7 +428,7 @@ _____________
   font-family: var(--font-family-montserrat);
   font-size: var(--font-size-title-sm);
   font-weight: 500;
-  transition: opacity 2s;
+  transition: color .1s, opacity .1s;
 
   /* 768 px */
   @media (max-width: 48rem) {
@@ -642,7 +642,7 @@ _____________
   width: initial;
   padding: 0.5em 1em;
   border-radius: var(--radius-md);
-  background-color: var(--color-btn-blue);
+  background: var(--color-btn-blue-purpure-gradient);
 
   /* 576 px */
   @media (max-width: 36rem) {
@@ -659,7 +659,7 @@ _____________
 }
 
 .panel__btn_login {
-  background-image: url('../../assets/media/icons/login.svg');
+  background-image: url('../../assets/media/icons/log-in.svg');
 }
 
 .panel__btn-text {
