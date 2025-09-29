@@ -113,7 +113,13 @@ _____________
       /* сдвинутая точка левее и выше нижнего угла */
     );
 }
-
+.hero__particles{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
 .hero__container {
   position: relative;
   display: flex;
@@ -231,13 +237,14 @@ _____________
 
 .hero__btn_callback {
   position: relative;
-  padding: 1em;
+  padding: 0.8em 1.2em;
   margin-bottom: auto;
   border-radius: var(--radius-md);
   font-family: var(--font-family-montserrat);
-  font-size: var(--font-size-text-md);
-  font-weight: 700;
-  background-color: var(--color-btn-white);
+  font-size: var(--font-size-text-sm);
+  font-weight: 500;
+  background: var(--color-btn-blue-purpure-gradient);
+  color: var(--color-text-white);
   box-shadow: 0 0 10px -6px black;
   transition: box-shadow .1s;
   z-index: 1;
