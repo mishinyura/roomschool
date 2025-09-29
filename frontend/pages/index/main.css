@@ -245,7 +245,6 @@ _____________
   font-weight: 500;
   background: var(--color-btn-blue-purpure-gradient);
   color: var(--color-text-white);
-  box-shadow: 0 0 10px -6px black;
   transition: box-shadow .1s;
   z-index: 1;
 
@@ -263,7 +262,7 @@ _____________
 }
 
 .hero__btn_callback:hover {
-  box-shadow: 0 0 5px -6px black;
+  box-shadow: 0 0 10px 0px rgba(82, 157, 255, 1);
 }
 
 .hero__btn_present {
