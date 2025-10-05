@@ -3,7 +3,7 @@ from typing import Optional
 from sqlalchemy import String
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from app.models import Base, BaseModel
+from app.models.base import Base, BaseModel
 
 
 class AuthorModel(BaseModel, Base):
@@ -14,7 +14,7 @@ class AuthorModel(BaseModel, Base):
         String(100), nullable=True, unique=False
     )
     image_url: Mapped[Optional[str]] = mapped_column(
-        String(100), nullable=True, unique=True
+        String(100), nullable=True, unique=False
     )
 
-    posts = relationship("PostsModel", back_populates="author")
+    article = relationship("ArticleModel", back_populates="author")

@@ -1,2 +1,2 @@
 from .callbacks import CallbackFormRequest
-from .posts import PostBase, PostOutClient
+from .articles import ArticleBase, ArticleOutClient

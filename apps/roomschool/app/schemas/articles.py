@@ -1,5 +1,5 @@
 """
-Schemas for Post and Author entities.
+Schemas for Article and Author entities.
 
 This module contains Pydantic models that represent the data structures
 used for validation and serialization of post-related data. These schemas
@@ -9,7 +9,7 @@ are typically used in FastAPI routes as request/response models.
 from pydantic import BaseModel
 
 
-class PostAuthor(BaseModel):
+class ArticleAuthor(BaseModel):
     """
     Schema representing an author of a post.
 
@@ -26,7 +26,7 @@ class PostAuthor(BaseModel):
     model_config = {"from_attributes": True}
 
 
-class PostBase(BaseModel):
+class ArticleBase(BaseModel):
     """
     Base schema for a blog/news post.
 
@@ -43,13 +43,13 @@ class PostBase(BaseModel):
     slug: str
     title: str
     description: str
-    author: PostAuthor
+    author: ArticleAuthor
     is_archived: bool
 
     model_config = {"from_attributes": True}
 
 
-class PostOutClient(BaseModel):
+class ArticleOutClient(BaseModel):
     """
     Public schema for returning post data to clients.
 
@@ -63,6 +63,6 @@ class PostOutClient(BaseModel):
 
     title: str
     description: str
-    author: PostAuthor
+    author: ArticleAuthor
 
     model_config = {"from_attributes": True}
