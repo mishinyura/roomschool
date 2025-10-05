@@ -3,12 +3,13 @@ from typing import Any, List
 from fastapi import Depends
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import selectinload
 
-from app.core.db import get_session
 from app.models import ArticleModel
 from app.repositories import BaseRepo
 from app.schemas import ArticleBase
+from app.core.exceptions import SqlAlchemyError
 
 
 class ArticleCrud(BaseRepo):
@@ -20,7 +21,9 @@ class ArticleCrud(BaseRepo):
         )
         return result.scalar_one_or_none()
 
-    async def get_by_slug(self, slug: str, session: AsyncSession) -> ArticleModel | None:
+    async def get_by_slug(
+            self, slug: str, session: AsyncSession
+    ) -> ArticleModel | None:
         result = await session.execute(
             select(ArticleModel)
             .where(ArticleModel.slug == slug)
@@ -36,5 +39,14 @@ class ArticleCrud(BaseRepo):
 
         return posts
 
+    async def create(self, article: ArticleBase, session: AsyncSession) -> None:
+        print(article.__dict__)
+        try:
+            session.add(article)
+            await session.commit()
+        except SQLAlchemyError:
+            await session.rollback()
+            raise SqlAlchemyError
 
-post_crud = ArticleCrud()
+
+article_crud = ArticleCrud()

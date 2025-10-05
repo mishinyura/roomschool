@@ -66,3 +66,11 @@ class ArticleOutClient(BaseModel):
     author: ArticleAuthor
 
     model_config = {"from_attributes": True}
+
+
+class ArticleInClient(BaseModel):
+    slug: str
+    title: str
+    description: str
+    author: ArticleAuthor
+    is_archived: bool

@@ -12,3 +12,11 @@ class PostNotFoundError(Exception):
 
     def __str__(self):
         return f"Error: {self.message}"
+
+
+class SqlAlchemyError(Exception):
+    def __init__(self):
+        self.message = "It is impossible to add an element"
+
+    def __str__(self):
+        return f"Error: {self.message}"

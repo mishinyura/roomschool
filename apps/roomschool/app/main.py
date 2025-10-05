@@ -1,10 +1,10 @@
 import uvicorn
 from fastapi import FastAPI
 
-from app.api import callback_router, post_router
+from app.api import callback_router, article_router
 from app.core.db import create_tables
 
-ROUTES = {"/callback": callback_router, "/posts": post_router}
+ROUTES = {"/callback": callback_router, "/articles": article_router}
 
 
 def main():
