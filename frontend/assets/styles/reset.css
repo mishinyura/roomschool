@@ -9,6 +9,7 @@
     --color-bg-dark-blue: #0AA6D7;
     --color-bg-light-blue: #aedeed84;
     --color-bg-red: #ffb7b7;
+    --color-bg-black-transparent: rgba(0, 0, 0, 0.4);
     --color-bg-green: #7cffb9;
 
     --color-bg-blue-radial-gradient: radial-gradient(circle at left top, #E8F6FF 0%, #8ad1fd59 53%);
@@ -21,7 +22,7 @@
 
 
     --color-text-black: #000;
-    --color-text-blue: #0AA6D7;
+    --color-text-blue: #46d1fb;
     --color-text-grey: #7c7c7c;
     --color-text-dark-grey: #4e4e4e;
     --color-text-white: #fff;
@@ -38,6 +39,11 @@
     --color-btn-blue-purpure-gradient: linear-gradient(318deg,rgba(82, 157, 255, 1) 0%, rgba(163, 71, 255, 1) 100%);
     --colot-btn-green-blue-gradient: linear-gradient(117deg,rgba(0, 204, 10, 1) 0%, rgba(82, 235, 255, 1) 100%);
 
+    --color-card-purpure: #f9f4ff;
+    --color-card-blue: #dfecff;
+    --color-card-green: #f9f4ff;
+    --color-card-red: #f9f4ff;
+
     /* Отступы */
     --padding-lr-container-desktop: 1.25em; /* 20px */
     --padding-lr-container-tablet: 1em; /* 16px */
@@ -47,11 +53,11 @@
     --padding-tb-container-tablet: 3.125rem; /* 50px */
     --padding-tb-container-mobile: 1.875rem; /* 30px */
 
-    --margin-bottom-title-desktop: 40px;
-    --margin-bottom-title-mobile: 20px;
+    --margin-bottom-title-desktop: 20px;
+    --margin-bottom-title-mobile: 15px;
 
-    --margin-bottom-descr-desktop: 20px;
-    --margin-bottom-descr-mobile: 15px;
+    --margin-bottom-descr-desktop: 40px;
+    --margin-bottom-descr-mobile: 20px;
     
     /* Размеры */
     --breakpoint-page-desktop: 87.5rem; /* 1400 px */
