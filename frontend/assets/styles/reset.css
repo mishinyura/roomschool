@@ -17,6 +17,8 @@
     --color-bg-purpure-linear-gradient: linear-gradient(236deg,rgba(255, 230, 230, 1) 0%, rgba(195, 185, 223, 1) 100%);
     --color-bg-blue-purpure-light-gradient: linear-gradient(318deg,rgb(213, 231, 255) 0%, rgb(238, 218, 255) 100%);
 
+    --color-bg-blue-purpure-linear-gradient2: linear-gradient(135deg, rgb(138, 209, 253) 0%, rgb(195, 185, 223) 100%);
+
 
     --color-text-black: #000;
     --color-text-blue: #0AA6D7;
@@ -28,9 +30,11 @@
 
     --color-action-blue: #0AA6D7;
     --color-action-dark-blue: #147fa0;
+    --color-action-white: #fff;
 
-    --color-btn-blue: #0AA6D7;
+    --color-btn-blue: #8ad1fd;
     --color-btn-white: #fff;
+    --color-btn-white-transparent: rgba(255, 255, 255, 0.5);
     --color-btn-blue-purpure-gradient: linear-gradient(318deg,rgba(82, 157, 255, 1) 0%, rgba(163, 71, 255, 1) 100%);
     --colot-btn-green-blue-gradient: linear-gradient(117deg,rgba(0, 204, 10, 1) 0%, rgba(82, 235, 255, 1) 100%);
 
