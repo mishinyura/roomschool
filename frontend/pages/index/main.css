@@ -67,67 +67,35 @@ class hero
 _____________
 */
 .hero {
-  position: relative;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   min-height: 100vh;
-  box-sizing: border-box;
-  background: url('../../assets/media/images/paint-shape.png'), url('../../assets/media/images/AI5.png'), var(--color-bg-blue-purpure-linear-gradient2);
+  background:
+    url('../../assets/media/images/AI5.png'),
+    url('../../assets/media/images/paint-shape.png'),
+    var(--color-bg-blue-purpure-linear-gradient2);
   background-size: 40%, 40%, 100%;
   background-repeat: no-repeat, no-repeat, no-repeat;
-  background-position: 70% 80%, 85% center, center;
-}
+  background-position: 85% center, 70% 80%, center;
 
-.hero::before {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 50%;
-  height: 100%;
-  background: var(--color-bg-blue-radial-gradient);
-  /* content: ''; */
-  clip-path: polygon(0 0,
-      100% 0,
-      100% 100%,
-      100% 40%,
-      0 100%);
-}
+  /* 992 px */
+  @media (max-width: 62rem) {
+    background-size: 80%, 50%, 100%;
+    background-position: 85% center, center 15%, center;
+  }
 
-.hero::after {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 50%;
-  height: 100%;
-  background: var(--color-bg-purpure-radial-gradient);
-  /* content: ''; */
-  clip-path: polygon(0 0,
-      /* левый верхний */
-      100% -20px,
-      /* правый верхний */
-      100% 100%,
-      /* правый нижний */
-      100% 100%,
-      /* точка сдвига для левого нижнего */
-      0 40%
-      /* сдвинутая точка левее и выше нижнего угла */
-    );
-}
-
-.hero__particles {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
+  /* 576 px */
+  @media (max-width: 36rem) {
+    align-items: flex-start;
+    background-size: 100%;
+    background-position: center 92%, center 15%, center;
+  }
 }
 
 .hero__container {
-  position: relative;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  height: 80%;
+  align-items: center;
   max-width: var(--max-width-container-desktop);
   margin: auto;
   padding: 130px var(--padding-lr-container-desktop) var(--padding-tb-container-desktop);
@@ -145,6 +113,7 @@ _____________
 
   /* 992 px */
   @media (max-width: 62rem) {
+    justify-content: center;
     max-width: var(--max-width-container-smartphone);
   }
 
@@ -156,30 +125,8 @@ _____________
 
   /* 576 px */
   @media (max-width: 36rem) {
-    align-items: center;
     max-width: 100%;
-  }
-}
-
-.hero__container::before {
-  position: absolute;
-  right: 0;
-  top: -30px;
-  width: 50%;
-  height: 100%;
-  background: url('../../assets/media/images/AI5.png');
-  background-size: contain, 40%;
-  background-repeat: no-repeat, no-repeat;
-  background-position: 75% center;
-  /* content: ''; */
-  z-index: 1;
-
-  /* 576 px */
-  @media (max-width: 36rem) {
-    right: 35px;
-    top: -125px;
-    width: 72%;
-    filter: opacity(.1);
+    margin: 0;
   }
 }
 
@@ -188,6 +135,18 @@ _____________
   padding: 2em;
   border-radius: var(--radius-lg);
   background-color: var(--color-bg-black-transparent);
+
+  /* 992 px */
+  @media (max-width: 62rem) {
+    max-width: initial;
+    backdrop-filter: blur(5px) saturate(120%);
+    -webkit-backdrop-filter: blur(5px) saturate(120%);
+  }
+
+  /* 576 px */
+  @media (max-width: 36rem) {
+    text-align: center;
+  }
 }
 
 .hero__label {
@@ -200,6 +159,11 @@ _____________
   font-size: var(--font-size-text-min);
   font-weight: 400;
   color: var(--color-text-blue);
+
+  /* 992 px */
+  @media (max-width: 62rem) {
+    margin-bottom: 20px;
+  }
 }
 
 .hero__title {
@@ -218,33 +182,20 @@ _____________
 
   /* 992 px */
   @media (max-width: 62rem) {
+    margin-bottom: 30px;
     font-size: var(--font-size-title-md);
-  }
-
-  /* 768 px */
-  @media (max-width: 48rem) {
-    margin-bottom: var(--margin-bottom-title-mobile);
   }
 
   /* 576 px */
   @media (max-width: 36rem) {
-    max-width: 80%;
     text-align: center;
-    font-size: var(--font-size-title-md);
+    font-size: var(--font-size-title-sm);
   }
 }
 
 .hero__title span {
   color: var(--color-text-blue);
 }
-
-/* .hero__title::after {
-  position: absolute;
-  right: -70px;
-  top: 0;
-  content: url('../../assets/media/images/rocket.png');
-  z-index: 1;
-} */
 
 .hero__descr {
   position: relative;
@@ -260,10 +211,16 @@ _____________
     font-size: var(--font-size-text-md);
   }
 
+  /* 992 px */
+  @media (max-width: 62rem) {
+    margin-bottom: 50px;
+  }
+
   /* 576 px */
   @media (max-width: 36rem) {
-    max-width: 80%;
+    margin-bottom: 30px;
     text-align: center;
+    font-size: var(--font-size-text-sm);
   }
 }
 
@@ -274,15 +231,24 @@ _____________
   font-size: var(--font-size-text-sm);
   font-weight: 500;
   transition: box-shadow .1s;
+
+  /* 576 px */
+  @media (max-width: 36rem) {
+    display: block;
+    margin: auto;
+  }
 }
 
 .hero__btn_start {
-
   margin-right: 20px;
-
   background: var(--color-btn-blue);
-
   z-index: 1;
+
+  /* 576 px */
+  @media (max-width: 36rem) {
+    margin-right: auto;
+    margin-bottom: 10px;
+  }
 }
 
 .hero__btn_start:hover {
@@ -876,12 +842,14 @@ _____________
   font-size: var(--font-size-text-md);
   font-weight: 400;
 }
-.courses__btns{
+
+.courses__btns {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
 }
+
 .courses__btn {
   width: fit-content;
   padding: .7em 1.2em;
@@ -892,7 +860,7 @@ _____________
   font-weight: 500;
   transition: background-color .1s;
 
-   /* 1400 px */
+  /* 1400 px */
   @media (max-width: 87.5rem) {
     font-size: var(--font-size-text-xs);
   }
@@ -1052,9 +1020,11 @@ _____________
 .course__link:hover {
   color: var(--color-action-blue);
 }
-.course__link:focus-visible  {
+
+.course__link:focus-visible {
   color: var(--color-action-blue);
 }
+
 .course__description {
   flex-grow: 1;
   display: -webkit-box;
@@ -1110,6 +1080,7 @@ _____________
   -ms-user-select: none;
   user-select: none
 }
+
 .course__level_purpure {
   background-color: var(--color-level-purpure);
 }
@@ -1183,14 +1154,14 @@ _____________
   color: var(--color-text-white);
 }
 
-.course__btn:focus-visible  {
+.course__btn:focus-visible {
   transform: translateX(-15px);
   box-shadow: 10px 0 10px 0 rgba(0, 0, 0, 0.2);
   background-color: var(--color-action-dark-blue);
   color: var(--color-text-white);
 }
 
-.course__btn:active  {
+.course__btn:active {
   transform: translateX(-15px) translateY(2px);
   background-color: var(--color-action-dark-blue);
   color: var(--color-text-white);
