@@ -94,7 +94,7 @@
         </symbol>
     </svg>
     <div class="notifications"></div>
-    <div class="hero__particles" id="particles-js"></div>
+    <!-- <div class="hero__particles" id="particles-js"></div> -->
     <header class="header">
         <div class="header__container">
             <a href="#" class="header__logo">
@@ -322,7 +322,7 @@
                 </div>
             </div>
         </section>
-        <section class="main__section advantages">
+        <!-- <section class="main__section advantages">
             <div class="advantages__container">
                 <h2 class="advantages__title">
                     Что мы можем сделать для вас?
@@ -396,7 +396,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
         <section class="main__section courses">
             <div class="courses__container">
                 <div class="courses__head">
@@ -407,47 +407,192 @@
                         Выберите курс и начните свой путь к новой профессии уже сегодня. Все курсы разработаны
                         экспертами индустрии
                     </p>
-                    <a href="" class="courses__btn courses__btn_all">Посмотреть все</a>
-                    <button class="courses__btn courses__btn_callback">Узнать больше</button>
+                    <div class="courses__btns">
+                        <a href="" class="courses__btn courses__btn_all">Посмотреть все</a>
+                        <button class="courses__btn courses__btn_callback">Узнать больше</button>
+                    </div>
                 </div>
                 <div class="courses__list course">
-                    <article class="course__item course__item_purpure">
+                    <article class="course__item course__item_purpure" itemscope itemtype="https://schema.org/Product">
+                        <meta itemprop="brand" content="RoomSchool">
                         <div class="course__info">
                             <span class="course__label course__label_popular">
                                 Популярный
                             </span>
-                            <div class="course__icon">
-                                <img src="../../assets/icons/like.svg" alt="">
+                            <div class="course__icon course__icon_purpure">
+                                <img src="../../assets/media/icons/like.svg" alt="">
                             </div>
-                            <h3 class="course__title">
-                                <a href="" class="course__link">
+                            <h3 class="course__title" itemprop="name">
+                                <a href="" class="course__link" tabindex="0">
                                     Эмоциональная грамотность
                                 </a>
                             </h3>
                             <p class="course__description">
                                 Научитесь понимать и управлять эмоциями, развивайте эмпатию и навыки общения
                             </p>
-                            <span class="course__rating">
-                                4.9
-                            </span>
-                            <span class="course__hours">
-                                40
-                            </span>
+                            <div class="course__stats" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                                <span class="course__rating rating-course" itemprop="ratingValue">
+                                    4.9
+                                </span>
+                                <span class="course__hours stats-course__hours">
+                                    40
+                                </span>
+                            </div>
                             <span class="course__level">
                                 Новичок
                             </span>
                         </div>
                         <div class="course__control">
-                            <span class="course__price course__price_new">
-                                990
+                            <div class="course__prices">
+                                <span class="course__price course__price_new" itemprop="price" content="990">
+                                    990
+                                </span>
+                                <span class="course__price course__price_old">
+                                    1990
+                                </span>
+                                <span class="course__period">
+                                    в месяц
+                                </span>
+                            </div>
+                            <button class="course__btn" tabindex="0">
+                                Поступить
+                            </button>
+                        </div>
+                    </article>
+                    <article class="course__item course__item_blue" itemscope itemtype="https://schema.org/Product">
+                        <meta itemprop="brand" content="RoomSchool">
+                        <div class="course__info">
+                            <span class="course__label course__label_recommendation">
+                                Рекомендуем
                             </span>
-                            <span class="course__price course__price_old">
-                                1990
+                            <div class="course__icon course__icon_blue">
+                                <img src="../../assets/media/icons/like.svg" alt="">
+                            </div>
+                            <h3 class="course__title" itemprop="name">
+                                <a href="" class="course__link" tabindex="0">
+                                    Правовая грамотность
+                                </a>
+                            </h3>
+                            <p class="course__description">
+                                Изучите основы права, защитите свои интересы и избегайте правовых ошибок
+                            </p>
+                            <div class="course__stats" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                                <span class="course__rating rating-course" itemprop="ratingValue">
+                                    4.9
+                                </span>
+                                <span class="course__hours stats-course__hours">
+                                    40
+                                </span>
+                            </div>
+                            <span class="course__level">
+                                Новичок
                             </span>
-                            <span class="course__period">
-                                в месяц
+                        </div>
+                        <div class="course__control">
+                            <div class="course__prices">
+                                <span class="course__price course__price_new" itemprop="price" content="990">
+                                    990
+                                </span>
+                                <span class="course__price course__price_old">
+                                    1990
+                                </span>
+                                <span class="course__period">
+                                    в месяц
+                                </span>
+                            </div>
+                            <button class="course__btn" tabindex="0">
+                                Поступить
+                            </button>
+                        </div>
+                    </article>
+                    <article class="course__item course__item_green" itemscope itemtype="https://schema.org/Product">
+                        <meta itemprop="brand" content="RoomSchool">
+                        <div class="course__info">
+                            <span class="course__label course__label_new">
+                                Новый
                             </span>
-                            <button class="course__btn">
+                            <div class="course__icon course__icon_green">
+                                <img src="../../assets/media/icons/like.svg" alt="">
+                            </div>
+                            <h3 class="course__title" itemprop="name">
+                                <a href="" class="course__link" tabindex="0">
+                                    Основы программирования
+                                </a>
+                            </h3>
+                            <p class="course__description">
+                                Познакомьтесь с миром программирования и создайте свои первые проекты на одном из самых популярных языков программирования
+                            </p>
+                            <div class="course__stats" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                                <span class="course__rating rating-course" itemprop="ratingValue">
+                                    5
+                                </span>
+                                <span class="course__hours stats-course__hours">
+                                    50
+                                </span>
+                            </div>
+                            <span class="course__level">
+                                Новичок
+                            </span>
+                        </div>
+                        <div class="course__control">
+                            <div class="course__prices">
+                                <span class="course__price course__price_new" itemprop="price" content="990">
+                                    480
+                                </span>
+                                <span class="course__price course__price_old">
+                                    1990
+                                </span>
+                                <span class="course__period">
+                                    в месяц
+                                </span>
+                            </div>
+                            <button class="course__btn" tabindex="0">
+                                Поступить
+                            </button>
+                        </div>
+                    </article>
+                    <article class="course__item course__item_red" itemscope itemtype="https://schema.org/Product">
+                        <meta itemprop="brand" content="RoomSchool">
+                        <div class="course__info">
+                            <span class="course__label course__label_popular">
+                                Популярный
+                            </span>
+                            <div class="course__icon course__icon_red">
+                                <img src="../../assets/media/icons/like.svg" alt="">
+                            </div>
+                            <h3 class="course__title" itemprop="name">
+                                <a href="" class="course__link" tabindex="0">
+                                    Разработка веб-сайтов
+                                </a>
+                            </h3>
+                            <p class="course__description">
+                                Научитесь понимать и управлять эмоциями, развивайте эмпатию и навыки общения
+                            </p>
+                            <div class="course__stats" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                                <span class="course__rating rating-course" itemprop="ratingValue">
+                                    4.9
+                                </span>
+                                <span class="course__hours stats-course__hours">
+                                    40
+                                </span>
+                            </div>
+                            <span class="course__level">
+                                Продвинутый
+                            </span>
+                        </div>
+                        <div class="course__control">
+                            <div class="course__prices">
+                                <span class="course__price course__price_new" itemprop="price" content="990">
+                                    990
+                                </span>
+                                <span class="course__price course__price_old">
+                                    1990
+                                </span>
+                                <span class="course__period">
+                                    в месяц
+                                </span>
+                            </div>
+                            <button class="course__btn" tabindex="0">
                                 Поступить
                             </button>
                         </div>

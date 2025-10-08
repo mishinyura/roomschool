@@ -1,6 +1,8 @@
 :root{
     /*--свойство-предмет-модификация*/
     /* Цвета */
+
+    /* Основные фоны для блоков и страниц */
     --color-bg-white: #fff;
     --color-bg-grey: #f8f8f8;
     --color-bg-wight: #fff;
@@ -20,7 +22,7 @@
 
     --color-bg-blue-purpure-linear-gradient2: linear-gradient(135deg, rgb(138, 209, 253) 0%, rgb(195, 185, 223) 100%);
 
-
+    /* Сцет текста */
     --color-text-black: #000;
     --color-text-blue: #46d1fb;
     --color-text-grey: #7c7c7c;
@@ -29,20 +31,36 @@
     --color-text-red: #de2d2d;
     --color-text-purpure: #9436ff;
 
+    /* hover, active, focus эффекты */
     --color-action-blue: #0AA6D7;
-    --color-action-dark-blue: #147fa0;
+    --color-action-dark-blue: #009dcd;
     --color-action-white: #fff;
 
+    /* Фоны для кнопок */
     --color-btn-blue: #8ad1fd;
     --color-btn-white: #fff;
     --color-btn-white-transparent: rgba(255, 255, 255, 0.5);
-    --color-btn-blue-purpure-gradient: linear-gradient(318deg,rgba(82, 157, 255, 1) 0%, rgba(163, 71, 255, 1) 100%);
-    --colot-btn-green-blue-gradient: linear-gradient(117deg,rgba(0, 204, 10, 1) 0%, rgba(82, 235, 255, 1) 100%);
 
+    /* Фон для лейблов, отметок (Новый, топ, продвинутый и тд) */
+    --color-label-blue-purpure-gradient: linear-gradient(90deg,rgba(112, 174, 255, 1) 0%, rgba(191, 128, 255, 1) 100%);
+    --color-label-green-blue-gradient: linear-gradient(90deg,rgba(0, 204, 10, 1) 0%, rgba(82, 235, 255, 1) 100%);
+    --color-label-red-orange-gradient: linear-gradient(93deg,rgba(255, 84, 84, 1) 0%, rgba(255, 226, 5, 1) 100%);
+    --color-label-grey: #d0d0d090;
+
+    /* Фон отдельных карточек */
     --color-card-purpure: #f9f4ff;
-    --color-card-blue: #dfecff;
-    --color-card-green: #f9f4ff;
-    --color-card-red: #f9f4ff;
+    --color-card-blue: #eff5fe;
+    --color-card-green: #e9fff5;
+    --color-card-red: #ffefef;
+
+    /* Фоны или цвета для иконок */
+    --color-icon-blue: #34a7ee;
+    --color-icon-purpure: #946dff;
+    --color-icon-green: #37d144;
+    --color-icon-red: #de2d2d;
+
+    --color-message-green: #7cffb9;
+    --color-message-yellow: #fff6bd;
 
     /* Отступы */
     --padding-lr-container-desktop: 1.25em; /* 20px */
@@ -85,6 +103,7 @@
     --border-red: 1px solid var(--color-bg-red);
 
     --shadow-classic: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+    --shadow-podium: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
     
     /* Шрифты */
     --font-family-montserrat: 'Montserrat', Arial, sans-serif;

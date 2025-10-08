@@ -1,3 +1,53 @@
+
+/* 1400 px */
+@media (max-width: 87.5rem) {}
+
+/* 1200 px */
+@media (max-width: 75rem) {}
+
+/* 992 px */
+@media (max-width: 62rem) {}
+
+/* 768 px */
+@media (max-width: 48rem) {}
+
+/* 576 px */
+@media (max-width: 36rem) {}
+
+/* 
+_____________
+Подсказка
+_____________
+*/
+*[data-tip]{
+  position: relative;
+}
+*[data-tip]:after {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: max-content;
+  max-width: 300px;
+  padding: 2em;
+  opacity: 0;
+  visibility: hidden;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-classic);
+  font-family: var(--font-family-montserrat);
+  font-size: var(--font-size-text-min);
+  font-weight: 400;
+  background-color: var(--color-message-yellow);
+  content: attr(data-tip);
+  transition: opacity .2s, visibility .2s;
+}
+*[data-tip=""]::after {
+  display: none;
+}
+*[data-tip]:hover::after{
+  opacity: 1;
+  visibility: visible;
+}
+
 /* 
 _____________
 notifications
@@ -219,16 +269,17 @@ _____________
     align-items: center;
     gap: 5px;
     font-family: var(--font-family-montserrat);
-    font-size: var(--font-size-text-xs);
-    font-weight: 500;
+    font-size: var(--font-size-text-min);
+    font-weight: 400;
+    color: var(--color-text-grey);
 }
 
 .stats-course__videos::before,
 .stats-course__hours::before,
 .rating-course::before,
 .testes-course::before {
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
