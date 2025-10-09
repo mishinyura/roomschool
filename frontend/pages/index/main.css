@@ -1208,6 +1208,193 @@ _____________
 }
 
 
+/* 
+_____________
+Секция новостей и блога
+_____________
+*/
+.reviews {
+}
+
+.reviews__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: var(--max-width-container-desktop);
+  margin: auto;
+  padding: var(--padding-tb-container-desktop) var(--padding-lr-container-desktop);
+
+
+  /* 1400 px */
+  @media (max-width: 87.5rem) {
+    max-width: var(--max-width-container-laptop)
+  }
+
+  /* 1200 px */
+  @media (max-width: 75rem) {
+    max-width: var(--max-width-container-tablet);
+    padding: var(--padding-tb-container-tablet) var(--padding-lr-container-tablet);
+  }
+
+  /* 992 px */
+  @media (max-width: 62rem) {
+    max-width: var(--max-width-container-smartphone);
+  }
+
+  /* 768 px */
+  @media (max-width: 48rem) {
+    max-width: var(--max-width-container-mobile);
+    padding: var(--padding-tb-container-mobile) var(--padding-lr-container-mobile);
+  }
+
+  /* 576 px */
+  @media (max-width: 36rem) {
+    max-width: 100%;
+  }
+}
+.reviews__head{
+  max-width: 60%;
+  margin-bottom: var(--margin-bottom-descr-desktop);
+}
+.reviews__title{
+  margin-bottom: var(--margin-bottom-title-desktop);
+  text-align: center;
+  font-family: var(--font-family-montserrat);
+  font-size: var(--font-size-title-sm);
+  font-weight: 500;
+}
+
+.reviews__description{
+  text-align: center;
+  font-family: var(--font-family-montserrat);
+  font-size: var(--font-size-text-sm);
+}
+.reviews__content{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.reviews__text{
+   flex-basis: 50%;
+}
+.reviews__subtitle{
+  margin-bottom: 18px;
+  font-family: var(--font-family-montserrat);
+  font-size: var(--font-size-title-sm);
+  font-weight: 500;
+}
+.reviews__subdescr{
+  margin-bottom: 20px;
+  font-family: var(--font-family-montserrat);
+  font-size: var(--font-size-text-xs);
+}
+.reviews__stats{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.reviews__count{
+  font-family: var(--font-family-montserrat);
+  font-size: var(--font-size-title-lg);
+  color: var(--color-text-blue);
+}
+
+.reviews__count::after{
+  display: block;
+  font-size: var(--font-size-text-xs);
+  color: var(--color-text-grey);
+}
+.reviews__count_avg::after{
+  content: 'Средняя оценка';
+}
+.reviews__count_percent::after{
+  content: 'Рекомендуют';
+}
+.reviews__list{
+  flex-basis: 50%;
+  position: relative;
+  padding-bottom: 40px;
+}
+.reviews__btn{
+  top: initial;
+  bottom: 0;
+  width: 25px;
+  height: 25px;
+  border: var(--border-blue);
+}
+.reviews__btn_prev::after{
+  width: 8px;
+  height: 8px;
+  border-left: var(--border-blue);
+  border-bottom: var(--border-blue);
+  transform: rotate(45deg);
+  content: '';
+}
+.reviews__btn_next::after{
+  width: 8px;
+  height: 8px;
+  border-right: var(--border-blue);
+  border-bottom: var(--border-blue);
+  transform: rotate(-45deg);
+  content: '';
+}
+.reviews__slider{
+  width: 500px;
+}
+.reviews__wrapper {
+  display: flex;
+  /* width: 100%; */
+}
+.reviews__slide{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2em;
+  box-sizing: border-box;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-bg-grey);
+}
+.reviews__rating{
+  flex-basis: 100%;
+  margin-bottom: 8px;
+}
+.reviews__course{
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 0.4em 1em;
+  border: var(--border-blue);
+  border-radius: var(--radius-max);
+  font-family: var(--font-family-montserrat);
+  font-size: var(--font-size-text-xs);
+  background-color: var(--color-label-blue);
+  color: var(--color-text-blue);
+}
+.reviews__review{
+  flex-basis: 100%;
+  margin-bottom: 20px;
+}
+.reviews__author{
+  display: inline-block;
+  margin-right: auto;
+}
+.reviews__link{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0.2em .5em;
+  border: var(--border-blue);
+  border-radius: var(--radius-md);
+  font-family: var(--font-family-montserrat);
+  font-size: var(--font-size-text-xs);
+  color: var(--color-text-blue);
+}
+.reviews__link::before{
+  content: '';
+  width: 20px;
+  height: 20px;
+  mask: url('../../assets/media/icons/link.svg') no-repeat center/contain;
+  background-color: var(--color-text-blue);
+}
+
 
 /* 
 _____________

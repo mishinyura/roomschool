@@ -46,6 +46,7 @@
     --color-label-green-blue-gradient: linear-gradient(90deg,rgba(0, 204, 10, 1) 0%, rgba(82, 235, 255, 1) 100%);
     --color-label-red-orange-gradient: linear-gradient(93deg,rgba(255, 84, 84, 1) 0%, rgba(255, 226, 5, 1) 100%);
     --color-label-grey: #d0d0d090;
+    --color-label-blue: #d6f5ff;
 
     /* Фон отдельных карточек */
     --color-card-purpure: #f9f4ff;

@@ -65,29 +65,30 @@ function main() {
         },
     });
 
-    const coursesSlider = new Swiper('.tickets', {
+    const coursesSlider = new Swiper('.reviews__slider', {
         direction: 'horizontal',
         loop: true,
-        freeMode: true,
+        speed: 400,
         spaceBetween: 40,
-        wrapperClass: 'tickets__wrapper',
-        slideClass: 'tickets__item',
-        autoplay: {
-            delay: 2500,
-            disableOnInteraction: true,
-        },
-        breakpoints: {
-            320: {
-                slidesPerView: 1
-            },
-            992: {
-                slidesPerView: 2
+        slidesPerView: 1,
+        effect: 'cube',
+        // centeredSlides: true,
 
-            },
-            1200: {
-                slidesPerView: 3
-            }
+        wrapperClass: 'reviews__wrapper',
+        slideClass: 'reviews__slide',
+        pagination: {
+            el: '.swiper-pagination',
+        },
+
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
         }
+        // autoplay: {
+        //     delay: 2500,
+        //     disableOnInteraction: true,
+        // },
     })
 
     // particlesJS.load('particles-js', '../../assets/libs/particles/particles.json', function () {
