@@ -1,4 +1,3 @@
-
 /* 1400 px */
 @media (max-width: 87.5rem) {}
 
@@ -19,9 +18,10 @@ _____________
 Подсказка
 _____________
 */
-*[data-tip]{
+*[data-tip] {
   position: relative;
 }
+
 *[data-tip]:after {
   position: absolute;
   left: 0;
@@ -40,10 +40,12 @@ _____________
   content: attr(data-tip);
   transition: opacity .2s, visibility .2s;
 }
+
 *[data-tip=""]::after {
   display: none;
 }
-*[data-tip]:hover::after{
+
+*[data-tip]:hover::after {
   opacity: 1;
   visibility: visible;
 }
@@ -252,7 +254,7 @@ _____________
   z-index: 1;
 }
 
-.rating__count::after{
+.rating__count::after {
   content: ' / 5';
 }
 
@@ -265,59 +267,59 @@ _____________
 .stats-course__hours,
 .rating-course,
 .testes-course {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    font-family: var(--font-family-montserrat);
-    font-size: var(--font-size-text-min);
-    font-weight: 400;
-    color: var(--color-text-grey);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-family-montserrat);
+  font-size: var(--font-size-text-min);
+  font-weight: 400;
+  color: var(--color-text-grey);
 }
 
 .stats-course__videos::before,
 .stats-course__hours::before,
 .rating-course::before,
 .testes-course::before {
-    width: 15px;
-    height: 15px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    content: '';
+  width: 15px;
+  height: 15px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  content: '';
 }
 
 .stats-course__videos::before {
-    background-image: url('../../assets/media/icons/videos.svg ');
+  background-image: url('../../assets/media/icons/videos.svg ');
 }
 
 .stats-course__hours::before {
-    background-image: url('../../assets/media/icons/clock.svg');
+  background-image: url('../../assets/media/icons/clock.svg');
 }
 
 .rating-course::before {
-    background-image: url('../../assets/media/icons/star.svg');
+  background-image: url('../../assets/media/icons/star.svg');
 }
 
 .testes-course::before {
-    background-image: url('../../assets/media/icons/okey.svg');
+  background-image: url('../../assets/media/icons/okey.svg');
 }
 
 .stats-course__videos::after {
-    content: 'видео';
+  content: 'видео';
 }
 
 .stats-course__hours::after {
-    content: 'ч.';
-    /* content: ''; */
+  content: 'ч.';
+  /* content: ''; */
 }
 
 .rating-course::after {
-    content: '/ 5';
+  content: '/ 5';
 }
 
 .testes-course::after {
-    /* content: 'заданий'; */
-    content: '';
+  /* content: 'заданий'; */
+  content: '';
 }
 
 /* 
@@ -666,6 +668,7 @@ _____________
 
 
 .panel {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -678,11 +681,81 @@ _____________
     left: 0;
     right: 0;
     justify-content: center;
-    gap: 30px;
+    gap: 45px;
     padding: 0.5em 1em;
     backdrop-filter: blur(16px) saturate(150%);
     -webkit-backdrop-filter: blur(16px) saturate(150%);
   }
+}
+
+.panel__form {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 2em;
+  background-color: var(--color-btn-white-transparent);
+  transform: scaleY(0) translateY(200px);
+  transition: transform .2s;
+}
+
+.panel__form.active {
+  transform: scaleY(1) translateY(0);
+}
+
+.panel__form input {
+  padding: 0.5em 1em;
+  box-sizing: border-box;
+  border: var(--border-white);
+  border-radius: var(--radius-md);
+  font-family: var(--font-family-montserrat);
+
+}
+
+.panel__label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-family-montserrat);
+  font-size: var(--font-size-text-xs);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none
+}
+
+.panel__checkbox {
+  display: none;
+}
+
+.panel__checkbox+span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border: var(--border-grey);
+  border-radius: var(--radius-max);
+}
+
+.panel__checkbox+span::before {
+  width: 14px;
+  height: 14px;
+  border-radius: var(--radius-max);
+  background-color: var(--color-action-blue);
+  content: '';
+  transform: scale(0);
+  transition: transform .1s;
+}
+
+.panel__checkbox:checked+span::before {
+  transform: scale(1);
 }
 
 .panel__btn {
@@ -693,37 +766,44 @@ _____________
   min-height: 30px;
   border-radius: var(--radius-max);
   box-sizing: border-box;
-  background-repeat: no-repeat;
+  background-color: #000;
   background-size: 20px;
-  background-position: center;
   transition: background .1s;
 
   /* 576 px */
   @media (max-width: 36rem) {
-    width: 60px;
-    height: 60px;
+    min-width: 60px;
+    min-height: 60px;
+    background-size: 60px;
   }
 }
 
-.panel__btn svg {
-  width: 100%;
-  height: 100%;
+.panel__btn:hover {
+  background-color: var(--color-action-white);
+}
+
+.panel__btn:focus-visible {
+  background-color: var(--color-action-white);
 }
 
 .panel__btn_chat {
   padding: 0.5em 1em;
-  border: var(--border-grey);
+  border: var(--border-white);
   border-radius: var(--radius-md);
-  background: var(--color-btn-blue);
-  background: var(--color-btn-white-transparent);
+  background-color: var(--color-btn-white-transparent);
+
+  /* 768 px */
+  @media (max-width: 48rem) {
+    padding: 0;
+    border-radius: 0;
+
+    mask: url('../../assets/media/icons/chat.svg') no-repeat center/contain;
+  }
 
   /* 576 px */
   @media (max-width: 36rem) {
+    order: 1;
     width: 60px;
-    padding: 0;
-    border-radius: 0;
-    background-color: transparent;
-    background-image: url('../../assets/media/icons/chat.svg');
   }
 }
 
@@ -732,20 +812,30 @@ _____________
   border-color: transparent;
 }
 
-.panel__btn:hover{
-  background-color: var(--color-action-white);
+.header.scrolled .panel__btn_chat:hover {
+  background-color: var(--color-action-blue);
 }
 
-.header.scrolled .panel__btn_chat:hover{
+.header.scrolled .panel__btn_chat:focus-visible {
   background-color: var(--color-action-blue);
 }
 
 .panel__btn_search {
-  background-image: url('../../assets/media/icons/search.svg');
+  mask: url('../../assets/media/icons/search.svg') no-repeat center/contain;
+
+  /* 576 px */
+  @media (max-width: 36rem) {
+    order: 2;
+  }
 }
 
 .panel__btn_login {
-  background-image: url('../../assets/media/icons/log-in.svg');
+  mask: url('../../assets/media/icons/log-in.svg') no-repeat center/contain;
+
+  /* 576 px */
+  @media (max-width: 36rem) {
+    order: 3;
+  }
 }
 
 .panel__btn-text {
@@ -753,8 +843,8 @@ _____________
   font-size: var(--font-size-text-sm);
   font-weight: 500;
 
-  /* 576 px */
-  @media (max-width: 36rem) {
+  /* 768 px */
+  @media (max-width: 48rem) {
     display: none;
   }
 }
@@ -762,8 +852,6 @@ _____________
 .panel__btn_burger {
   position: relative;
   display: none;
-  width: 30px;
-  height: 30px;
 
   /* 768 px */
   @media (max-width: 48rem) {
@@ -774,15 +862,17 @@ _____________
   @media (max-width: 36rem) {
     width: 60px;
     height: 60px;
+    order: 4;
   }
 }
 
 .panel__btn_burger span {
   position: absolute;
   top: 50%;
-  left: 0;
+  left: 17%;
   right: 0;
-  height: 5px;
+  width: 70%;
+  height: 2px;
   border-radius: var(--radius-lg);
   background-color: #000;
   transition: background-color .2s, transform .2s;
@@ -790,10 +880,10 @@ _____________
 
 .panel__btn_burger::before {
   position: absolute;
-  top: 10%;
-  left: 0;
-  width: 50%;
-  height: 5px;
+  top: 30%;
+  left: 10%;
+  width: 30%;
+  height: 2px;
   border-radius: var(--radius-lg);
   background-color: #000;
   content: '';
@@ -802,10 +892,10 @@ _____________
 
 .panel__btn_burger::after {
   position: absolute;
-  top: 90%;
-  right: 0;
-  width: 50%;
-  height: 5px;
+  top: 70%;
+  right: 10%;
+  width: 30%;
+  height: 2px;
   border-radius: var(--radius-lg);
   background-color: #000;
   content: '';
@@ -819,14 +909,14 @@ _____________
 
 .panel__btn_burger.open::before {
   top: 50%;
-  width: 100%;
+  width: 80%;
   transform: rotate(45deg);
   transition: top .2s .15s, width .2s, transform .2s;
 }
 
 .panel__btn_burger.open::after {
   top: 50%;
-  width: 100%;
+  width: 80%;
   transform: rotate(-45deg);
   transition: top .2s .15s, width .2s, transform .2s;
 }

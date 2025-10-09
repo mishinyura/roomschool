@@ -101,6 +101,7 @@
     --border-black: 1px solid black;
     --border-grey: 1px solid #cbcbcb;
     --border-red: 1px solid var(--color-bg-red);
+    --border-white: 1px solid #fff;
 
     --shadow-classic: 0 0 15px 0 rgba(0, 0, 0, 0.2);
     --shadow-podium: 0 5px 10px 0 rgba(0, 0, 0, 0.1);

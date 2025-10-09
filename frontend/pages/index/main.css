@@ -255,11 +255,19 @@ _____________
   box-shadow: 0 0 10px 0px rgba(82, 157, 255, 1);
 }
 
+.hero__btn_start:focus-visible {
+  box-shadow: 0 0 10px 0px rgba(82, 157, 255, 1);
+}
+
 .hero__btn_callback {
   background-color: var(--color-btn-white-transparent);
 }
 
 .hero__btn_callback:hover {
+  box-shadow: 0 0 10px 0px rgb(222, 236, 255);
+}
+
+.hero__btn_callback:focus-visible {
   box-shadow: 0 0 10px 0px rgb(222, 236, 255);
 }
 

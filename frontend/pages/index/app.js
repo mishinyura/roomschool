@@ -19,7 +19,51 @@ function main() {
     //     obj: '.callback__select',
     // })
 
-    const header = new Header('.header')
+    // const header = new Header('.header')
+
+    const header = new Header({
+        elements: {
+            header: ".header",
+            burger: "#burger",
+            searchBtn: ".panel__btn_search",
+            searchInput: ".panel__form",
+            chatBtn: ".header__chat-btn",
+        },
+
+        handlers: {
+            header: {
+                target: 'window',
+                event: "scroll",
+                callback() {
+                    this.onScroll();
+                }
+            },
+            burger: {
+                event: "click",
+                callback() {
+                    this.toggleMenu();
+                },
+            },
+            searchBtn: {
+                event: "click",
+                callback() {
+                    this.toggleSearch();
+                },
+            },
+            searchInput: {
+                event: "input",
+                callback(e) {
+                    this.searchData();
+                },
+            },
+            chatBtn: {
+                event: "click",
+                callback() {
+                    this.handleChat();
+                },
+            },
+        },
+    });
 
     const coursesSlider = new Swiper('.tickets', {
         direction: 'horizontal',
@@ -46,9 +90,9 @@ function main() {
         }
     })
 
-    particlesJS.load('particles-js', '../../assets/libs/particles/particles.json', function () {
-        console.log('callback - particles.js config loaded');
-    });
+    // particlesJS.load('particles-js', '../../assets/libs/particles/particles.json', function () {
+    //     console.log('callback - particles.js config loaded');
+    // });
 
 }
 
