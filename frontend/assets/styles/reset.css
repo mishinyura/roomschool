@@ -62,6 +62,8 @@
     --color-message-green: #7cffb9;
     --color-message-yellow: #fff6bd;
 
+    --color-form-white-transparent: rgba(255, 255, 255, 0.2);
+
     /* Отступы */
     --padding-lr-container-desktop: 1.25em; /* 20px */
     --padding-lr-container-tablet: 1em; /* 16px */
@@ -100,7 +102,7 @@
     --border-blue: 1px solid #0AA6D7;
     --border-black: 1px solid black;
     --border-grey: 1px solid #cbcbcb;
-    --border-red: 1px solid var(--color-bg-red);
+    --border-red: 1px solid #de2d2d;
     --border-white: 1px solid #fff;
 
     --shadow-classic: 0 0 15px 0 rgba(0, 0, 0, 0.2);

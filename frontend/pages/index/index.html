@@ -442,7 +442,8 @@
                             <p class="course__description">
                                 Научитесь понимать и управлять эмоциями, развивайте эмпатию и навыки общения
                             </p>
-                            <div class="course__stats" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                            <div class="course__stats" itemprop="aggregateRating" itemscope
+                                itemtype="https://schema.org/AggregateRating">
                                 <span class="course__rating rating-course" itemprop="ratingValue">
                                     4.9
                                 </span>
@@ -488,7 +489,8 @@
                             <p class="course__description">
                                 Изучите основы права, защитите свои интересы и избегайте правовых ошибок
                             </p>
-                            <div class="course__stats" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                            <div class="course__stats" itemprop="aggregateRating" itemscope
+                                itemtype="https://schema.org/AggregateRating">
                                 <span class="course__rating rating-course" itemprop="ratingValue">
                                     4.9
                                 </span>
@@ -532,9 +534,11 @@
                                 </a>
                             </h3>
                             <p class="course__description">
-                                Познакомьтесь с миром программирования и создайте свои первые проекты на одном из самых популярных языков программирования
+                                Познакомьтесь с миром программирования и создайте свои первые проекты на одном из самых
+                                популярных языков программирования
                             </p>
-                            <div class="course__stats" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                            <div class="course__stats" itemprop="aggregateRating" itemscope
+                                itemtype="https://schema.org/AggregateRating">
                                 <span class="course__rating rating-course" itemprop="ratingValue">
                                     5
                                 </span>
@@ -580,7 +584,8 @@
                             <p class="course__description">
                                 Научитесь понимать и управлять эмоциями, развивайте эмпатию и навыки общения
                             </p>
-                            <div class="course__stats" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                            <div class="course__stats" itemprop="aggregateRating" itemscope
+                                itemtype="https://schema.org/AggregateRating">
                                 <span class="course__rating rating-course" itemprop="ratingValue">
                                     4.9
                                 </span>
@@ -714,11 +719,13 @@
                 </div>
             </div>
         </section>
-        <section class="main__section callback">
+    </main>
+    <footer class="footer">
+        <div class="footer__form callback">
             <div class="callback__container">
-                <h2 class="callback__title">
+                <h3 class="callback__title">
                     Оставьте Ваш телефон для связи
-                </h2>
+                </h3>
                 <p class="callback__description">
                     Менеджер свяжется с вами в ближайшие 30 минут
                 </p>
@@ -732,14 +739,14 @@
                     </label>
                     <div class="callback__select">
                         <label class="callback__wrapper">
-                            <input class="callback__input" name="method" type="text" value="По телефону"
-                                data-validate="select" data-method="phone" readonly>
+                            <input class="callback__input" name="method" type="text" data-validate="select"
+                                data-method="phone" readonly placeholder="Способ связи">
                         </label>
                         <ul class="callback__list">
                             <li class="callback__item" data-method="telegram">
                                 Telegram
                             </li>
-                            <li class="callback__item selected" data-method="phone">
+                            <li class="callback__item" data-method="phone">
                                 По телефону
                             </li>
                             <li class="callback__item" data-method="whatsapp">
@@ -752,20 +759,17 @@
                     </button>
                 </form>
             </div>
-        </section>
-    </main>
-    <!-- <footer class="footer">
-        <div class="footer__container">
-            <div class="footer__head">
-                <div class="footer__text">
-                    <h3 class="footer__title">
-                        Ищите что-то большее?
-                    </h3>
-                    <p class="footer__description">
-                        Еще больше полезной информации мы оставляем в наших социальных сетях или по телефону
-                    </p>
-                </div>
-                <ul class="footer__list socials">
+        </div>
+        <div class="footer__more connection">
+            <div class="connection__container">
+                <h3 class="connection__title">
+                    Ищите что-то большее?
+                </h3>
+                <p class="connection__description">
+                    Еще больше полезной информации мы оставляем в наших социальных сетях или по телефону
+                </p>
+
+                <ul class="connection__list socials">
                     <li class="socials__item">
                         <a class="socials__link socials__link_black" href="#" tabindex="0">
                             <svg class="socials__svg" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -796,7 +800,9 @@
                     </li>
                 </ul>
             </div>
-            <nav class="footer__nav bottommenu">
+        </div>
+        <nav class="footer__nav bottommenu">
+            <div class="bottommenu__container">
                 <div class="bottommenu__wrapper">
                     <h4 class="bottommenu__title">
                         Документы
@@ -903,19 +909,21 @@
                         </li>
                     </ul>
                 </div>
-            </nav>
-            <div class="footer__copyright">
-                <p class="footer__warning">
+            </div>
+        </nav>
+        <div class="footer__copy copyright">
+            <div class="copyright__container">
+                <p class="copyright__warning">
                     © <span id="year">2025</span> ООО «РУМСКУЛ». Все права защищены.
                 </p>
-                <p class="footer__alert">
+                <p class="copyright__alert">
                     Компания запрещает любое копирование текста, элементов дизайна и кода.
                     Все запросы и действия логируются и ограничиваются для предотвращения парсинга
                     или других несанкционированных действий, нарушающих действующее законодательство РФ.
                 </p>
             </div>
         </div>
-    </footer> -->
+    </footer>
 </body>
 
 </html>

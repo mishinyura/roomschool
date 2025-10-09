@@ -9,11 +9,11 @@ function main() {
     new InputMask('#inputPhoneNumber')
     const formCallback = new Form('callback__form')
 
-    // const selectCallback = new Select({
-    //     obj: '.callback__select',
-    //     input: '.callback__wrapper',
-    //     options: '.callback__item'
-    // })
+    const selectCallback = new Select({
+        obj: '.callback__select',
+        input: '.callback__wrapper',
+        options: '.callback__item'
+    })
 
     // const selectCallback = new Select({
     //     obj: '.callback__select',
