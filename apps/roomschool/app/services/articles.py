@@ -23,14 +23,14 @@ class ArticleServices:
             raise PostNotFoundError
 
         print(post.__dict__)
-        return ArticleOutClient.model_validate(post)
+        return ArticleOutClient.model_validate(post, from_attributes=True)
 
     async def get_all_posts(self, session: AsyncSession) -> List[ArticleOutClient]:
         posts = await self.crud.get_all(session)
 
         if not posts:
             return []
-        return [ArticleOutClient.model_validate(posts) for posts in posts]
+        return [ArticleOutClient.model_validate(posts, from_attributes=True) for posts in posts]
 
     async def add_new_article(self, article_data, session: AsyncSession) -> None:
         author_id = await author_service.add_new_author(article_data.author, session=session)

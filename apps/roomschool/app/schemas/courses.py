@@ -14,7 +14,7 @@ class CourseBaseSchema(BaseModel):
     is_archived: bool
 
 
-class CourseOutClient(BaseModel):
+class CourseOutClientSchema(BaseModel):
     title: str
     short_description: str | None
     main_description: str
@@ -23,8 +23,7 @@ class CourseOutClient(BaseModel):
     discount: int
     image: str | None
 
-
-class CourseInClient(BaseModel):
+class CourseInClientSchema(BaseModel):
     slug: str
     title: str
     short_description: str | None

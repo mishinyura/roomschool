@@ -23,8 +23,6 @@ class ArticleAuthor(BaseModel):
     post: str | None
     image_url: str | None
 
-    model_config = {"from_attributes": True}
-
 
 class ArticleBase(BaseModel):
     """
@@ -46,8 +44,6 @@ class ArticleBase(BaseModel):
     author: ArticleAuthor
     is_archived: bool
 
-    model_config = {"from_attributes": True}
-
 
 class ArticleOutClient(BaseModel):
     """
@@ -60,12 +56,10 @@ class ArticleOutClient(BaseModel):
         description: Short description of the post.
         author: Nested PostAuthor schema with author details.
     """
-
+    slug: str
     title: str
     description: str
     author: ArticleAuthor
-
-    model_config = {"from_attributes": True}
 
 
 class ArticleInClient(BaseModel):
