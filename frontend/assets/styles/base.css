@@ -790,11 +790,13 @@ _____________
   padding: 0.5em 1em;
   border: var(--border-white);
   border-radius: var(--radius-md);
+  background-color: var(--color-btn-white-transparent);
 
   /* 768 px */
   @media (max-width: 48rem) {
     padding: 0;
     border-radius: 0;
+    background-color: #000;
 
     mask: url('../../assets/media/icons/chat.svg') no-repeat center/contain;
   }
@@ -856,6 +858,7 @@ _____________
 .panel__btn_burger {
   position: relative;
   display: none;
+  background-color: transparent;
 
   /* 768 px */
   @media (max-width: 48rem) {

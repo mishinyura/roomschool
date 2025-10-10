@@ -72,6 +72,7 @@ function main() {
         spaceBetween: 40,
         slidesPerView: 1,
         effect: 'cube',
+        autoHeight: true,
         // centeredSlides: true,
 
         wrapperClass: 'reviews__wrapper',
