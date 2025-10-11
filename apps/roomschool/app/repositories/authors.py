@@ -23,4 +23,5 @@ class AuthorCrud(BaseRepo):
         else:
             return author.id
 
+
 author_crud = AuthorCrud()

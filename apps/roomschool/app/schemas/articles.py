@@ -56,6 +56,7 @@ class ArticleOutClient(BaseModel):
         description: Short description of the post.
         author: Nested PostAuthor schema with author details.
     """
+
     slug: str
     title: str
     description: str

@@ -13,6 +13,7 @@ class PostNotFoundError(Exception):
     def __str__(self):
         return f"Error: {self.message}"
 
+
 class ObjectNotFoundError(Exception):
     def __init__(self):
         self.message = "Not found"

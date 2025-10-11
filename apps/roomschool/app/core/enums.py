@@ -6,3 +6,8 @@ class MethodCommunicationTypes(str, Enum):
     TELEGRAM = "telegram"
     WHATSAPP = "whatsapp"
     EMAIL = "email"
+
+class UserRoleEnums(str, Enum):
+    ADMIN = "admin"
+    TEACHER = "teacher"
+    PARENT = ""

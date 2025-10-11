@@ -30,10 +30,15 @@ class ArticleServices:
 
         if not posts:
             return []
-        return [ArticleOutClient.model_validate(posts, from_attributes=True) for posts in posts]
+        return [
+            ArticleOutClient.model_validate(posts, from_attributes=True)
+            for posts in posts
+        ]
 
     async def add_new_article(self, article_data, session: AsyncSession) -> None:
-        author_id = await author_service.add_new_author(article_data.author, session=session)
+        author_id = await author_service.add_new_author(
+            article_data.author, session=session
+        )
 
         article = ArticleModel(
             slug=slugify(article_data.title),

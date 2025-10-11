@@ -20,3 +20,8 @@ db_port = 5432
 
 [clients_settings]
 admin_url = 'http://admin.roomschool.ru'
+
+[auth_settings]
+secret_key = "secret"
+algorithm = "HS256"
+access_token_expire_minutes = 30

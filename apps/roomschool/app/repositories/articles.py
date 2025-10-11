@@ -22,7 +22,7 @@ class ArticleCrud(BaseRepo):
         return result.scalar_one_or_none()
 
     async def get_by_slug(
-            self, slug: str, session: AsyncSession
+        self, slug: str, session: AsyncSession
     ) -> ArticleModel | None:
         result = await session.execute(
             select(ArticleModel)

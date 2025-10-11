@@ -6,15 +6,17 @@ from app.schemas import AuthorInClient
 from app.core.exceptions import SqlAlchemyError
 
 
-class AuthorServices():
+class AuthorServices:
     def __init__(self):
         self.crud = author_crud
 
-    async def add_new_author(self, author_data: AuthorInClient, session: AsyncSession) -> int:
+    async def add_new_author(
+        self, author_data: AuthorInClient, session: AsyncSession
+    ) -> int:
         author = AuthorModel(
             name=author_data.name,
             post=author_data.post,
-            image_url=author_data.image_url
+            image_url=author_data.image_url,
         )
         try:
             author_id = await self.crud.create(author=author, session=session)

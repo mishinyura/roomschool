@@ -12,12 +12,16 @@ from app.core.exceptions import SqlAlchemyError
 
 class CourseCrud(BaseRepo):
     async def get(self, course_id: int, session: AsyncSession) -> CourseModel | None:
-        course = await session.execute(select(CourseModel).where(CourseModel.id == course_id))
+        course = await session.execute(
+            select(CourseModel).where(CourseModel.id == course_id)
+        )
 
         return course.scalar_one_or_none()
 
     async def get_by_slug(self, slug: str, session: AsyncSession) -> CourseModel | None:
-        course = await session.execute(select(CourseModel).where(CourseModel.slug == slug))
+        course = await session.execute(
+            select(CourseModel).where(CourseModel.slug == slug)
+        )
 
         return course.scalar_one_or_none()
 
@@ -32,9 +36,13 @@ class CourseCrud(BaseRepo):
         else:
             return course.id
 
-    async def update(self, course_id: int, values: dict, session: AsyncSession) -> None:
+    async def update(self, course_id: int, fields: dict, session: AsyncSession) -> None:
         try:
-            await session.execute(orm_update(CourseModel).where(CourseModel.id == course_id).values(**values))
+            await session.execute(
+                orm_update(CourseModel)
+                .where(CourseModel.id == course_id)
+                .values(**fields)
+            )
             await session.commit()
         except SQLAlchemyError:
             await session.rollback()
@@ -49,7 +57,6 @@ class CourseCrud(BaseRepo):
             await session.delete(course)
         except SQLAlchemyError:
             raise SqlAlchemyError
-
 
 
 course_crud = CourseCrud()

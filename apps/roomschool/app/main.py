@@ -7,7 +7,7 @@ from app.core.db import create_tables
 ROUTES = {
     "/callback": callback_router,
     "/articles": article_router,
-    "/courses": course_router
+    "/courses": course_router,
 }
 
 

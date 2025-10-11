@@ -17,8 +17,12 @@ async def get_articles_list(session: AsyncSession = Depends(get_session)):
 
 
 @article_router.post("/")
-async def create_article(article_data: ArticleInClient, session: AsyncSession = Depends(get_session)):
-    result = await article_services.add_new_article(article_data=article_data, session=session)
+async def create_article(
+    article_data: ArticleInClient, session: AsyncSession = Depends(get_session)
+):
+    result = await article_services.add_new_article(
+        article_data=article_data, session=session
+    )
     return result
 
 

@@ -40,10 +40,17 @@ class DBConfig(BaseModel):
         return path
 
 
+class AuthConfig(BaseModel):
+    secret_key: str
+    algorithm: str
+    access_token_expire_minutes: int
+
+
 class Settings(BaseModel):
     app: AppConfig
     db: DBConfig
     client: ClientsConfig
+    auth: AuthConfig
 
 
 dyna_settings = Dynaconf(settings_files=["settings.toml"])
@@ -52,4 +59,5 @@ settings = Settings(
     app=dyna_settings["app_settings"],
     db=dyna_settings["db_settings"],
     client=dyna_settings["clients_settings"],
+    auth=dyna_settings["auth_settings"]
 )
