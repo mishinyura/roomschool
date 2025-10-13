@@ -1,8 +1,15 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
+from typing import Optional
 
 
-class AddressCreateSchema(BaseModel):
-    street: str
-    house_number: str
-    flat_number: str
-    city_id: int 
+class AddressBaseSchema(BaseModel):
+    city_id: int = Field(..., description="ID города")
+    street: str = Field(..., min_length=2, max_length=150)
+    house_number: str = Field(..., min_length=1, max_length=10)
+    flat_number: Optional[str] = Field(None, max_length=10)
+
+
+class AddressUpdateSchema(BaseModel):
+    street: Optional[str] = None
+    house_number: Optional[str] = None
+    flat_number: Optional[str] = None
