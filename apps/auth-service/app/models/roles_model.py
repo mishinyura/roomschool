@@ -9,4 +9,9 @@ class RoleModel(BaseModel, Base):
     name: Mapped[str] = mapped_column(String(50), unique=True, nullable=False)
     description: Mapped[str] = mapped_column(Text, unique=False, nullable=True)
 
-    role_account = relationship("AccountRoleModel", back_populates="account_role_role", cascade="all, delete-orphan")
+    role_account = relationship(
+        "AccountRoleModel",
+        back_populates="account_role_role",
+        cascade="all, delete-orphan",
+        lazy="selectin"
+    )

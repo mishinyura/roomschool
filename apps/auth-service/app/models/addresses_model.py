@@ -15,11 +15,13 @@ class AddressModel(BaseModel, Base):
     address_person_registration = relationship(
         "PersonModel",
         back_populates="person_address_registration",
-        foreign_keys="PersonModel.registration_address_id"
+        foreign_keys="PersonModel.registration_address_id",
+        lazy="selectin"
     )
     address_person_living = relationship(
         "PersonModel",
         back_populates="person_address_living",
-        foreign_keys="PersonModel.residential_address_id"
+        foreign_keys="PersonModel.residential_address_id",
+        lazy="selectin"
     )
-    city = relationship("CityModel", back_populates="address")
+    city = relationship("CityModel", back_populates="address", lazy="selectin")

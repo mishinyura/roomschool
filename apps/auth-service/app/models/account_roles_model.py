@@ -11,5 +11,15 @@ class AccountRoleModel(Base):
     account_id = Column(Integer, ForeignKey("accounts.id", ondelete="CASCADE"))
     role_id = Column(Integer, ForeignKey("roles.id", ondelete="CASCADE"))
 
-    account_role_account = relationship("AccountModel", back_populates="account_role", foreign_keys=[account_id])
-    account_role_role = relationship("RoleModel", back_populates="role_account", foreign_keys=[role_id])
+    account_role_account = relationship(
+        "AccountModel",
+        back_populates="account_role",
+        foreign_keys=[account_id],
+        lazy="selectin"
+    )
+    account_role_role = relationship(
+        "RoleModel",
+        back_populates="role_account",
+        foreign_keys=[role_id],
+        lazy="selectin"
+    )

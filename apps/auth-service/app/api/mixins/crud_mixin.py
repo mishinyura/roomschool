@@ -13,7 +13,7 @@ class CreateMixin(BaseEndpointMixin):
     """Добавляет POST /"""
     def __call__(self, *args, **kwargs):
         @self.router.post("/")
-        async def create(data: self.create_schema, session: AsyncSession = Depends(get_session)):
+        async def create(data: CreateMixin.create_schema, session: AsyncSession = Depends(get_session)):
             try:
                 obj = await self.service.create_new_obj(data_obj=data, session=session)
             except DuplicateError as ex:
@@ -21,7 +21,7 @@ class CreateMixin(BaseEndpointMixin):
             else:
                 return JSONResponse(
                     status_code=HTTP_201_CREATED,
-                    content=self.response_schema.model_validate(obj, from_attributes=True).model_dump()
+                    content=self.response_schema.model_validate(obj, from_attributes=True).model_dump(mode="json")
                 )
 
 
@@ -29,7 +29,7 @@ class UpdateMixin(BaseEndpointMixin):
     """Добавляет PATCH /{id}"""
     def __call__(self):
         @self.router.patch("/{obj_id}")
-        async def update(obj_id: int, data: self.update_schema, session: AsyncSession = Depends(get_session)):
+        async def update(obj_id: int, data: UpdateMixin.update_schema, session: AsyncSession = Depends(get_session)):
             try:
                 await self.service.update_obj(obj_id=obj_id, data_obj=data, session=session)
             except DBError:

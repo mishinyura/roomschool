@@ -2,6 +2,7 @@ from pydantic import BaseModel, EmailStr, constr
 from datetime import date
 
 from app.core.utils import make_partial_model
+from app.schemas.addresses_schema import AddressOutClientSchema
 
 
 class PersonCreateSchema(BaseModel):
@@ -24,8 +25,8 @@ class PersonOutClientSchema(BaseModel):
     birthday: date | None = None
     phone: constr(pattern=r'^\+?\d{10,15}$')
     email: EmailStr | None = None
-    registration_address: str
-    residential_address: str | None = None
+    person_address_registration: AddressOutClientSchema | None
+    person_address_living: AddressOutClientSchema | None = None
 
 
 PersonUpdateSchema = make_partial_model("PersonUpdateSchema", base_model=PersonCreateSchema)

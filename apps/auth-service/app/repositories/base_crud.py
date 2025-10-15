@@ -41,6 +41,9 @@ class BaseCrud(AbstractCrud):
             if relations:
                 for rel in relations:
                     stmt = stmt.options(selectinload(getattr(self.model, rel)))
+                # for rel_name, rel_prop in self.model.__mapper__.relationships.items():
+                #     print("OOO", rel_name, rel_prop)
+                #     stmt = stmt.options(selectinload(getattr(self.model, rel_name)))
             stmt = stmt.where(self.model.id == obj_id)
             result = await session.execute(stmt)
         except SQLAlchemyError:
@@ -51,9 +54,7 @@ class BaseCrud(AbstractCrud):
     async def create(self, obj: Any, session: AsyncSession) -> Any:
         try:
             session.add(obj)
-            print('RRR', obj)
             await session.commit()
-
             await session.refresh(obj)
         except IntegrityError:
             await session.rollback()

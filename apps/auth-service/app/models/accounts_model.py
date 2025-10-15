@@ -15,5 +15,5 @@ class AccountModel(BaseModel, Base):
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
     updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), onupdate=func.now())
 
-    account_person = relationship("PersonModel", back_populates="person_account")
-    account_role = relationship("AccountRoleModel", back_populates="account_role_account")
+    account_person = relationship("PersonModel", back_populates="person_account", lazy="selectin")
+    account_role = relationship("AccountRoleModel", back_populates="account_role_account", lazy="selectin")

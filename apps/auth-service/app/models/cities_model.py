@@ -10,7 +10,7 @@ class CityModel(BaseModel, Base):
     name: Mapped[str] = mapped_column(String(50), nullable=False, unique=True)
     time_zone: Mapped[str] = mapped_column(String(50), nullable=False, unique=False)
 
-    address = relationship("AddressModel", back_populates="city")
+    address = relationship("AddressModel", back_populates="city", lazy="selectin")
 
     def __repr__(self):
         return f"City(name={self.name}, tz={self.time_zone}"

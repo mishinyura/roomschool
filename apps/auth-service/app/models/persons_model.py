@@ -30,19 +30,21 @@ class PersonModel(BaseModel, Base):
         unique=False
     )
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
-    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), onupdate=func.now())
+    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
 
     person_address_registration = relationship(
         "AddressModel",
         back_populates="address_person_registration",
-        foreign_keys=[registration_address_id]
+        foreign_keys=[registration_address_id],
+        lazy="selectin"
     )
     person_address_living = relationship(
         "AddressModel",
         back_populates="address_person_living",
-        foreign_keys=[residential_address_id]
+        foreign_keys=[residential_address_id],
+        lazy="selectin"
     )
-    person_account = relationship("AccountModel", back_populates="account_person")
+    person_account = relationship("AccountModel", back_populates="account_person", lazy="selectin")
 
     def __repr__(self) -> str:
         string = "<Person(id={person_id}, name={l_name} {f_name} {m_name}, phone={phone})>".format(
