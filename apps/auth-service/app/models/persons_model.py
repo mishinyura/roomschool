@@ -1,7 +1,9 @@
 from datetime import date, datetime
+import uuid as py_uuid
 
-from sqlalchemy import String, Integer, Date, DateTime, Enum as AlchemyEnum, func, ForeignKey
+from sqlalchemy import String, Integer, Date, DateTime, Enum as AlchemyEnum, func, ForeignKey, text
 from sqlalchemy.orm import Mapped, mapped_column, relationship
+from sqlalchemy.dialects.postgresql import UUID
 
 from app.models.base_model import Base, BaseModel
 from app.core.enums import Gender
@@ -10,6 +12,13 @@ from app.core.enums import Gender
 class PersonModel(BaseModel, Base):
     __tablename__ = 'persons'
 
+    uuid: Mapped[py_uuid.UUID] = mapped_column(
+        UUID(as_uuid=True),
+        unique=True,
+        server_default=text("gen_random_uuid()"),
+        index=True,
+        nullable=False
+    )
     first_name: Mapped[str] = mapped_column(String(150), nullable=False, unique=False)
     last_name: Mapped[str] = mapped_column(String(150), nullable=False, unique=False)
     middle_name: Mapped[str | None] = mapped_column(String(150), nullable=True, unique=False)

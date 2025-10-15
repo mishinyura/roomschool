@@ -11,7 +11,8 @@ ROUTES = {
     '/auth': auth_router,
     '/cities': city_api.router,
     '/addresses': address_api.router,
-    '/persons': person_api.router
+    '/persons': person_api.router,
+    '/roles': role_api.router
 }
 
 MIDDLEWARES = [

@@ -7,12 +7,13 @@ from app.core.db import get_session
 from app.core.exceptions import DuplicateError, DBError
 
 from app.api.mixins.base_mixin import BaseEndpointMixin
+from app.core.validators import user_validate
 
 
 class CreateMixin(BaseEndpointMixin):
     """Добавляет POST /"""
     def __call__(self, *args, **kwargs):
-        @self.router.post("/")
+        @self.router.post("/", dependencies=[Depends(user_validate.validate)])
         async def create(body: self.create_schema, session: AsyncSession = Depends(get_session)):
             try:
                 obj = await self.service.create_new_obj(data_obj=body, session=session)

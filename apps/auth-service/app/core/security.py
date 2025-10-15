@@ -5,7 +5,7 @@ from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
 from passlib.context import CryptContext
 
-from app.core.enums import UserRoleEnums
+from app.core.enums import UserRole
 from app.core.config import settings
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
@@ -39,7 +39,7 @@ async def get_current_user(token: str = Depends(oauth2_scheme)):
     return {"username": username, "role": role}
 
 
-def require_role(roles: list[UserRoleEnums]):
+def require_role(roles: list[UserRole]):
     async def role_checker(current_user=Depends(get_current_user)):
         if current_user["role"] not in [r.value for r in roles]:
             raise HTTPException(status_code=403, detail="Not enough permissions")
