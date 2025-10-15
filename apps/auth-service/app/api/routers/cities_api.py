@@ -1,17 +1,12 @@
-from fastapi import APIRouter, Depends, HTTPException, Response
-from sqlalchemy.ext.asyncio import AsyncSession
-from starlette.status import HTTP_201_CREATED, HTTP_409_CONFLICT, HTTP_204_NO_CONTENT, HTTP_404_NOT_FOUND
+from fastapi import APIRouter
 
 from app.schemas import CityCreateSchema, CityUpdateSchema
-from app.core.db import get_session
 from app.services import city_service
-from app.core.exceptions import DuplicateError
-from app.core.validators import user_validate
 
-from app.api.mixins import CreateMixin, RetrieveMixin
+from app.api.mixins import CreateMixin, RetrieveMixin, UpdateMixin, DeleteMixin
 
 
-class CityAPI(RetrieveMixin, CreateMixin):
+class CityAPI(RetrieveMixin, CreateMixin, UpdateMixin, DeleteMixin):
     router = APIRouter()
     service = city_service
     create_schema = CityCreateSchema

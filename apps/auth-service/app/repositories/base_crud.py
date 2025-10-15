@@ -51,7 +51,9 @@ class BaseCrud(AbstractCrud):
     async def create(self, obj: Any, session: AsyncSession) -> Any:
         try:
             session.add(obj)
+            print('RRR', obj)
             await session.commit()
+
             await session.refresh(obj)
         except IntegrityError:
             await session.rollback()

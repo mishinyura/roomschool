@@ -6,7 +6,7 @@ from app.schemas.addresses_schema import AddressUpdateSchema, AddressBaseSchema,
 from app.api.mixins import CreateMixin, RetrieveMixin, DeleteMixin, UpdateMixin
 
 
-class AddressAPI(CreateMixin, DeleteMixin, UpdateMixin):
+class AddressAPI(RetrieveMixin, CreateMixin, DeleteMixin, UpdateMixin):
     router = APIRouter()
     service = address_service
     response_schema = AddressOutClientSchema
@@ -19,8 +19,7 @@ class AddressAPI(CreateMixin, DeleteMixin, UpdateMixin):
 
 
 address_api = AddressAPI()
-address_api()
-# address_api.register()
+
 
 #Старая версия api
 # @address_router.post("/")

@@ -2,9 +2,9 @@ from app.models import CityModel
 from app.repositories.base_crud import BaseCrud
 
 
-class CityCrud(BaseCrud):
+class PersonCrud(BaseCrud):
     def __init__(self):
         super().__init__(CityModel)
 
 
-city_crud = CityCrud()
+person_crud = PersonCrud()
