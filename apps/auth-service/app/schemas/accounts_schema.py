@@ -1,4 +1,5 @@
 from datetime import datetime
+import uuid as py_uuid
 
 from pydantic import BaseModel, Field
 
@@ -21,8 +22,13 @@ class AccountBaseSchema(BaseModel):
 
 
 class AccountUpdatePasswordSchema(BaseModel):
-    uuid:
+    uuid: py_uuid.UUID
     password: str
 
 
-AccountUpdateSchema = make_partial_model("AccountUpdateSchema", Ac)
+class AccountUpdateUsernameSchema(BaseModel):
+    uuid: py_uuid.UUID
+    username: str
+
+
+AccountUpdateSchema = make_partial_model("AccountUpdateSchema", AccountBaseSchema)

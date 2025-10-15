@@ -7,7 +7,7 @@ class PersonCrud(BaseCrud):
         super().__init__(PersonModel)
 
 
-    async def get_by_uuid
+    # async def get_by_uuid
 
 
 person_crud = PersonCrud()

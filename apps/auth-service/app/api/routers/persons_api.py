@@ -17,6 +17,8 @@ class PersonAPI(RetrieveMixin, CreateMixin, UpdateMixin, DeleteMixin):
     async def get_info_about_me(self):
         try:
             result = await self.service.crud.get()
+        except:
+            pass
 
 
 person_api = PersonAPI()
