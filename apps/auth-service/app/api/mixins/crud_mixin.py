@@ -1,4 +1,4 @@
-from fastapi import Depends
+from fastapi import Depends, Body
 from fastapi.responses import JSONResponse
 from starlette.status import HTTP_200_OK, HTTP_201_CREATED
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -13,15 +13,17 @@ class CreateMixin(BaseEndpointMixin):
     """Добавляет POST /"""
     def __call__(self, *args, **kwargs):
         @self.router.post("/")
-        async def create(data: CreateMixin.create_schema, session: AsyncSession = Depends(get_session)):
+        async def create(body: self.create_schema, session: AsyncSession = Depends(get_session)):
             try:
-                obj = await self.service.create_new_obj(data_obj=data, session=session)
+                obj = await self.service.create_new_obj(data_obj=body, session=session)
             except DuplicateError as ex:
                 self.conflict(detail=str(ex))
             else:
                 return JSONResponse(
                     status_code=HTTP_201_CREATED,
-                    content=self.response_schema.model_validate(obj, from_attributes=True).model_dump(mode="json")
+                    content=self.response_schema.model_validate(
+                        obj, from_attributes=True
+                    ).model_dump(mode="json", by_alias=True)
                 )
 
 
@@ -29,7 +31,7 @@ class UpdateMixin(BaseEndpointMixin):
     """Добавляет PATCH /{id}"""
     def __call__(self):
         @self.router.patch("/{obj_id}")
-        async def update(obj_id: int, data: UpdateMixin.update_schema, session: AsyncSession = Depends(get_session)):
+        async def update(obj_id: int, data: self.update_schema, session: AsyncSession = Depends(get_session)):
             try:
                 await self.service.update_obj(obj_id=obj_id, data_obj=data, session=session)
             except DBError:

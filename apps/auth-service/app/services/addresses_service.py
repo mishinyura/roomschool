@@ -7,7 +7,6 @@ from app.services.base_service import BaseService
 class AddressService(BaseService):
     crud = address_crud
     model = AddressModel
-    eager_relations = ["city"]
 
 
 address_service = AddressService()

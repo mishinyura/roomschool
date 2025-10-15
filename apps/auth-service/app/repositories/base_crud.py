@@ -6,7 +6,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.exc import SQLAlchemyError, IntegrityError
 from sqlalchemy.orm import selectinload
 
-from app.core.exceptions import DBError, DBDuplicateError
+from app.core.exceptions import DBError, DBDuplicateError, ObjectNotFoundError
 
 
 class AbstractCrud(ABC):
@@ -35,22 +35,6 @@ class BaseCrud(AbstractCrud):
         else:
             return obj.scalar_one_or_none()
 
-    async def get_with_relations(self, obj_id: int, session: AsyncSession, relations: list[str] | None = None):
-        try:
-            stmt = select(self.model)
-            if relations:
-                for rel in relations:
-                    stmt = stmt.options(selectinload(getattr(self.model, rel)))
-                # for rel_name, rel_prop in self.model.__mapper__.relationships.items():
-                #     print("OOO", rel_name, rel_prop)
-                #     stmt = stmt.options(selectinload(getattr(self.model, rel_name)))
-            stmt = stmt.where(self.model.id == obj_id)
-            result = await session.execute(stmt)
-        except SQLAlchemyError:
-            raise DBError
-        else:
-            return result.scalar_one_or_none()
-
     async def create(self, obj: Any, session: AsyncSession) -> Any:
         try:
             session.add(obj)
@@ -64,7 +48,9 @@ class BaseCrud(AbstractCrud):
 
     async def delete(self, obj_id: int, session: AsyncSession) -> None:
         try:
-            await session.execute(orm_delete(self.model).where(self.model.id == obj_id))
+            result = await session.execute(orm_delete(self.model).where(self.model.id == obj_id))
+            if result.rowcount == 0:
+                raise ObjectNotFoundError
             await session.commit()
         except SQLAlchemyError:
             await session.rollback()

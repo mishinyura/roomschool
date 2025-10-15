@@ -24,10 +24,6 @@ class BaseService:
         obj = self.model(**data_obj.model_dump(exclude_unset=True))
         create_obj = await self.crud.create(obj=obj, session=session)
         serialaze_obj = await self.crud.get(create_obj.id, session)
-        # if self.eager_relations:
-        #     serialaze_obj = await self.crud.get_with_relations(create_obj.id, session, self.eager_relations)
-        #     return serialaze_obj
-        # return create_obj
         return serialaze_obj
 
     async def delete_obj(self, obj_id: int, session: AsyncSession) -> None:
