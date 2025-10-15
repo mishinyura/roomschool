@@ -34,7 +34,14 @@ def set_middlewares(app: FastAPI):
 
 
 def main():
-    app = FastAPI(title='Auth Service')
+    app = FastAPI(
+        debug=settings.app.debug,
+        title='Auth Service',
+        version=settings.app.app_version,
+        description=settings.app.app_description,
+        root_path=settings.app.app_mount
+    )
+    print(settings.app.debug, "OOO")
 
     set_middlewares(app)
     set_routes(app)

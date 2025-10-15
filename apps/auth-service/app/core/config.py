@@ -3,10 +3,13 @@ from dynaconf import Dynaconf
 
 
 class AppConfig(BaseModel):
+    debug: bool
     app_version: str
     app_name: str
+    app_description: str
     app_host: str
     app_port: int
+    app_mount: str
     app_key: str
 
 
