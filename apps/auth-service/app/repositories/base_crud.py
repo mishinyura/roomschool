@@ -4,6 +4,7 @@ from typing import Any
 from sqlalchemy import select, delete as orm_delete, update as orm_update
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.exc import SQLAlchemyError, IntegrityError
+from sqlalchemy.orm import selectinload
 
 from app.core.exceptions import DBError, DBDuplicateError
 
@@ -33,6 +34,15 @@ class BaseCrud(AbstractCrud):
             raise DBError
         else:
             return obj.scalar_one_or_none()
+
+    async def get_with_relations(self, obj_id: int, session: AsyncSession, relations: list[str] | None = None):
+        stmt = select(self.model)
+        if relations:
+            for rel in relations:
+                stmt = stmt.options(selectinload(getattr(self.model, rel)))
+        stmt = stmt.where(self.model.id == obj_id)
+        result = await session.execute(stmt)
+        return result.scalar_one_or_none()
 
     async def create(self, obj: Any, session: AsyncSession) -> Any:
         try:

@@ -8,7 +8,7 @@ from app.schemas.addresses_schema import AddressUpdateSchema, AddressBaseSchema,
 from app.models import AddressModel
 from app.core.exceptions import DuplicateError
 
-from app.api import CreateMixin, RetrieveMixin, DeleteMixin, UpdateMixin
+from app.api.mixins import CreateMixin, RetrieveMixin, DeleteMixin, UpdateMixin
 
 
 class AddressAPI(CreateMixin, DeleteMixin, UpdateMixin):
@@ -26,6 +26,7 @@ class AddressAPI(CreateMixin, DeleteMixin, UpdateMixin):
 address_api = AddressAPI()
 address_api.register()
 
+#Старая версия api
 # @address_router.post("/")
 # async def create_address(address_data: AddressBaseSchema, session: AsyncSession = Depends(get_session)):
 #     try:

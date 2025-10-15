@@ -15,25 +15,6 @@ class BaseService:
         if not self.model or not self.crud:
             raise ValueError(f"{self.__class__.__name__} must define 'model' and 'crud'")
 
-    async def _load_relations(self, obj_or_id, session: AsyncSession):
-        """Подгружает связи, указанные в eager_relations"""
-        if not self.eager_relations:
-            # если связей нет, просто возвращаем объект как есть
-            if isinstance(obj_or_id, self.model):
-                return obj_or_id
-            return await self.crud.get(obj_id=obj_or_id, session=session)
-
-        stmt = select(self.model)
-        for rel in self.eager_relations:
-            stmt = stmt.options(selectinload(getattr(self.model, rel)))
-
-        # если пришёл объект — достаём его id
-        obj_id = obj_or_id.id if isinstance(obj_or_id, self.model) else obj_or_id
-        stmt = stmt.where(self.model.id == obj_id)
-
-        result = await session.execute(stmt)
-        return result.scalar_one_or_none()
-
     async def get_obj_by_id(self, obj_id: int, session: AsyncSession) -> object:
         obj = await self.crud.get(obj_id=obj_id, session=session)
 
@@ -44,7 +25,10 @@ class BaseService:
     async def create_new_obj(self, data_obj: BaseModel, session: AsyncSession) -> object:
         obj = self.model(**data_obj.model_dump(exclude_unset=True))
         create_obj = await self.crud.create(obj=obj, session=session)
-        return await self._load_relations(create_obj, session)
+        if self.eager_relations:
+            serialaze_obj = await self.crud.get_with_relations(create_obj.id, session, self.eager_relations)
+            return serialaze_obj
+        return create_obj
 
     async def delete_obj(self, obj_id: int, session: AsyncSession) -> None:
         await self.crud.delete(obj_id=obj_id, session=session)

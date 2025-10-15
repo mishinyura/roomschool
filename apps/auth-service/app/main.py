@@ -2,7 +2,7 @@ import uvicorn
 
 from fastapi import FastAPI
 
-from app.api import *
+from app.api.routers import *
 from app.core.config import settings
 from app.core.db import create_tables
 from app.middlewares import *
