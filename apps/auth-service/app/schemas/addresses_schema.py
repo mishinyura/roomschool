@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator, ConfigDict
 from typing import Optional
 
 
@@ -13,3 +13,16 @@ class AddressUpdateSchema(BaseModel):
     street: Optional[str] = None
     house_number: Optional[str] = None
     flat_number: Optional[str] = None
+
+
+class AddressOutClientSchema(BaseModel):
+    city: str
+    street: str
+    house_number: str
+    flat_number: str
+
+    @field_validator("city", mode="before")
+    def convert_city(cls, v):
+        if hasattr(v, "name"):
+            return v.name
+        return v

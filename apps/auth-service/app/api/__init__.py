@@ -1,7 +1,5 @@
-from .base_api import CreateMixin, UpdateMixin, RetrieveMixin, DeleteMixin
-from .auth import auth_router
-from .cities_api import city_router
-from .addresses_api import address_api
+from app.api.mixins.crud_mixin import CreateMixin, UpdateMixin, RetrieveMixin, DeleteMixin
+from app.api.routers.addresses_api import address_api
 
 __all__ = [
     "auth_router",

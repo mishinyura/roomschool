@@ -4,28 +4,27 @@ from starlette.status import HTTP_201_CREATED, HTTP_409_CONFLICT, HTTP_204_NO_CO
 
 from app.core.db import get_session
 from app.services import address_service
-from app.schemas.addresses_schema import AddressUpdateSchema, AddressBaseSchema
+from app.schemas.addresses_schema import AddressUpdateSchema, AddressBaseSchema, AddressOutClientSchema
 from app.models import AddressModel
 from app.core.exceptions import DuplicateError
 
 from app.api import CreateMixin, RetrieveMixin, DeleteMixin, UpdateMixin
 
 
-class AddressAPI(CreateMixin, RetrieveMixin, DeleteMixin, UpdateMixin):
+class AddressAPI(CreateMixin, DeleteMixin, UpdateMixin):
     router = APIRouter()
-    _model = AddressModel
-    _service = address_service
-    _schemas = {
-        "create": AddressBaseSchema,
-        "update": AddressUpdateSchema,
-    }
+    service = address_service
+    response_schema = AddressOutClientSchema
+    create_schema = AddressBaseSchema
+    update_schema = AddressUpdateSchema
 
     @router.get("/search")
     async def search_by_street(self, request: str):
-        return await address_service.search_by_street(request)
+        return await self.service.search_by_street(request)
 
 
 address_api = AddressAPI()
+address_api.register()
 
 # @address_router.post("/")
 # async def create_address(address_data: AddressBaseSchema, session: AsyncSession = Depends(get_session)):

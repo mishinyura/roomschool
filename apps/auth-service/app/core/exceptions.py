@@ -20,3 +20,12 @@ class DBDuplicateError(Exception):
 
     def __str__(self) -> str:
         return f"DB Duplicate Error: {self.message}"
+
+
+
+class ObjectNotFoundError(Exception):
+    def __init__(self, message: str="Object not found") -> None:
+        self.message = message
+
+    def __str__(self) -> str:
+        return f"DB Error: {self.message}"

@@ -7,4 +7,5 @@ class AddressCrud(BaseCrud):
         super().__init__(AddressModel)
 
 
+
 address_crud = AddressCrud()

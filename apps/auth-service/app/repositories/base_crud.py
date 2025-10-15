@@ -34,7 +34,7 @@ class BaseCrud(AbstractCrud):
         else:
             return obj.scalar_one_or_none()
 
-    async def create(self, obj: Any, session: AsyncSession) -> int:
+    async def create(self, obj: Any, session: AsyncSession) -> Any:
         try:
             session.add(obj)
             await session.commit()
@@ -43,7 +43,7 @@ class BaseCrud(AbstractCrud):
             await session.rollback()
             raise DBDuplicateError
         else:
-            return obj.id
+            return obj
 
     async def delete(self, obj_id: int, session: AsyncSession) -> None:
         try:
