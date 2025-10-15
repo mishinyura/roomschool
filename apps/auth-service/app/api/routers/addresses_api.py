@@ -1,12 +1,7 @@
-from fastapi import APIRouter, Depends, Response, HTTPException
-from sqlalchemy.ext.asyncio import AsyncSession
-from starlette.status import HTTP_201_CREATED, HTTP_409_CONFLICT, HTTP_204_NO_CONTENT, HTTP_404_NOT_FOUND
+from fastapi import APIRouter
 
-from app.core.db import get_session
 from app.services import address_service
 from app.schemas.addresses_schema import AddressUpdateSchema, AddressBaseSchema, AddressOutClientSchema
-from app.models import AddressModel
-from app.core.exceptions import DuplicateError
 
 from app.api.mixins import CreateMixin, RetrieveMixin, DeleteMixin, UpdateMixin
 

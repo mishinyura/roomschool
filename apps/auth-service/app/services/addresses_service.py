@@ -1,9 +1,5 @@
-from sqlalchemy.ext.asyncio import AsyncSession
-
-from app.schemas import AddressUpdateSchema, AddressBaseSchema
 from app.models import AddressModel
 from app.repositories import address_crud
-from app.core.exceptions import DBError, DuplicateError
 
 from app.services.base_service import BaseService
 

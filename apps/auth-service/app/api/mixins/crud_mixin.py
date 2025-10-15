@@ -1,6 +1,6 @@
-from fastapi import Depends, HTTPException, Response
+from fastapi import Depends
 from fastapi.responses import JSONResponse
-from starlette.status import HTTP_200_OK, HTTP_201_CREATED, HTTP_204_NO_CONTENT, HTTP_404_NOT_FOUND, HTTP_409_CONFLICT
+from starlette.status import HTTP_200_OK, HTTP_201_CREATED
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.db import get_session
