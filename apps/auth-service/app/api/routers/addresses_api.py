@@ -19,7 +19,8 @@ class AddressAPI(CreateMixin, DeleteMixin, UpdateMixin):
 
 
 address_api = AddressAPI()
-address_api.register()
+address_api()
+# address_api.register()
 
 #Старая версия api
 # @address_router.post("/")

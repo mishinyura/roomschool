@@ -12,6 +12,18 @@ class BaseEndpointMixin:
     create_schema: type[BaseModel] = None
     update_schema: type[BaseModel] = None
 
+    def __init__(self):
+        """
+        При создании экземпляра API вызываются все миксины,
+        у которых определен __call__.
+        """
+        for base in type(self).__mro__:
+            if base in (BaseEndpointMixin, object):
+                continue
+            call_method = getattr(base, "__call__", None)
+            if callable(call_method) and base is not type(self):
+                call_method(self)
+
     def __init_subclass__(cls, **kwargs):
         super().__init_subclass__(**kwargs)
         if cls.__name__.endswith("Mixin"):

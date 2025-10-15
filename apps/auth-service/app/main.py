@@ -9,7 +9,7 @@ from app.middlewares import *
 
 ROUTES = {
     '/auth': auth_router,
-    '/cities': city_router,
+    '/cities': city_api.router,
     '/addresses': address_api.router
 }
 
