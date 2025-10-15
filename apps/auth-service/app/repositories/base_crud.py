@@ -36,13 +36,17 @@ class BaseCrud(AbstractCrud):
             return obj.scalar_one_or_none()
 
     async def get_with_relations(self, obj_id: int, session: AsyncSession, relations: list[str] | None = None):
-        stmt = select(self.model)
-        if relations:
-            for rel in relations:
-                stmt = stmt.options(selectinload(getattr(self.model, rel)))
-        stmt = stmt.where(self.model.id == obj_id)
-        result = await session.execute(stmt)
-        return result.scalar_one_or_none()
+        try:
+            stmt = select(self.model)
+            if relations:
+                for rel in relations:
+                    stmt = stmt.options(selectinload(getattr(self.model, rel)))
+            stmt = stmt.where(self.model.id == obj_id)
+            result = await session.execute(stmt)
+        except SQLAlchemyError:
+            raise DBError
+        else:
+            return result.scalar_one_or_none()
 
     async def create(self, obj: Any, session: AsyncSession) -> Any:
         try:
