@@ -24,7 +24,7 @@ class AccountModel(BaseModel, Base):
     is_active: Mapped[bool] = mapped_column(default=True, nullable=False)
     is_verified: Mapped[bool] = mapped_column(default=False, nullable=False)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
-    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), onupdate=func.now())
+    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
 
     account_person = relationship("PersonModel", back_populates="person_account", lazy="selectin")
     account_role = relationship("AccountRoleModel", back_populates="account_role_account", lazy="selectin")

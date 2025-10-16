@@ -39,9 +39,8 @@ def main():
         title='Auth Service',
         version=settings.app.app_version,
         description=settings.app.app_description,
-        root_path=settings.app.app_mount
+        # root_path=settings.app.app_mount
     )
-    print(settings.app.debug, "OOO")
 
     set_middlewares(app)
     set_routes(app)
@@ -49,6 +48,10 @@ def main():
     @app.on_event("startup")
     async def startup_event():
         await create_tables()
+
+    for r in app.routes:
+        print(getattr(r, "path", r), getattr(r, "methods", None), getattr(r, "endpoint", None))
+
 
     uvicorn.run(app, host=settings.app.app_host, port=settings.app.app_port)
 

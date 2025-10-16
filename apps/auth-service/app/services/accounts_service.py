@@ -12,24 +12,36 @@ class AccountService(BaseService):
     crud = account_crud
     model = AccountModel
 
+    async def get_account_by_uuid(self, uuid, session: AsyncSession):
+        await self.crud.get_by_uuid(uuid=uuid, session=session)
+
     async def create_new_account(self, data: AccountCreateSchema, session: AsyncSession) -> AccountModel:
         obj = AccountModel(
             person_id=data.person_id,
             username=data.username,
             hash_password=hash_password(data.password)
         )
-        new_obj = self.crud.create(obj=obj, session=session)
-        return new_obj
+        print(obj, "OOO")
+        new_obj = await self.crud.create(obj=obj, session=session)
+        print(new_obj, "ККК")
+        serialaze_obj = await self.crud.get(new_obj.id, session)
+        print("EEE:", serialaze_obj)
+        return serialaze_obj
 
     async def update_password_by_uuid(self, data: AccountUpdatePasswordSchema, session: AsyncSession) -> None:
         uuid = data.uuid
+        new_hash_password = hash_password(data.new_password)
+        print(new_hash_password, "OOL")
+        account = await self.crud.get_by_uuid(uuid=uuid, session=session)
+
+        if account.hash_password != new_hash_password:
+            raise
+
         update_fileds = {
-            "hash_password": hash_password(data.password)
+            "hash_password": new_hash_password
         }
 
-        self.crud.update_by_uuid(uuid=uuid, fields=update_fileds, session=session)
-
-
+        await self.crud.update_by_uuid(uuid=uuid, fields=update_fileds, session=session)
 
 
 account_service = AccountService()

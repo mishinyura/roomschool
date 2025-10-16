@@ -40,7 +40,7 @@ class BaseCrud(AbstractCrud):
             session.add(obj)
             await session.commit()
             await session.refresh(obj)
-        except IntegrityError:
+        except IntegrityError as ex:
             await session.rollback()
             raise DBDuplicateError
         else:
