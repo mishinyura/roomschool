@@ -4,7 +4,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.repositories import account_crud
 from app.models import AccountModel
 from app.services.base_service import BaseService
-from app.schemas import AccountUpdateUsernameSchema, AccountUpdatePasswordSchema, AccountCreateSchema
+from app.schemas import AccountUpdateUsernameSchema, AccountUpdatePasswordSchema, AccountCreateSchema, AccountFullOutClientSchema
 from app.core.security import hash_password
 
 
@@ -13,7 +13,45 @@ class AccountService(BaseService):
     model = AccountModel
 
     async def get_account_by_uuid(self, uuid, session: AsyncSession):
-        await self.crud.get_by_uuid(uuid=uuid, session=session)
+        result = await self.crud.get_by_uuid(uuid, session)
+        if not result:
+            return None
+
+        person_dict = {
+            "first_name": result.get("first_name"),
+            "last_name": result.get("last_name"),
+            "middle_name": result.get("middle_name"),
+            "gender": result.get("gender"),
+            "birthday": result.get("birthday"),
+            "phone": result.get("phone"),
+            "email": result.get("email"),
+            "registration_address": {
+                "street": result.get("reg_street"),
+                "house_number": result.get("reg_house"),
+                "flat_number": result.get("reg_flat"),
+                "city": result.get("reg_city_name")
+            } if result.get("reg_street") else None,
+            "residential_address": {
+                "street": result.get("live_street"),
+                "house_number": result.get("live_house"),
+                "flat_number": result.get("live_flat"),
+                "city": result.get("live_city_name")
+            } if result.get("live_street") else None
+        }
+
+        account_dict = {
+            "uuid": result.get("uuid"),
+            "username": result.get("username"),
+            "is_active": result.get("is_active"),
+            "is_verified": result.get("is_verified"),
+            "created_at": result.get("created_at"),
+            "updated_at": result.get("updated_at"),
+            "person": person_dict
+        }
+
+        print("RESULT SERVICE", account_dict)
+
+        return AccountFullOutClientSchema.model_validate(account_dict).model_dump(mode='json')
 
     async def create_new_account(self, data: AccountCreateSchema, session: AsyncSession) -> AccountModel:
         obj = AccountModel(

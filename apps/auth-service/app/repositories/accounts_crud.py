@@ -1,6 +1,6 @@
 import uuid as py_uuid
 
-from sqlalchemy import select, update
+from sqlalchemy import select, update, text
 from sqlalchemy.orm import selectinload
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -22,28 +22,41 @@ class AccountCrud(BaseCrud):
             raise DBError
 
     async def get_by_uuid(self, uuid: str, session):
-        stmt = (
-            select(AccountModel)
-            .where(AccountModel.uuid == uuid)
-            .options(
-                selectinload(AccountModel.account_person)
-                .options(
-                    selectinload(PersonModel.person_address_registration),
-                    selectinload(PersonModel.person_address_living),
-                )
-            )
-        )
-        result = await session.execute(stmt)
-        return result.scalar_one_or_none()
-
-        # try:
-        #     print("RRR", uuid)
-        #     account = await session.execute(select(AccountModel).where(AccountModel.uuid == uuid))
-        #     print('OOK', account)
-        # except SQLAlchemyError:
-        #     raise DBError
-        # else:
-        #     return account
+        query = """
+        SELECT 
+            a.uuid,
+            a.username,
+            p.first_name,
+            p.last_name,
+            p.middle_name,
+            p.gender,
+            p.birthday,
+            p.phone,
+            p.email,
+            reg.street AS reg_street,
+            reg.house_number AS reg_house,
+            reg.flat_number AS reg_flat,
+            reg_city.name AS reg_city_name,
+            live.street AS live_street,
+            live.house_number AS live_house,
+            live.flat_number AS live_flat,
+            live_city.name AS live_city_name,
+            a.is_active,
+            a.is_verified,
+            a.created_at,
+            a.updated_at
+        FROM accounts a
+        JOIN persons p ON p.id = a.person_id
+        LEFT JOIN addresses reg ON reg.id = p.registration_address_id
+        LEFT JOIN cities reg_city ON reg_city.id = reg.city_id
+        LEFT JOIN addresses live ON live.id = p.residential_address_id
+        LEFT JOIN cities live_city ON live_city.id = live.city_id
+        WHERE a.uuid = :uuid
+        """
+        result = await session.execute(text(query), {"uuid": uuid})
+        row = result.mappings().first()
+        print("BD Result: ", row)
+        return row
 
 
 account_crud = AccountCrud()

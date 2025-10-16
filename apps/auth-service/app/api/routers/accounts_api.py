@@ -4,17 +4,16 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from starlette.status import HTTP_409_CONFLICT, HTTP_204_NO_CONTENT, HTTP_200_OK
 
 from app.services import account_service
-from app.schemas import AccountCreateSchema, AccountUpdateUsernameSchema, AccountUpdatePasswordSchema, AccountBaseSchema
+from app.schemas import AccountCreateSchema, AccountUpdateUsernameSchema, AccountUpdatePasswordSchema, AccountBaseSchema, AccountOutClientSchema, AccountFullOutClientSchema
 from app.core.db import get_session
 
 from app.api.mixins import CreateMixin, RetrieveMixin, DeleteMixin, UpdateMixin
+from app.core.exceptions import DBError
 
 
 class AccountAPI(DeleteMixin):
     router = APIRouter()
     service = account_service
-    response_schema = AccountBaseSchema
-    create_schema = AccountCreateSchema
 
     def __init__(self):
         super().__init__()
@@ -23,9 +22,13 @@ class AccountAPI(DeleteMixin):
         self.router.add_api_route('/', self.create_user, methods=['post'])
         self.router.add_api_route('/password', self.update_password, methods=['patch'])
 
-
     async def get_account(self, uuid, session: AsyncSession = Depends(get_session)):
-        return await self.service.get_account_by_uuid(uuid=uuid, session=session)
+        try:
+            account = await self.service.get_account_by_uuid(uuid=uuid, session=session)
+        except DBError:
+            raise HTTPException(status_code=404)
+        else:
+            return account
 
     async def create_user(
             self,
@@ -54,7 +57,6 @@ class AccountAPI(DeleteMixin):
             HTTPException(HTTP_409_CONFLICT, detail="ERROR")
         else:
             return JSONResponse(status_code=HTTP_200_OK, content={"message": "Updated"})
-
 
     async def update_username(
             self,

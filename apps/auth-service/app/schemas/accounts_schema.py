@@ -4,13 +4,17 @@ import uuid as py_uuid
 from pydantic import BaseModel, Field, field_validator, ConfigDict
 
 from app.core.utils import make_partial_model
+from app.schemas.persons_schema import PersonOutClientSchema
 
 
 class AccountBaseSchema(BaseModel):
     id: int
-    person: int = Field(..., alias='person')
+    uuid: py_uuid.UUID
+    person_id: int
     username: str
     hash_password: str
+    is_active: bool
+    is_verified: bool
     created_at: datetime
     updated_at: datetime
 
@@ -36,3 +40,23 @@ class AccountUpdateUsernameSchema(BaseModel):
     uuid: py_uuid.UUID
     username: str
     password: str
+
+
+class AccountOutClientSchema(BaseModel):
+    uuid: py_uuid.UUID
+    username: str
+    hash_password: str
+    is_active: bool
+    is_verified: bool
+    created_at: datetime
+    updated_at: datetime
+
+
+class AccountFullOutClientSchema(BaseModel):
+    uuid: py_uuid.UUID
+    username: str
+    is_active: bool
+    is_verified: bool
+    created_at: datetime
+    updated_at: datetime
+    person: PersonOutClientSchema
