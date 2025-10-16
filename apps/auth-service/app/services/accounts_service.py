@@ -4,7 +4,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.repositories import account_crud
 from app.models import AccountModel
 from app.services.base_service import BaseService
-from app.schemas import AccountUpdateUsernameSchema, AccountUpdatePasswordSchema, AccountCreateSchema, AccountFullOutClientSchema
+from app.schemas import AccountUpdateUsernameSchema, AccountUpdatePasswordSchema, AccountCreateSchema, AccountFullOutClientSchema, AccountLoginSchema
 from app.core.security import hash_password
 
 
@@ -12,7 +12,7 @@ class AccountService(BaseService):
     crud = account_crud
     model = AccountModel
 
-    async def get_account_by_uuid(self, uuid, session: AsyncSession):
+    async def get_account_by_uuid(self, uuid: str, session: AsyncSession):
         result = await self.crud.get_by_uuid(uuid, session)
         if not result:
             return None
@@ -52,6 +52,10 @@ class AccountService(BaseService):
         print("RESULT SERVICE", account_dict)
 
         return AccountFullOutClientSchema.model_validate(account_dict).model_dump(mode='json')
+
+    async def get_account_by_username(self, username: str, session: AsyncSession):
+        account = await self.crud.get_by_username(username=username, session=session)
+        return AccountLoginSchema.model_validate(account).model_dump(mode='json')
 
     async def create_new_account(self, data: AccountCreateSchema, session: AsyncSession) -> AccountModel:
         obj = AccountModel(

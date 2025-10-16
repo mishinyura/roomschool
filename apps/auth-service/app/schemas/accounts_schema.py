@@ -41,11 +41,9 @@ class AccountUpdateUsernameSchema(BaseModel):
     username: str
     password: str
 
-
 class AccountOutClientSchema(BaseModel):
     uuid: py_uuid.UUID
     username: str
-    hash_password: str
     is_active: bool
     is_verified: bool
     created_at: datetime
@@ -60,3 +58,11 @@ class AccountFullOutClientSchema(BaseModel):
     created_at: datetime
     updated_at: datetime
     person: PersonOutClientSchema
+
+
+class AccountLoginSchema(BaseModel):
+    uuid: py_uuid.UUID
+    username: str
+    hash_password: str
+    is_active: bool
+    is_verified: bool

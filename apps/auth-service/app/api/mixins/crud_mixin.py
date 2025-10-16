@@ -4,7 +4,7 @@ from starlette.status import HTTP_200_OK, HTTP_201_CREATED
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.db import get_session
-from app.core.exceptions import DuplicateError, DBError
+from app.core.exceptions import DuplicateError, DBError, ObjectNotFoundError
 
 from app.api.mixins.base_mixin import BaseEndpointMixin
 from app.core.validators import user_validate
@@ -58,8 +58,9 @@ class RetrieveMixin(BaseEndpointMixin):
     def __call__(self, *args, **kwargs):
         @self.router.get("/{obj_id}")
         async def get(obj_id: int, session: AsyncSession = Depends(get_session)):
-            obj = await self.service.get_obj_by_id(obj_id=obj_id, session=session)
-            if not obj:
+            try:
+                obj = await self.service.get_obj_by_id(obj_id=obj_id, session=session)
+            except ObjectNotFoundError:
                 self.not_found(detail="Object not found")
             return self.response_schema.model_validate(obj, from_attributes=True)
 

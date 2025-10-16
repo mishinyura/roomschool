@@ -1,15 +1,33 @@
+import uuid as py_uuid
+
 from pydantic import BaseModel, EmailStr, constr, Field
-from datetime import date
+from datetime import date, datetime
 
 from app.core.utils import make_partial_model
 from app.schemas.addresses_schema import AddressOutClientSchema
+from app.core.enums import Gender
+
+
+class PersonBaseSchema(BaseModel):
+    uuid: py_uuid.UUID
+    first_name: str
+    last_name: str
+    middle_name: str | None = None
+    gender: Gender
+    birthday: date | None = None
+    phone: constr(pattern=r'^\+?\d{10,15}$')
+    email: EmailStr | None = None
+    registration_address_id: int | None = None
+    residential_address_id: int | None = None
+    created_at: datetime
+    updated_at: datetime
 
 
 class PersonCreateSchema(BaseModel):
     first_name: str
     last_name: str
     middle_name: str | None = None
-    gender: str
+    gender: Gender
     birthday: date | None = None
     phone: constr(pattern=r'^\+?\d{10,15}$')
     email: EmailStr | None = None
@@ -17,11 +35,14 @@ class PersonCreateSchema(BaseModel):
     residential_address_id: int | None = None
 
 
+PersonUpdateSchema = make_partial_model("PersonUpdateSchema", base_model=PersonCreateSchema)
+
+
 class PersonOutClientSchema(BaseModel):
     first_name: str
     last_name: str
     middle_name: str | None = None
-    gender: str
+    gender: Gender
     birthday: date | None = None
     phone: constr(pattern=r'^\+?\d{10,15}$')
     email: EmailStr | None = None
@@ -32,4 +53,13 @@ class PersonOutClientSchema(BaseModel):
         populate_by_name = True
 
 
-PersonUpdateSchema = make_partial_model("PersonUpdateSchema", base_model=PersonCreateSchema)
+class PersonPersonalDataSchema(BaseModel):
+    first_name: str
+    last_name: str
+    middle_name: str | None = None
+    birthday: date | None = None
+
+
+class PersonContactsSchema(BaseModel):
+    phone: constr(pattern=r'^\+?\d{10,15}$')
+    email: EmailStr | None = None

@@ -1,4 +1,4 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Request
 
 from app.schemas import PersonOutClientSchema, PersonUpdateSchema, PersonCreateSchema
 from app.services import person_service
@@ -13,8 +13,10 @@ class PersonAPI(RetrieveMixin, CreateMixin, UpdateMixin, DeleteMixin):
     update_schema = PersonUpdateSchema
     response_schema = PersonOutClientSchema
 
-    @router.get("/me")
-    async def get_info_about_me(self):
+    def __init__(self):
+        self.router.add_api_route('/profile', self.get_info_about_me, methods=['get'])
+
+    async def get_info_about_me(self, request: Request):
         try:
             result = await self.service.crud.get()
         except:

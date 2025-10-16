@@ -21,6 +21,15 @@ class AccountCrud(BaseCrud):
         except SQLAlchemyError:
             raise DBError
 
+    async def get_by_username(self, username: str, session: AsyncSession):
+        try:
+            account = await session.execute(select(AccountModel).where(AccountModel.username == username))
+            await session.commit()
+        except SQLAlchemyError:
+            raise DBError
+        else:
+            return account
+
     async def get_by_uuid(self, uuid: str, session):
         query = """
         SELECT 

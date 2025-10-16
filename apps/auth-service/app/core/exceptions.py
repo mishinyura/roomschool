@@ -29,3 +29,19 @@ class ObjectNotFoundError(Exception):
 
     def __str__(self) -> str:
         return f"DB Error: {self.message}"
+
+
+class AccountNotFoundError(Exception):
+    def __init__(self, message: str="Account not found") -> None:
+        self.message = message
+
+    def __str__(self) -> str:
+        return f"Error: {self.message}"
+
+
+class IncorrecPasswordError(Exception):
+    def __init__(self, message: str="The password is incorrect") -> None:
+        self.message = message
+
+    def __str__(self) -> str:
+        return f"Error: {self.message}"
