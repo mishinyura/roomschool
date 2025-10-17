@@ -23,8 +23,8 @@ class AccountCrud(BaseCrud):
 
     async def get_by_username(self, username: str, session: AsyncSession):
         try:
-            account = await session.execute(select(AccountModel).where(AccountModel.username == username))
-            await session.commit()
+            result = await session.execute(select(AccountModel).where(AccountModel.username == username))
+            account = result.scalars().first()
         except SQLAlchemyError:
             raise DBError
         else:

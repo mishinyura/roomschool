@@ -1,7 +1,8 @@
 from fastapi import APIRouter, Depends, HTTPException
-from fastapi.security import OAuth2PasswordBearer
+from fastapi.responses import JSONResponse
+from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from sqlalchemy.ext.asyncio import AsyncSession
-from starlette.status import HTTP_401_UNAUTHORIZED, HTTP_404_NOT_FOUND
+from starlette.status import HTTP_401_UNAUTHORIZED, HTTP_404_NOT_FOUND, HTTP_200_OK
 
 from app.services import auth_service
 from app.core.security import get_current_user
@@ -10,25 +11,29 @@ from app.core.exceptions import IncorrecPasswordError, AccountNotFoundError
 
 
 class AuthAPI:
-    router = APIRouter()
+    router = APIRouter(tags=['Auth'])
     service = auth_service
 
     def __init__(self):
         self.router.add_api_route('/login', self.login, methods=['post'])
 
-    async def login(self, form_data: OAuth2PasswordBearer = Depends(), session: AsyncSession = Depends(get_session)):
+    async def login(
+        self,
+        form_data: OAuth2PasswordRequestForm = Depends(),
+        session: AsyncSession = Depends(get_session),
+    ):
         try:
-            account = await self.service.authenticate(form_data, session=session)
+            token = await self.service.authenticate(
+                data=form_data,
+                session=session
+            )
         except IncorrecPasswordError as ex:
             raise HTTPException(status_code=HTTP_401_UNAUTHORIZED, detail=str(ex))
         except AccountNotFoundError as ex:
             raise HTTPException(status_code=HTTP_404_NOT_FOUND, detail=str(ex))
         else:
-            return account
-
-auth_router = APIRouter()
+            return JSONResponse(status_code=HTTP_200_OK, content={"access_token": token, "token_type": "bearer"})
 
 
-@auth_router.post('/')
-def hello():
-    return 'OK'
+
+auth_api = AuthAPI()

@@ -1,15 +1,14 @@
 from sqlalchemy import Column, Integer, String, ForeignKey, DateTime, func
-from sqlalchemy.orm import relationship
+from sqlalchemy.orm import relationship, Mapped, mapped_column
 
-from app.models.base_model import Base
+from app.models.base_model import Base, BaseModel
 
 
-class AccountRoleModel(Base):
+class AccountRoleModel(BaseModel, Base):
     __tablename__ = "account_roles"
 
-    id = Column(Integer, primary_key=True)
-    account_id = Column(Integer, ForeignKey("accounts.id", ondelete="CASCADE"))
-    role_id = Column(Integer, ForeignKey("roles.id", ondelete="CASCADE"))
+    account_id: Mapped[int] = mapped_column(Integer, ForeignKey("accounts.id", ondelete="CASCADE"))
+    role_id: Mapped[int] = mapped_column(Integer, ForeignKey("roles.id", ondelete="CASCADE"))
 
     account_role_account = relationship(
         "AccountModel",

@@ -9,5 +9,5 @@ from .accounts_schema import (
     AccountFullOutClientSchema,
     AccountLoginSchema
 )
-from .roles_schema import RoleCreateSchema, RoleUpdateSchema, RoleBaseSchema, RoleOutClientSchema
+from .roles_schema import RoleCreateSchema, RoleUpdateSchema, RoleBaseSchema, RoleOutClientSchema, RoleAccountCreateSchema
 from .persons_schema import PersonCreateSchema, PersonOutClientSchema, PersonUpdateSchema, PersonBaseSchema, PersonContactsSchema, PersonPersonalDataSchema

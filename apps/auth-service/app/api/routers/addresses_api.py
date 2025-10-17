@@ -7,7 +7,7 @@ from app.api.mixins import CreateMixin, RetrieveMixin, DeleteMixin, UpdateMixin
 
 
 class AddressAPI(RetrieveMixin, CreateMixin, DeleteMixin, UpdateMixin):
-    router = APIRouter()
+    router = APIRouter(tags=['Addresses'])
     service = address_service
     response_schema = AddressOutClientSchema
     create_schema = AddressBaseSchema

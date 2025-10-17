@@ -31,7 +31,7 @@ class CreateMixin(BaseEndpointMixin):
 class UpdateMixin(BaseEndpointMixin):
     """Добавляет PATCH /{id}"""
     def __call__(self, *args, **kwargs):
-        @self.router.patch("/{obj_id}")
+        @self.router.patch("/{obj_id:int}")
         async def update(obj_id: int, data: self.update_schema, session: AsyncSession = Depends(get_session)):
             try:
                 await self.service.update_obj(obj_id=obj_id, data_obj=data, session=session)
@@ -43,7 +43,7 @@ class UpdateMixin(BaseEndpointMixin):
 class DeleteMixin(BaseEndpointMixin):
     """Добавляет DELETE /{id}"""
     def __call__(self, *args, **kwargs):
-        @self.router.delete("/{obj_id}")
+        @self.router.delete("/{obj_id:int}")
         async def delete(obj_id: int, session: AsyncSession = Depends(get_session)):
             print("DeleteMixin вызван:")
             try:
@@ -56,7 +56,7 @@ class DeleteMixin(BaseEndpointMixin):
 class RetrieveMixin(BaseEndpointMixin):
     """Добавляет GET /{id}"""
     def __call__(self, *args, **kwargs):
-        @self.router.get("/{obj_id}")
+        @self.router.get("/{obj_id:int}")
         async def get(obj_id: int, session: AsyncSession = Depends(get_session)):
             try:
                 obj = await self.service.get_obj_by_id(obj_id=obj_id, session=session)

@@ -8,7 +8,7 @@ from app.core.db import create_tables
 from app.middlewares import *
 
 ROUTES = {
-    '/auth': auth_router,
+    '/auth': auth_api.router,
     '/cities': city_api.router,
     '/addresses': address_api.router,
     '/persons': person_api.router,

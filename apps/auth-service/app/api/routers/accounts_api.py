@@ -12,7 +12,7 @@ from app.core.exceptions import DBError
 
 
 class AccountAPI(DeleteMixin):
-    router = APIRouter()
+    router = APIRouter(tags=['Accounts'])
     service = account_service
 
     def __init__(self):
@@ -44,7 +44,7 @@ class AccountAPI(DeleteMixin):
         except Exception as ex:
             HTTPException(HTTP_409_CONFLICT, detail="ERROR")
         else:
-            return self.response_schema.model_validate(user).model_dump(mode="json", by_alias=True)
+            return AccountBaseSchema.model_validate(user).model_dump(mode="json", by_alias=True)
 
     async def update_password(
             self,

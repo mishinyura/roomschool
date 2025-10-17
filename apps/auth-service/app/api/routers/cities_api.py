@@ -7,7 +7,7 @@ from app.api.mixins import CreateMixin, RetrieveMixin, UpdateMixin, DeleteMixin
 
 
 class CityAPI(RetrieveMixin, CreateMixin, UpdateMixin, DeleteMixin):
-    router = APIRouter()
+    router = APIRouter(tags=['Cities'])
     service = city_service
     create_schema = CityCreateSchema
     update_schema = CityUpdateSchema

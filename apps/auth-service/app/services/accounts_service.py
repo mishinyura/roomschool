@@ -55,7 +55,7 @@ class AccountService(BaseService):
 
     async def get_account_by_username(self, username: str, session: AsyncSession):
         account = await self.crud.get_by_username(username=username, session=session)
-        return AccountLoginSchema.model_validate(account).model_dump(mode='json')
+        return AccountLoginSchema.model_validate(account, from_attributes=True)
 
     async def create_new_account(self, data: AccountCreateSchema, session: AsyncSession) -> AccountModel:
         obj = AccountModel(
